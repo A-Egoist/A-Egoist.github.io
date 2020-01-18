@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="A-Egoist">
+    <meta name="keywords" content="算法，美化，日常，随笔">
     <meta name="description" content="A-Egoist">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -139,7 +139,7 @@
         <div class="logo-name">A-Egoist</div>
         <div class="logo-desc">
             
-            Never really desperate, only the lost of the soul.
+            一个蒟蒻的尝试
             
         </div>
     </div>
@@ -353,7 +353,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                subtitle
+                Amonologue
                 
             </div>
 
@@ -380,7 +380,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getHours() + '.jpg)');
 </script>
 
 
@@ -485,20 +485,42 @@
             <div class="card">
                 <div class="card-content">
                     
-                        <div class="dream">
+
+                    
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
     
     <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+        <i class="fas fa-music"></i>&nbsp;&nbsp;Music
     </div>
     
     <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
         </div>
     </div>
 </div>
-                    
 
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.5'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '',
+        audio: eval([{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://xxx.com/music1.mp3","cover":"http://xxx.com/music-cover1.png"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"/medias/music/music2.mp3","cover":"/medias/music/cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"http://xxx.com/music3.mp3","cover":"http://xxx.com/music-cover3.png"}])
+    });
+});
+</script>
                     
 
                     
@@ -572,7 +594,7 @@
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="https://a-egoist.github.io" target="_blank">LX</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -698,6 +720,14 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+    
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
     
 
     
