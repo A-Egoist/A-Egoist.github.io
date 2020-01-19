@@ -4,7 +4,32 @@
   
     
     <entry>
-      <title>hello world</title>
+      <title>Blog profile</title>
+      <link href="/2020/01/19/Blog-profile/"/>
+      <url>/2020/01/19/Blog-profile/</url>
+      
+        <content type="html"><![CDATA[<h1 id="My-blog-introduction"><a href="#My-blog-introduction" class="headerlink" title="My blog introduction"></a>My blog introduction</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>​    因为在学算法的时候，翻阅了很多<strong>dalao</strong>的博客查看资料，看到他们都有着自己风格的博客（有着炫酷的背景，动态效果，等等特效）心生羡慕，遍想着自己搭建一个属于自己的<strong>blog</strong>，本来有点<strong>懒</strong>，起初是在洛谷，<strong>CSDN</strong>都尝试过，发现洛谷上面的博客的主题不适合我，再加之<strong>CSDN</strong>上的广告是真的多，而且还有朋友说，搭载别人那里的<strong>blog</strong>还可能会被别人删稿，这就把我吓着了。</p><p>​    于是，我就在网上查找资料，试着自己搭建一个属于自己的<strong>blog</strong>，并且让其后端在自己这边。网上有很多的方式，我选择了<strong>hexo+github</strong>的方式搭建的博客。</p><h2 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h2><p>1、因为我这个<strong>blog</strong>刚搭建好，然后又在美化上面耗费了许多的时间，以至于还有很多的bug，这个我会在之后的时间慢慢补上。</p><p>2、因为是在<a href="https://github.com/A-Egoist/A-Egoist.github.io" target="_blank" rel="noopener"><strong>GitHub</strong></a>上面部署的，在晚上的时候访问博客的速度会变得很慢，毕竟需要用到<strong>国外的网</strong>，访问该<strong>blog</strong>的朋友请忍受下，我会找方法尽量改善下情况。</p><p>3、<strong>blog</strong>刚刚搭建好，还没有博文可以发上，而且也难得把以前的<strong>blog</strong>搬运过来。</p><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>​    搭建<strong>blog</strong>的目的有很多，但主要的还是为了学习吧，毕竟我还是需要有一个这样的<strong>blog</strong>来帮助我学习的，希望可以通过这个方式让我学到更多的知识。</p><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>​    这次<strong>blog</strong>的搭建借鉴了很多<strong>dalao</strong>的方法，然后又在<a href="https://www.bilibili.com/" target="_blank" rel="noopener">B站</a>上找到了相关的视频（<a href="https://www.bilibili.com/video/av44544186?t=1608" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a>）（顺便说一句，<strong>羊哥</strong>(CodeSheep)是真的好，期间遇到了很多问题，我问他，他都耐心的帮我解决问题），而后又在逛<strong>CSDN</strong>的时候看到了相关的搭建流程，以及<strong><a href="https://blog.csdn.net/victoryxa/article/details/103733655" target="_blank" rel="noopener">美化教程</a></strong>，在结合了以上的资源之后我终于搭建好了自己的<strong>blog</strong>。</p><h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>1、<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">Markdown教程</a></p><p>2、<a href="https://music.liuzhijin.cn/" target="_blank" rel="noopener">音乐直链搜索</a></p><p>3、<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hello </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 介绍 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
       <link href="/2020/01/19/test/"/>
       <url>/2020/01/19/test/</url>
       
