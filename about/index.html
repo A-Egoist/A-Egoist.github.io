@@ -588,7 +588,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Log","value":1},{"name":"Hello","value":4}],
+                data: [{"name":"Hello","value":4},{"name":"Log","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -612,7 +612,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["测试","日志","介绍"]
+                data: ["测试","介绍","日志"]
             }
         ],
         yAxis: [
@@ -997,25 +997,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== 'your_domain' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
+</body>
 
 </html>

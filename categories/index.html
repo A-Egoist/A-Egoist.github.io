@@ -340,20 +340,20 @@
                 
                 
                 
-                <a href="/categories/Log/" title="Log: 1">
+                <a href="/categories/Hello/" title="Hello: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Log
-                        <span class="tag-length">1</span>
+                            style="background-color: #F9EBEA;">Hello
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Hello/" title="Hello: 4">
+                <a href="/categories/Log/" title="Log: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Hello
-                        <span class="tag-length">4</span>
+                            style="background-color: #F5EEF8;">Log
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -399,7 +399,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Log","max":5},{"name":"Hello","max":5}],
+            indicator: [{"name":"Hello","max":5},{"name":"Log","max":5}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -410,7 +410,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,4],
+                    value : [4,1],
                     name : '文章分类数量'
                 }
             ]
@@ -661,25 +661,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== 'your_domain' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
+</body>
 
 </html>

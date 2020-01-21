@@ -339,11 +339,11 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/%E6%97%A5%E5%BF%97/" title="日志: 1">
+                <a href="/tags/%E6%B5%8B%E8%AF%95/" title="测试: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="日志" style="background-color: #F9EBEA;">日志
-                        <span class="tag-length">1</span>
+                             chip-default "
+                            data-tagname="测试" style="background-color: #F9EBEA;">测试
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -357,11 +357,11 @@
                 </a>
                 
                 
-                <a href="/tags/%E6%B5%8B%E8%AF%95/" title="测试: 3">
+                <a href="/tags/%E6%97%A5%E5%BF%97/" title="日志: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="测试" style="background-color: #D5F5E3;">测试
-                        <span class="tag-length">3</span>
+                             chip-active "
+                            data-tagname="日志" style="background-color: #D5F5E3;">日志
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -651,25 +651,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        $('a').each(function() {
-          const $this = $(this);
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== 'your_domain' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
+</body>
 
 </html>
