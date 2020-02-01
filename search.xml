@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>String用法</title>
+      <link href="/posts/b23d60f8/"/>
+      <url>/posts/b23d60f8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="String类简介"><a href="#String类简介" class="headerlink" title="String类简介"></a>String类简介</h2><p><strong>要使用 string 类，必须包含头文件 <string>。</strong>在 STL 库中，basic_string 有两个预定义类型：包含 char 的 string 类型和包含 wchar 的 wstring 类型。</p><p>string 类的 string::npos 可同时定义字符串的最大长度，通常设置为无符号 int 的最大值。string 类包含了 6 个构造函数。string 类支持 cin 方式和 getline() 方式两种输入方式。简单示例如下：</p><pre class="line-numbers language-c"><code class="language-c">string s<span class="token punctuation">;</span>cin<span class="token operator">>></span>s<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//不能读空格</span><span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//可以读空格</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>上述三行代码，第一行是声明 string 类的对象 stuff，第二行是从屏幕读入输入的字符串，第三行同样实现第二行代码的功能。</p><p>string 库提供了许多其他功能，如删除字符串的部分或全部，用一个字符的部分或全部替换另一个字符串的部分或全部，插入、删除字符串中数据，比较、提取、复制、交换等。</p><h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> STL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> String </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二维前缀和</title>
       <link href="/posts/b8859ab5/"/>
       <url>/posts/b8859ab5/</url>
