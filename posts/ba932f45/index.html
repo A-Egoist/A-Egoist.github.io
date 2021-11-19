@@ -7,9 +7,8 @@
     <meta name="keywords" content="差分和一维前缀和, 算法，美化，日常，随笔">
     <meta name="description" content="一维前缀和​    说道一维前缀和，我们可以理解为——一个数列求前 n 项和。没错，一维前缀和就是这么简单，就是一个求前 n 项和的思想。
 
-for(int j=1;j&amp;lt;=i;j++)
-&amp;#123;
-    cin&gt;&gt;a[j];		/">
+S[i]=\sum_{j=1}^iA[j]for(int j=1;j&amp;lt;=i;j++)
+&amp;#1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -456,8 +455,8 @@ for(int j=1;j&amp;lt;=i;j++)
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                算法竞赛
                             </a>
                         
                     </div>
@@ -476,7 +475,7 @@ for(int j=1;j&amp;lt;=i;j++)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-05
+                    2021-11-19
                 </div>
                 
 
@@ -490,7 +489,7 @@ for(int j=1;j&amp;lt;=i;j++)
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -514,15 +513,15 @@ for(int j=1;j&amp;lt;=i;j++)
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="一维前缀和"><a href="#一维前缀和" class="headerlink" title="一维前缀和"></a>一维前缀和</h2><p>​    说道一维前缀和，我们可以理解为——一个数列求前 <strong>n</strong> 项和。没错，一维前缀和就是这么简单，就是一个求前 <strong>n</strong> 项和的思想。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images1.png" style="zoom:80%;" /></p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+<script type="math/tex; mode=display">
+S[i]=\sum_{j=1}^iA[j]</script><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
     cin<span class="token operator">>></span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//scanf("%d",&amp;a[j]);</span>
     s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//其中s[j]表示前j项和，a[j]表示第j项数</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果我们要求一个数列中某个区间的和，我们就可以用到前缀和的思想。例如求<strong>[ l , r ]</strong>这个区间中数的和：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2.png" style="zoom:80%;" /></p>
-<p>所以想要求这个区间中数字的和，我们只需要用前 <strong>r</strong> 项和减前 <strong>l-1</strong> 项和。</p>
+<p>如果我们要求一个数列中某个区间的和，我们就可以用到前缀和的思想。例如求 $[l,r]$ 这个区间中数的和：</p>
+<script type="math/tex; mode=display">
+sum[l,r]=\sum_{i=l}^rA[i]=S[r]-S[l-1]</script><p>所以想要求这个区间中数字的和，我们只需要用前 <strong>r</strong> 项和减前 <strong>l-1</strong> 项和。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">cin<span class="token operator">>></span>l<span class="token operator">>></span>r<span class="token punctuation">;</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
@@ -811,21 +810,13 @@ cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation"
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Log/" class="post-category">
-                                    Log
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1010,7 +1001,7 @@ cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35k</span>
+                        class="white-color">35.3k</span>
             
             
             

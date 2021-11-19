@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="递推总结(持续更新!!!), 算法，美化，日常，随笔">
-    <meta name="description" content="递推总结(持续更新!!!)错排公式介绍问题：现有10本书按照顺序摆放，现要求重新排列，使得新的书的顺序中每一本书都不在原来的位置，求有多少种排列方式？
-这个问题推广一下，就是错排问题，是组合数学中的问题之一。考虑一个有n个元素的排列，若一个">
+    <meta name="keywords" content="递推总结, 算法，美化，日常，随笔">
+    <meta name="description" content="递推总结错排公式介绍问题：现有10本书按照顺序摆放，现要求重新排列，使得新的书的顺序中每一本书都不在原来的位置，求有多少种排列方式？
+这个问题推广一下，就是错排问题，是组合数学中的问题之一。考虑一个有n个元素的排列，若一个排列中所有的元素都">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>递推总结(持续更新!!!) | A-Egoist</title>
+    <title>递推总结 | A-Egoist</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -321,7 +321,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">递推总结(持续更新!!!)</h1>
+                    <h1 class="description center-align post-title">递推总结</h1>
                 </div>
             </div>
         </div>
@@ -435,17 +435,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/">
-                                <span class="chip bg-color">错排公式</span>
-                            </a>
-                        
-                            <a href="/tags/hdu/">
-                                <span class="chip bg-color">hdu</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -453,8 +445,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%80%92%E6%8E%A8/" class="post-category">
-                                递推
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                算法竞赛
                             </a>
                         
                     </div>
@@ -473,7 +469,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-22
+                    2021-11-19
                 </div>
                 
 
@@ -510,7 +506,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="递推总结-持续更新"><a href="#递推总结-持续更新" class="headerlink" title="递推总结(持续更新!!!)"></a>递推总结(持续更新!!!)</h2><h3 id="错排公式"><a href="#错排公式" class="headerlink" title="错排公式"></a>错排公式</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/bengshakalakaka/article/details/83420150">介绍</a></h4><p><strong>问题：</strong>现有10本书按照顺序摆放，现要求重新排列，使得新的书的顺序中每一本书都不在原来的位置，求有多少种排列方式？</p>
+                <h2 id="递推总结"><a href="#递推总结" class="headerlink" title="递推总结"></a>递推总结</h2><h3 id="错排公式"><a href="#错排公式" class="headerlink" title="错排公式"></a>错排公式</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/bengshakalakaka/article/details/83420150">介绍</a></h4><p><strong>问题：</strong>现有10本书按照顺序摆放，现要求重新排列，使得新的书的顺序中每一本书都不在原来的位置，求有多少种排列方式？</p>
 <p>这个问题推广一下，就是<strong>错排问题</strong>，是<strong>组合数学</strong>中的问题之一。考虑一个有n个元素的排列，若一个排列中所有的元素都不在自己原来的位置上，那么这样的排列就称为原排列的一个错排。 n个元素的错排数记为<strong>D(n)</strong>。 研究一个排列错排个数的问题，叫做<strong>错排问题</strong>或称为<strong>更列问题</strong>。</p>
 <p>OK，现在详细分析这个问题，我们要的最终结果就是书的编号与所在位置的编号不同，在这里，我们把n本书的错排操作数记为<strong>D(n)</strong>，那<strong>n-1</strong>本就是<strong>D(n-1)</strong>，<strong>n-2</strong>本就是<strong>D(n-2)</strong>啦，下面，我们把放置问题分为两步（初始位置号与书的编号相同）：</p>
 <p><strong>第一步：</strong></p>
@@ -675,15 +671,7 @@ using namespace std<span class="token punctuation">;</span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/">
-                                    <span class="chip bg-color">错排公式</span>
-                                </a>
-                            
-                                <a href="/tags/hdu/">
-                                    <span class="chip bg-color">hdu</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -753,12 +741,12 @@ using namespace std<span class="token punctuation">;</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/5a52a5c2/">
+                <a href="/posts/68a09d/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/img/624.jpg" class="responsive-img" alt="ACM Training Plan">
+                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/img/289.jpg" class="responsive-img" alt="哈夫曼树(最优二叉树)">
                         
-                        <span class="card-title">ACM Training Plan</span>
+                        <span class="card-title">哈夫曼树(最优二叉树)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -769,14 +757,18 @@ using namespace std<span class="token punctuation">;</span>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ACM/" class="post-category">
-                                    ACM
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                    算法竞赛
                                 </a>
                             
                             
@@ -786,8 +778,8 @@ using namespace std<span class="token punctuation">;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E5%88%92/">
-                        <span class="chip bg-color">计划</span>
+                    <a href="/tags/tree/">
+                        <span class="chip bg-color">tree</span>
                     </a>
                     
                 </div>
@@ -823,8 +815,8 @@ using namespace std<span class="token punctuation">;</span>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E8%AE%BA/" class="post-category">
-                                    数论
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                    算法竞赛
                                 </a>
                             
                             
@@ -834,12 +826,8 @@ using namespace std<span class="token punctuation">;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/">
-                        <span class="chip bg-color">埃氏筛法</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/">
-                        <span class="chip bg-color">欧拉筛法</span>
+                    <a href="/tags/%E6%95%B0%E8%AE%BA/">
+                        <span class="chip bg-color">数论</span>
                     </a>
                     
                 </div>
@@ -1026,7 +1014,7 @@ using namespace std<span class="token punctuation">;</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35k</span>
+                        class="white-color">35.3k</span>
             
             
             
