@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>LaTex入门笔记 | A-Egoist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LaTex入门笔记前言很早之前写博客的时候就用LaTex写数学公式了，但是一直没有系统的学习过LaTex，正好逻辑代数的实验报告推荐使用LaTex编写，那我就开始系统的学习一边LaTex了。 不得不说在用过LaTex之后对Word的排版是真的难以忍受了。但是现在对于我来说用纯LaTex写实验报告之类的还是太慢了，所以现阶段我都是用md+LaTex编写的。 话说，用md写LaTex的入门笔记是不是不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTex入门笔记">
+<meta property="og:url" content="http://a-egoist.com/posts/f43198be/index.html">
+<meta property="og:site_name" content="A-Egoist">
+<meta property="og:description" content="LaTex入门笔记前言很早之前写博客的时候就用LaTex写数学公式了，但是一直没有系统的学习过LaTex，正好逻辑代数的实验报告推荐使用LaTex编写，那我就开始系统的学习一边LaTex了。 不得不说在用过LaTex之后对Word的排版是真的难以忍受了。但是现在对于我来说用纯LaTex写实验报告之类的还是太慢了，所以现阶段我都是用md+LaTex编写的。 话说，用md写LaTex的入门笔记是不是不">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210329204354659.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images14174754-267e8aa705533a74.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331145215340.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123709331.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123725694.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331130527907.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331124046483.png">
+<meta property="article:published_time" content="2021-11-19T10:15:29.218Z">
+<meta property="article:modified_time" content="2021-11-12T03:30:04.220Z">
+<meta property="article:author" content="Amonologue">
+<meta property="article:tag" content="LaTex">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210329204354659.png">
+  
+    <link rel="alternate" href="/atom.xml" title="A-Egoist" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">A-Egoist</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://a-egoist.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-LaTex入门笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/posts/f43198be/" class="article-date">
+  <time datetime="2021-11-19T10:15:29.218Z" itemprop="datePublished">2021-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LaTex入门笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LaTex入门笔记"><a href="#LaTex入门笔记" class="headerlink" title="LaTex入门笔记"></a>LaTex入门笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很早之前写博客的时候就用LaTex写数学公式了，但是一直没有系统的学习过LaTex，正好逻辑代数的实验报告推荐使用LaTex编写，那我就开始系统的学习一边LaTex了。</p>
+<p>不得不说在用过LaTex之后对Word的排版是真的难以忍受了。但是现在对于我来说用纯LaTex写实验报告之类的还是太慢了，所以现阶段我都是用md+LaTex编写的。</p>
+<p>话说，用md写LaTex的入门笔记是不是不太行(╥╯^╰╥)</p>
+<h2 id="LaTex的安装与配置"><a href="#LaTex的安装与配置" class="headerlink" title="LaTex的安装与配置"></a>LaTex的安装与配置</h2><p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38178015">使用VSCode编写LaTeX</a></p>
+<h2 id="LaTex基础"><a href="#LaTex基础" class="headerlink" title="LaTex基础"></a>LaTex基础</h2><h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>LaTex 语言是以反斜杠 <code>\</code> 开头的宏标记语言</p>
+<p>注释以<code>%</code> 开头，若需要输入 <code>%</code> 则需要用 <code>\</code> 进行转义</p>
+<p>按照惯例，输出一个 <code>Hello world</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;%文章类型为article，此外除了article之外还有：book，report</span><br><span class="line">%导言区</span><br><span class="line">%你可以将导言区理解为是对整篇文档进行设置的区域</span><br><span class="line">%在导言区出现的控制序列，往往会影响整篇文档的格式。</span><br><span class="line">%比如，我们通常在导言区设置页面大小、页眉页脚样式、章节标题样式等等。</span><br><span class="line">\begin&#123;document&#125;%文章开始的部分，只有位于document中的内容才会在PDF文件中显示</span><br><span class="line">    Hello, world!%我们需要在PDF文件中显示的内容</span><br><span class="line">\end&#123;document&#125;%文章的结尾</span><br></pre></td></tr></table></figure>
+
+<p>在LaTex中 <code>\begin</code> 和 <code>\end</code> 成对出现，两者之间的内容被称为<strong>环境</strong>，两者之后的第一个参数总是一致的，被称作环境名。</p>
+<p>在VSCode中我们写好上面的代码之后就可以点击<img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210329204354659.png" alt="image-20210329204354659">，从而将tex文件编译成PDF文件。然后我们就可以点击<code>View LaTex PDF</code>中的选项来查看编译结果。</p>
+<h3 id="组织文章"><a href="#组织文章" class="headerlink" title="组织文章"></a>组织文章</h3><h4 id="文档类型选择"><a href="#文档类型选择" class="headerlink" title="文档类型选择"></a>文档类型选择</h4><p>因为现在我主要用LaTex排版的内容是中文，因此我所需要使用的宏对中文的支持必须非常好，因此我在这里推荐是用CTeX，使用方法为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8, c5size]&#123;ctexart&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage[UTF8]&#123;ctex&#125;</span><br></pre></td></tr></table></figure>
+
+<p>CTeX 宏集提供了四个中文文档类：ctexart、ctexrep、ctexbook和ctexbeamer，分别对应 LaTeX 的标准文档类article、report、book和beamer。</p>
+<h4 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h4><p>在CTeX宏包中，默认的正常字体是宋体，粗体是黑体，意大利体是楷体。</p>
+<p>我们也可以通过使用<code>&#123;\songti ......&#125;</code>来修改字体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;\songti 什么是半加器和全加器？各自有何特点？&#125;</span><br><span class="line">&#123;\heiti 什么是半加器和全加器？各自有何特点？&#125;</span><br><span class="line">&#123;\fangsong 什么是半加器和全加器？各自有何特点？&#125;</span><br><span class="line">&#123;\kaishu 什么是半加器和全加器？各自有何特点？&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关于更加详细的字体介绍可以看看这本手册：<a target="_blank" rel="noopener" href="https://www.moonpapers.com/manual/latex/basic/text/typeface/use.html">字体使用</a></p>
+<h4 id="设置字号"><a href="#设置字号" class="headerlink" title="设置字号"></a>设置字号</h4><h5 id="局部修改字号"><a href="#局部修改字号" class="headerlink" title="局部修改字号"></a>局部修改字号</h5><p>对于字体的大小在LaTex中有很多命令来操纵：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\Huge</span><br><span class="line">\huge</span><br><span class="line">\LARGE</span><br><span class="line">\Large</span><br><span class="line">\large</span><br><span class="line">\normalsize (default)</span><br><span class="line">\small</span><br><span class="line">\footnotesize</span><br><span class="line">\scriptsize</span><br><span class="line">\tiny</span><br></pre></td></tr></table></figure>
+
+<p>这些命令对应字体的大小和默认字体有关，具体对应关系如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images14174754-267e8aa705533a74.png" alt="img"></p>
+<h5 id="全局修改字号"><a href="#全局修改字号" class="headerlink" title="全局修改字号"></a>全局修改字号</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[c5size]&#123;ctexart&#125;%直接在\documentclass后面添加相应的字体大小即可</span><br></pre></td></tr></table></figure>
+
+<p>关于字号的详细信息可以看看这篇博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/68da21a1501a">latex 字体设置</a></p>
+<h4 id="设置行间距"><a href="#设置行间距" class="headerlink" title="设置行间距"></a>设置行间距</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\setlength&#123;\baselineskip&#125;&#123;20pt&#125;%20pt表示行间距大小为20磅</span><br></pre></td></tr></table></figure>
+
+<p>关于LaTex长度单位可以看这篇博客：<a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_5e16f1770100fve8.html">LaTeX技巧18：LaTeX的长度单位入门</a></p>
+<h4 id="作者、标题、日期"><a href="#作者、标题、日期" class="headerlink" title="作者、标题、日期"></a>作者、标题、日期</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\title&#123;你好，LaTex!&#125;%标题</span><br><span class="line">\author&#123;A-Egoist&#125;%作者</span><br><span class="line">\date&#123;\today&#125;%时间</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\maketitle%将在导言区中定义的标题、作者、日期按照预定的格式展现出来</span><br><span class="line">%\tableofcontents%设置目录，但是需要进行两次编译才能体现出效果</span><br><span class="line">你好，world!</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="章节和段落"><a href="#章节和段落" class="headerlink" title="章节和段落"></a>章节和段落</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8, c5size]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;lipsum&#125;</span><br><span class="line">\usepackage&#123;&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\centering</span><br><span class="line">\section&#123;\songti 什么是半加器和全加器？各自有何特点？&#125;</span><br><span class="line">\subsection&#123;半加器(half-adder)&#125;</span><br><span class="line">\subsubsection&#123;概述&#125;</span><br><span class="line">\subsubsection&#123;原理&#125;</span><br><span class="line">\subsection&#123;全加器(full-adder)&#125;</span><br><span class="line">\section&#123;根据组合逻辑电路设计步骤，设计半加器和全加器，并在Logisim中仿真。&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331145215340.png" style="zoom:80%;" />
+
+<p>在文档类 <code>article</code>/<code>ctexart</code> 中，定义了五个控制序列来调整行文组织结构。他们分别是</p>
+<ul>
+<li><code>\section&#123;·&#125;</code></li>
+<li><code>\subsection&#123;·&#125;</code></li>
+<li><code>\subsubsection&#123;·&#125;</code></li>
+<li><code>\paragraph&#123;·&#125;</code></li>
+<li><code>\subparagraph&#123;·&#125;</code></li>
+</ul>
+<blockquote>
+<p>在<code>report</code>/<code>ctexrep</code>中，还有<code>\chapter&#123;·&#125;</code>；在文档类<code>book</code>/<code>ctexbook</code>中，还定义了<code>\part&#123;·&#125;</code>。</p>
+</blockquote>
+<h4 id="插入目录"><a href="#插入目录" class="headerlink" title="插入目录"></a>插入目录</h4><p>在上一节的文档中，找到 <code>\maketitle</code>，在它的下面插入控制序列 <code>\tableofcontents</code>，保存并用 XeLaTeX 编译<strong>两次</strong></p>
+<blockquote>
+<p>第一次编译的时候和之前没有什么区别<br>但是当第二次编译的时候会在时间下方多出一个目录</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8, c5size]&#123;ctexart&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">    \maketitle</span><br><span class="line">    \tableofcontents</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>LaTeX 将一个换行当做是一个简单的空格来处理，如果需要换行另起一段，则需要用两个换行（一个空行）来实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">简单来说半加器就是一个两输入两输出、只能进行两个一位二进制</span><br><span class="line">加法的器件，因为两输入两输出的特性使得半加器不需要考虑低位的进位。%这样没有达到换行的目的</span><br><span class="line">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><br><span class="line">简单来说半加器就是一个两输入两输出、只能进行两个一位二进制</span><br><span class="line"></span><br><span class="line">加法的器件，因为两输入两输出的特性使得半加器不需要考虑低位的进位。%这样才是换行</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h3><p>LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。前者在正文的行文中，插入数学公式；后者独立排列单独成行，并自动居中。</p>
+<p>在行文中，使用 <code>$ ... $</code> 可以插入行内公式，使用 <code>\[ ... \]</code> 可以插入行间公式，如果需要对行间公式进行编号，则可以使用 <code>equation</code> 环境。</p>
+<blockquote>
+<p>行内公式也可以使用 <code>\(...\)</code> 或者 <code>\begin&#123;math&#125; ... \end&#123;math&#125;</code> 来插入，但略显麻烦。<br>无编号的行间公式也可以使用 <code>\begin&#123;displaymath&#125; ... \end&#123;displaymath&#125;</code> 或者 <code>\begin&#123;equation*&#125; ... \end&#123;equation*&#125;</code> 来插入，但略显麻烦。（<code>equation*</code> 中的 <code>*</code> 表示环境不编号）<br>也有 plainTeX 风格的 <code>$$ ... $$</code> 来插入不编号的行间公式。但是在 LaTeX 中这样做会改变行文的默认行间距，不推荐。</p>
+</blockquote>
+<p>在使用数学公式之前，我们需要导入包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;amsmath&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h4><p>行内公式只需要放在两个$直接就行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$S = 1$</span><br></pre></td></tr></table></figure>
+
+<h4 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h4><p>行间公式有两种一种是放在<code>$$...$$</code>中，还有一种是放在<code>\[...\]</code>中，推荐使用第二种。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\[\begin&#123;aligned&#125;</span><br><span class="line">    S =&amp; \bar&#123;A&#125;\bar&#123;B&#125;Cin + \bar&#123;A&#125;B\bar&#123;Cin&#125; + A\bar&#123;B&#125;\bar&#123;Cin&#125; + ABCin \\</span><br><span class="line">    =&amp; (\bar&#123;A&#125;\bar&#123;B&#125; + AB)Cin + (\bar&#123;A&#125;B + A\bar&#123;B&#125;)\bar&#123;Cin&#125; \\</span><br><span class="line">    =&amp; (A\odot B)Cin + (A\oplus B)\bar&#123;Cin&#125; \\</span><br><span class="line">    =&amp; A \oplus B \oplus Cin</span><br><span class="line">\end&#123;aligned&#125;\]</span><br></pre></td></tr></table></figure>
+
+<p>关于数学公式的符号可以用用这个网站：<a target="_blank" rel="noopener" href="https://latexlive.com/">LaTeX公式编辑器</a></p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>在插入图片前，我们需要导入相关的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;graphicx&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入一张图片"><a href="#插入一张图片" class="headerlink" title="插入一张图片"></a>插入一张图片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\subsubsection&#123;电路图&#125;</span><br><span class="line">    如图\ref&#123;half-adder-logisim-1&#125;所示。%\ref 表示引用图片或者表格</span><br><span class="line">    \begin&#123;figure&#125;[htbp]%在这个区间放入图片</span><br><span class="line">        \centering</span><br><span class="line">        \includegraphics[width = .5\textwidth]&#123;half-adder-1.png&#125;%[]中表示图片显示大小，&#123;&#125;中填入图片地址    </span><br><span class="line">        \caption&#123;half-adder&#125;%设置图片名称</span><br><span class="line">        \label&#123;half-adder-logisim-1&#125;%创建标签名，在之后就可以使用\ref&#123;标签名&#125;引用图片</span><br><span class="line">    \end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123709331.png" alt="image-20210331123709331"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123725694.png" alt="image-20210331123725694"></p>
+<h4 id="在一排中插入两张图片"><a href="#在一排中插入两张图片" class="headerlink" title="在一排中插入两张图片"></a>在一排中插入两张图片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[htbp]</span><br><span class="line">    \centering</span><br><span class="line">    %一个subfigure就表示一张子图</span><br><span class="line">    \subfigure[half-adder-alter]&#123;</span><br><span class="line">        \begin&#123;minipage&#125;&#123;7cm&#125;</span><br><span class="line">        \centering</span><br><span class="line">        \includegraphics[scale=0.4]&#123;half-adder-2.png&#125;</span><br><span class="line">        \end&#123;minipage&#125;%</span><br><span class="line">    &#125;%</span><br><span class="line">    \subfigure[full-adder-alter]&#123;</span><br><span class="line">        \begin&#123;minipage&#125;&#123;7cm&#125;</span><br><span class="line">        \centering</span><br><span class="line">        \includegraphics[scale=0.3]&#123;full-adder-2.png&#125;</span><br><span class="line">        \end&#123;minipage&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    \caption&#123;根据芯片的结构改装之后的Logisim图&#125;</span><br><span class="line">    \label&#123;alter&#125;</span><br><span class="line">\end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331130527907.png" alt="image-20210331130527907"></p>
+<h3 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h3><p>在插入表格前，我们需要导入相关的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;booktabs&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="普通表格"><a href="#普通表格" class="headerlink" title="普通表格"></a>普通表格</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;center&#125;</span><br><span class="line">    \begin&#123;tabular&#125;&#123;llll&#125;%表示有4列左对齐的数据</span><br><span class="line">        \hline</span><br><span class="line">        姓名&amp;name&amp;学号&amp;id\\</span><br><span class="line">        \hline</span><br><span class="line">        专业&amp;cs&amp;年级&amp;grade\\</span><br><span class="line">        \hline</span><br><span class="line">    \end&#123;tabular&#125;</span><br><span class="line">\end&#123;center&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="三线法"><a href="#三线法" class="headerlink" title="三线法"></a>三线法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;table&#125;[htbp]</span><br><span class="line">    \centering</span><br><span class="line">    \caption&#123;Half-adder Truth Table&#125;%设置表格名称</span><br><span class="line">    \label&#123;half-adder-1&#125;%创建标签名，在之后就可以使用\ref&#123;标签名&#125;引用表格</span><br><span class="line">    \begin&#123;tabular&#125;&#123;cccc&#125;%三线法绘制表格，&#123;&#125;中的字母表示每一列左对齐(l)，居中(c)，右对齐(r)，一个字母对应一列</span><br><span class="line">        \toprule</span><br><span class="line">        A&amp;B&amp;S&amp;Cout \\</span><br><span class="line">        \midrule</span><br><span class="line">        0&amp;0&amp;0&amp;0 \\</span><br><span class="line">        0&amp;1&amp;1&amp;0 \\</span><br><span class="line">        1&amp;0&amp;1&amp;0 \\</span><br><span class="line">        1&amp;1&amp;0&amp;1 \\</span><br><span class="line">        \bottomrule</span><br><span class="line">    \end&#123;tabular&#125;</span><br><span class="line">\end&#123;table&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331124046483.png" alt="image-20210331124046483"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文是我个人在学习和使用LaTex过程中的学习笔记，同时也可以作为新手的一个简单入门指南和教程，本文参考了很多大佬的博客，文章。这些都放在参考资料中了。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.moonpapers.com/manual/">LaTex手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">一份其实很短的 LaTeX 入门文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/68da21a1501a">latex 字体设置</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://a-egoist.com/posts/f43198be/" data-id="ckw68jfld0009bgid3e4jf9rk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/posts/4c74c080/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SQL Server 学习笔记——T-SQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/posts/7c0a38a4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CUDA Vector Addition</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hello/">Hello</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Log/">Log</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Parallel-Computing/">Parallel Computing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/STL/C/">C++</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">刷题记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/">爬虫</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/Python/">Python</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">数据结构及算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/TensorFlow/">TensorFlow</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%92%E6%8E%A8/">递推</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup%E5%BA%93/" rel="tag">BeautifulSoup库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN/" rel="tag">CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attention/" rel="tag">attention</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdu/" rel="tag">hdu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random%E5%BA%93/" rel="tag">random库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests%E5%BA%93/" rel="tag">requests库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/time%E5%BA%93/" rel="tag">time库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transformer/" rel="tag">transformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordcloud%E5%BA%93/" rel="tag">wordcloud库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8B%E7%BB%8D/" rel="tag">介绍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88/" rel="tag">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" rel="tag">图形库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" rel="tag">埃氏筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%AE%E5%88%86/" rel="tag">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" rel="tag">欧拉筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" rel="tag">错排公式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/BeautifulSoup%E5%BA%93/" style="font-size: 10px;">BeautifulSoup库</a> <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/CUDA/" style="font-size: 10px;">CUDA</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/random%E5%BA%93/" style="font-size: 10px;">random库</a> <a href="/tags/requests%E5%BA%93/" style="font-size: 10px;">requests库</a> <a href="/tags/time%E5%BA%93/" style="font-size: 10px;">time库</a> <a href="/tags/transformer/" style="font-size: 10px;">transformer</a> <a href="/tags/wordcloud%E5%BA%93/" style="font-size: 10px;">wordcloud库</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10px;">介绍</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 12.5px;">前缀和</a> <a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 10px;">博弈</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" style="font-size: 10px;">图形库</a> <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">埃氏筛法</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 17.5px;">基础</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 15px;">实践</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 10px;">差分</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 10px;">日志</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">欧拉筛法</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 10px;">贪心</a> <a href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" style="font-size: 10px;">错排公式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/posts/b68f41a0/">算法竞赛进阶指南学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/posts/374e1302/">数学知识</a>
+          </li>
+        
+          <li>
+            <a href="/posts/43934f6d/">搜索</a>
+          </li>
+        
+          <li>
+            <a href="/posts/b8859ab5/">二维前缀和</a>
+          </li>
+        
+          <li>
+            <a href="/posts/fc45aa12/">SQL Sever 学习笔记——图形化创建数据库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Amonologue<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>素数筛法(转载+总结) | A-Egoist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="素数筛法(转载+总结)埃氏筛​        埃式筛的复杂度是 *O(nloglogn)**，基本上可以视为线性。 ​        它的过程是这样的： 我们把2~n的数按顺序写出来：  从前往后看，找到第一个未被划掉的数，2，这说明它是质数。然后把2的倍数（不包括2）划掉：  下一个未被划掉的数是3，它是质数，把3的倍数划掉：  接下来应该是5，但是5已经超过  16^(0.5) 了，所以遍历结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="素数筛法(转载+总结)">
+<meta property="og:url" content="http://a-egoist.com/posts/c7e65d0f/index.html">
+<meta property="og:site_name" content="A-Egoist">
+<meta property="og:description" content="素数筛法(转载+总结)埃氏筛​        埃式筛的复杂度是 *O(nloglogn)**，基本上可以视为线性。 ​        它的过程是这样的： 我们把2~n的数按顺序写出来：  从前往后看，找到第一个未被划掉的数，2，这说明它是质数。然后把2的倍数（不包括2）划掉：  下一个未被划掉的数是3，它是质数，把3的倍数划掉：  接下来应该是5，但是5已经超过  16^(0.5) 了，所以遍历结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D%7B2%7D&3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&9&%5Ccancel%7B10%7D&11&%5Ccancel%7B12%7D&13&%5Ccancel%7B14%7D&15&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&%5Ccancel%7B9%7D&%5Ccancel%7B10%7D&11&%5Ccancel%7B12%7D&13&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&%5Ccolor%7Bblue%7D7&%5Ccancel8&%5Ccancel%7B9%7D&%5Ccancel%7B10%7D&%5Ccolor%7Bblue%7D%7B11%7D&%5Ccancel%7B12%7D&%5Ccolor%7Bblue%7D%7B13%7D&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;()">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&3&%5Ccancel4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&8&%5Ccancel9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&%5Ccancel9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&7&%5Ccancel8&%5Ccancel9&%5Ccancel%7B10%7D&11&12&13&14&%5Ccancel%7B15%7D&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,5,)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&%5Ccolor%7Bblue%7D7&%5Ccancel8&%5Ccancel9&%5Ccancel%7B10%7D&%5Ccolor%7Bblue%7D%7B11%7D&%5Ccancel%7B12%7D&%5Ccolor%7Bblue%7D%7B13%7D&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,5,7,11,13)">
+<meta property="article:published_time" content="2020-03-30T06:44:09.000Z">
+<meta property="article:modified_time" content="2021-03-12T05:39:25.127Z">
+<meta property="article:author" content="Amonologue">
+<meta property="article:tag" content="埃氏筛法">
+<meta property="article:tag" content="欧拉筛法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D">
+  
+    <link rel="alternate" href="/atom.xml" title="A-Egoist" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">A-Egoist</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://a-egoist.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-素数筛法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/posts/c7e65d0f/" class="article-date">
+  <time datetime="2020-03-30T06:44:09.000Z" itemprop="datePublished">2020-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      素数筛法(转载+总结)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="素数筛法-转载-总结"><a href="#素数筛法-转载-总结" class="headerlink" title="素数筛法(转载+总结)"></a>素数筛法(<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100051075">转载</a>+总结)</h2><h3 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h3><p>​        埃式筛的复杂度是 *<em>O(n</em>loglogn)**，基本上可以视为线性。</p>
+<p>​        它的过程是这样的：</p>
+<p>我们把2~n的数按顺序写出来：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D"></p>
+<p>从前往后看，找到第一个未被划掉的数，2，这说明它是质数。然后把2的倍数（不包括2）划掉：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D%7B2%7D&3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&9&%5Ccancel%7B10%7D&11&%5Ccancel%7B12%7D&13&%5Ccancel%7B14%7D&15&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D"></p>
+<p>下一个未被划掉的数是3，它是质数，把3的倍数划掉：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&%5Ccancel%7B9%7D&%5Ccancel%7B10%7D&11&%5Ccancel%7B12%7D&13&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D"></p>
+<p>接下来应该是5，但是5已经超过  16^(0.5) 了，所以遍历结束，剩下未被划掉的都是素数：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&%5Ccolor%7Bblue%7D7&%5Ccancel8&%5Ccancel%7B9%7D&%5Ccancel%7B10%7D&%5Ccolor%7Bblue%7D%7B11%7D&%5Ccancel%7B12%7D&%5Ccolor%7Bblue%7D%7B13%7D&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D"></p>
+<p>如何？是不是比一个一个判断快多了？这个过程写成代码就是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_is_prime</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//n表示上限</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(is_prime,<span class="number">1</span>,<span class="keyword">sizeof</span>(is_prime));</span><br><span class="line">    <span class="comment">//is_prime[0]=0;is_prime[1]=0;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!is_prime[i])<span class="keyword">continue</span>;</span><br><span class="line">        ans[cnt++]=i;<span class="comment">//如果是素数的话，就加入ans中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i*<span class="number">2</span>;j&lt;=n;j+=i)is_prime[j]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        这个算法的复杂度是 <strong>O(n*loglogn)</strong> ，还是非常优秀了。但是我们可能会发现，在筛的过程中我们会重复筛到同一个数，例如12同时被2和3筛到，30同时被2、3和5筛到。所以我们引入<strong>欧拉筛</strong>，也叫<strong>线性筛</strong>，可以在 <strong>O(n)<strong>时间内完成对2~n的筛选。它的核心思想是：</strong>让每一个合数被其最小质因数筛到</strong>。</p>
+<h3 id="欧拉筛"><a href="#欧拉筛" class="headerlink" title="欧拉筛"></a>欧拉筛</h3><p>我们这次除了把2~n列出来，还维护一个<strong>质数表</strong>：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;()"></p>
+<p>还是从头到尾遍历，第一个数是2，未被划掉，把它放进质数表：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&3&4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,)"></p>
+<p>然后我们用2去乘质数表里的每个数，划掉它们：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&3&%5Ccancel4&5&6&7&8&9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,)"></p>
+<p>下一个是3，加入质数表，划掉6、9：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&8&%5Ccancel9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,)"></p>
+<p>下一个是4（注意这里划掉的数也要遍历，只是不加入质数表），先划掉8，但我们不划掉12，因为12 **(12=2 x 6 = 3 x 4)**应该由它的最小质因数2筛掉，而不是3。</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&5&%5Ccancel6&7&%5Ccancel8&%5Ccancel9&10&11&12&13&14&15&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,)"></p>
+<p>下一个是5，加入质数表，划掉10，15：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&7&%5Ccancel8&%5Ccancel9&%5Ccancel%7B10%7D&11&12&13&14&%5Ccancel%7B15%7D&16%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,5,)"></p>
+<p>下一个是6，划掉12，6被2整除，跳过。</p>
+<p>……</p>
+<p>按这样的步骤进行下去，可以筛掉所有的合数，并得到一张质数表。</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2&%5Ccolor%7Bblue%7D3&%5Ccancel4&%5Ccolor%7Bblue%7D5&%5Ccancel6&%5Ccolor%7Bblue%7D7&%5Ccancel8&%5Ccancel9&%5Ccancel%7B10%7D&%5Ccolor%7Bblue%7D%7B11%7D&%5Ccancel%7B12%7D&%5Ccolor%7Bblue%7D%7B13%7D&%5Ccancel%7B14%7D&%5Ccancel%7B15%7D&%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes:%7D%5C;(2,3,5,7,11,13)"></p>
+<p>详细证明见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100051075">https://zhuanlan.zhihu.com/p/100051075</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//n表示上限</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(is_prime,<span class="number">1</span>,<span class="keyword">sizeof</span>(is_prime));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(is_prime[i])ans[cnt++]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;cnt&amp;&amp;i*ans[j]&lt;=n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            is_prime[i*ans[j]]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%ans[j]==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>​        还是多多练习欧拉筛吧，O(n)还是挺香的，然后还要注意数据读取的优化。</p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3383">洛谷P3383 【模板】线性筛素数</a></p>
+<p>AC code</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">bool</span> is_prime[<span class="number">100000001</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans[<span class="number">100000001</span>];</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum=sum*<span class="number">10</span>+s[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> n,q,k,cnt=<span class="number">1</span>;<span class="comment">//开longlong以防万一</span></span><br><span class="line">    n=read();q=read();<span class="comment">//这样读数据应该快一点</span></span><br><span class="line">    <span class="comment">//把函数体放在main里面省去调用函数的时间</span></span><br><span class="line">    <span class="built_in">memset</span>(is_prime,<span class="number">1</span>,<span class="keyword">sizeof</span>(is_prime));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(is_prime[i])ans[cnt++]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;cnt&amp;&amp;i*ans[j]&lt;=n;j++)<span class="comment">//注意不能越界</span></span><br><span class="line">        &#123;</span><br><span class="line">            is_prime[i*ans[j]]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%ans[j]==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans[k]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://a-egoist.com/posts/c7e65d0f/" data-id="ckw68jfm70029bgid2xrxgfxf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" rel="tag">埃氏筛法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" rel="tag">欧拉筛法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/posts/f6444059/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          递推总结(持续更新!!!)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/posts/e8049b71/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MNIST手写数字识别的两种实现方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hello/">Hello</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Log/">Log</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Parallel-Computing/">Parallel Computing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/STL/C/">C++</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">刷题记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/">爬虫</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/Python/">Python</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">数据结构及算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/TensorFlow/">TensorFlow</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%92%E6%8E%A8/">递推</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup%E5%BA%93/" rel="tag">BeautifulSoup库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN/" rel="tag">CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attention/" rel="tag">attention</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdu/" rel="tag">hdu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random%E5%BA%93/" rel="tag">random库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests%E5%BA%93/" rel="tag">requests库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/time%E5%BA%93/" rel="tag">time库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transformer/" rel="tag">transformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordcloud%E5%BA%93/" rel="tag">wordcloud库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8B%E7%BB%8D/" rel="tag">介绍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88/" rel="tag">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" rel="tag">图形库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" rel="tag">埃氏筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%AE%E5%88%86/" rel="tag">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" rel="tag">欧拉筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" rel="tag">错排公式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/BeautifulSoup%E5%BA%93/" style="font-size: 10px;">BeautifulSoup库</a> <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/CUDA/" style="font-size: 10px;">CUDA</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/random%E5%BA%93/" style="font-size: 10px;">random库</a> <a href="/tags/requests%E5%BA%93/" style="font-size: 10px;">requests库</a> <a href="/tags/time%E5%BA%93/" style="font-size: 10px;">time库</a> <a href="/tags/transformer/" style="font-size: 10px;">transformer</a> <a href="/tags/wordcloud%E5%BA%93/" style="font-size: 10px;">wordcloud库</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10px;">介绍</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 12.5px;">前缀和</a> <a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 10px;">博弈</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" style="font-size: 10px;">图形库</a> <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">埃氏筛法</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 17.5px;">基础</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 15px;">实践</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 10px;">差分</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 10px;">日志</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">欧拉筛法</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 10px;">贪心</a> <a href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" style="font-size: 10px;">错排公式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/posts/b68f41a0/">算法竞赛进阶指南学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/posts/374e1302/">数学知识</a>
+          </li>
+        
+          <li>
+            <a href="/posts/43934f6d/">搜索</a>
+          </li>
+        
+          <li>
+            <a href="/posts/b8859ab5/">二维前缀和</a>
+          </li>
+        
+          <li>
+            <a href="/posts/fc45aa12/">SQL Sever 学习笔记——图形化创建数据库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Amonologue<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

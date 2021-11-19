@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>算法竞赛进阶指南学习笔记 | A-Egoist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="位运算原码原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制: 其中，第一位为1是负数  [+1] &#x3D; [0000 0001]原 [-1] &#x3D; [1000 0001]原  因此，8位二进制数的取值范围：[-127,127] 补码正数的补码是其本身 负数的补码是在其原码的基础上，符号位不变，其余各位取反，最后+1(即在其反码的基础上+1)  [+1] &#x3D; [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛进阶指南学习笔记">
+<meta property="og:url" content="http://a-egoist.com/posts/b68f41a0/index.html">
+<meta property="og:site_name" content="A-Egoist">
+<meta property="og:description" content="位运算原码原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制: 其中，第一位为1是负数  [+1] &#x3D; [0000 0001]原 [-1] &#x3D; [1000 0001]原  因此，8位二进制数的取值范围：[-127,127] 补码正数的补码是其本身 负数的补码是在其原码的基础上，符号位不变，其余各位取反，最后+1(即在其反码的基础上+1)  [+1] &#x3D; [">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/1852543/202101/1852543-20210120145456615-1978955513.png">
+<meta property="article:published_time" content="2021-11-19T10:15:29.253Z">
+<meta property="article:modified_time" content="2021-03-12T10:59:54.135Z">
+<meta property="article:author" content="Amonologue">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/1852543/202101/1852543-20210120145456615-1978955513.png">
+  
+    <link rel="alternate" href="/atom.xml" title="A-Egoist" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">A-Egoist</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://a-egoist.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-算法竞赛进阶指南学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/posts/b68f41a0/" class="article-date">
+  <time datetime="2021-11-19T10:15:29.253Z" itemprop="datePublished">2021-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>►<a class="article-category-link" href="/categories/ACM/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法竞赛进阶指南学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h4 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h4><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制:</p>
+<p>其中，第一位为1是负数</p>
+<blockquote>
+<p>[+1] = [0000 0001]原</p>
+<p>[-1] = [1000 0001]原</p>
+</blockquote>
+<p>因此，8位二进制数的取值范围：[-127,127]</p>
+<h4 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h4><p>正数的补码是其本身</p>
+<p>负数的补码是在其原码的基础上，符号位不变，其余各位取反，最后+1(即在其反码的基础上+1)</p>
+<blockquote>
+<p>[+1] = [00000001]原 = [00000001]反 = [00000001]补</p>
+<p>[-1] = [10000001]原 = [11111110]反 = [11111111]补</p>
+</blockquote>
+<h4 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h4><p>正数的反码是其本身</p>
+<p>负数的反码是在其原码的基础上，符号位不变，其余各个位取反</p>
+<blockquote>
+<p>[+1] = [00000001]原 = [00000001]反</p>
+<p>[-1] = [10000001]原 = [11111110]反</p>
+</blockquote>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h4><p><code>memset(a, 0x3f, sizeof(a))</code> 给数组赋值 0x3f3f3f3f</p>
+<p>赋值正无穷 INF = 0x3f3f3f3f 或者 INF = 0x3f</p>
+<h4 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h4><p>左移：n &lt;&lt; x = n*2^x</p>
+<p>右移：n &gt;&gt; x = n/2^x  (在C++中右移为算数右移，即移出去的位丢弃，空缺位用“符号位”来填充)</p>
+<h4 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h4><h5 id="原理解释："><a href="#原理解释：" class="headerlink" title="原理解释："></a>原理解释：</h5><p><img src="https://img2020.cnblogs.com/blog/1852543/202101/1852543-20210120145456615-1978955513.png"></p>
+<h5 id="代码模板："><a href="#代码模板：" class="headerlink" title="代码模板："></a>代码模板：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qmi</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> k, <span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span> % p, t = m;</span><br><span class="line">    <span class="keyword">while</span> (k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k&amp;<span class="number">1</span>) res = res * t % p;</span><br><span class="line">        t = t * t % p;</span><br><span class="line">        k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h5><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/91/">AcWing 89. a^b</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a,b,p;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) res = res * a % p;</span><br><span class="line">        a *= a;</span><br><span class="line">        a %= p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res % p&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/92/">AcWing 90. 64位整数乘法</a></p>
+<p>与快速幂原理相同，将一个乘数分解成二进制来表示，然后再相乘，防止溢出。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a,b,p,res = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)res = (res + a) % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = <span class="number">2</span> * a % p;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res%p&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="递推与递归"><a href="#递推与递归" class="headerlink" title="递推与递归"></a>递推与递归</h2><h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/94/">AcWing 92. 递归实现指数型枚举</a></p>
+<p>位运算解法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    n = <span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i, cnt = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp &amp; <span class="number">1</span>) cout &lt;&lt; cnt &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">            temp &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (temp == <span class="number">0</span>) cout &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>递归解法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == n + <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; res.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">solve</span>(x + <span class="number">1</span>);</span><br><span class="line">    res.<span class="built_in">push_back</span>(x);</span><br><span class="line">    <span class="built_in">solve</span>(x + <span class="number">1</span>);</span><br><span class="line">    res.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/95/">AcWing 93. 递归实现组合型枚举</a></p>
+<p>需要剪枝</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res.<span class="built_in">size</span>() + n - res.<span class="built_in">back</span>() + <span class="number">1</span> &lt; m) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span> (cnt == m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; res.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span> &amp;&amp; res.<span class="built_in">back</span>() &lt; i)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(i);</span><br><span class="line">            vis[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">solve</span>(cnt+<span class="number">1</span>);</span><br><span class="line">            vis[i] = <span class="number">0</span>;</span><br><span class="line">            res.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    res.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/96/">AcWing 94. 递归实现排列型枚举</a></p>
+<p>在上一题的基础上修改一部分代码就行</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//if (res.size() + n - res.back() + 1 &lt; n) return ;</span></span><br><span class="line">    <span class="keyword">if</span> (cnt == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(i);</span><br><span class="line">            vis[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">solve</span>(cnt+<span class="number">1</span>);</span><br><span class="line">            vis[i] = <span class="number">0</span>;</span><br><span class="line">            res.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="comment">//res.push_back(0);</span></span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a>前缀和与差分</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/101/">AcWing 99. 激光炸弹</a></p>
+<p>二维前缀和</p>
+<p>根据容斥原理，可以推导出二维前缀和：<code>s[i][j]=s[i][j-1]+s[i-1][j]-s[i-1][j-1]</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">5050</span>][<span class="number">5050</span>];</span><br><span class="line"><span class="keyword">int</span> n,r;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; r;</span><br><span class="line">    <span class="keyword">int</span> x, y, w;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y &gt;&gt; w;</span><br><span class="line">        x++,y++;</span><br><span class="line">        sum[x][y] += w;<span class="comment">//读数据，位置相同的点权值相加</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5001</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5001</span>; j++)</span><br><span class="line">            sum[i][j] += sum[i][j<span class="number">-1</span>] + sum[i<span class="number">-1</span>][j] - sum[i<span class="number">-1</span>][j<span class="number">-1</span>];<span class="comment">//以(0,0)为左下角的矩形求二维前缀和</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = r; i &lt;= <span class="number">5001</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = r; j &lt;= <span class="number">5001</span>; j++)</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, sum[i][j] - sum[i][j-r] - sum[i-r][j] + sum[i-r][j-r]);<span class="comment">//因为炸弹影响r*r矩形的范围，根据容斥原理同样可以推导出ans=sum[i][j]-sum[i][j-r]-sum[i-r][j]+sum[i][j]，最后再取一个最大值就行</span></span><br><span class="line">    cout &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/103/">AcWing 101. 最高的牛</a></p>
+<p>简单的差分题，注意去重</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">10005</span>], res[<span class="number">10005</span>];</span><br><span class="line">set&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; vis;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, p, h, m, a, b;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; p &gt;&gt; h &gt;&gt; m;</span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">min</span>(a, b), r = <span class="built_in">max</span>(a, b);</span><br><span class="line">        <span class="keyword">if</span> (vis.<span class="built_in">count</span>(&#123;l, r&#125;)) <span class="keyword">continue</span>;</span><br><span class="line">        vis.<span class="built_in">insert</span>(&#123;l, r&#125;);</span><br><span class="line">        d[l + <span class="number">1</span>] --;</span><br><span class="line">        d[r] ++;</span><br><span class="line">    &#125;</span><br><span class="line">    res[<span class="number">0</span>] = h;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        res[i] = res[i - <span class="number">1</span>] + d[i]; </span><br><span class="line">        cout &lt;&lt; res[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/104/">AcWing 102. 最佳牛围栏</a></p>
+<p>二分出平均值，然后再用前缀和找出该平均值条件下的最大子段和，在利用这个最大子段和来确定二分方向</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">50</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n, f;</span><br><span class="line"><span class="keyword">double</span> s[maxn], a[maxn], l, r, mid, ans, min_value;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; f;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; a[i];</span><br><span class="line">    l = <span class="number">-3000</span>, r = <span class="number">3000</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="comment">// 前缀和</span></span><br><span class="line">            s[i] = s[i - <span class="number">1</span>] + a[i] - mid;</span><br><span class="line">        ans = <span class="number">-1e8</span>, min_value = <span class="number">1e8</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = f; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            min_value = <span class="built_in">min</span>(min_value, s[i - f]);</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, s[i] - min_value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans &gt;= <span class="number">0</span>) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; (<span class="keyword">int</span>)(r * <span class="number">1000</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://a-egoist.com/posts/b68f41a0/" data-id="ckw68jfm4001xbgidbw2v9znn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/posts/374e1302/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数学知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DeepLearning/">DeepLearning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hello/">Hello</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Log/">Log</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Parallel-Computing/">Parallel Computing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/STL/">STL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/STL/C/">C++</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">刷题记录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/">ACM</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/ACM/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/">爬虫</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/Python/">Python</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">数据结构及算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/TensorFlow/">TensorFlow</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%92%E6%8E%A8/">递推</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup%E5%BA%93/" rel="tag">BeautifulSoup库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN/" rel="tag">CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attention/" rel="tag">attention</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdu/" rel="tag">hdu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random%E5%BA%93/" rel="tag">random库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests%E5%BA%93/" rel="tag">requests库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/time%E5%BA%93/" rel="tag">time库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transformer/" rel="tag">transformer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordcloud%E5%BA%93/" rel="tag">wordcloud库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8B%E7%BB%8D/" rel="tag">介绍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88/" rel="tag">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" rel="tag">图形库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" rel="tag">埃氏筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E8%B7%B5/" rel="tag">实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%AE%E5%88%86/" rel="tag">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" rel="tag">欧拉筛法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" rel="tag">错排公式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/BeautifulSoup%E5%BA%93/" style="font-size: 10px;">BeautifulSoup库</a> <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/CUDA/" style="font-size: 10px;">CUDA</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/attention/" style="font-size: 10px;">attention</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/random%E5%BA%93/" style="font-size: 10px;">random库</a> <a href="/tags/requests%E5%BA%93/" style="font-size: 10px;">requests库</a> <a href="/tags/time%E5%BA%93/" style="font-size: 10px;">time库</a> <a href="/tags/transformer/" style="font-size: 10px;">transformer</a> <a href="/tags/wordcloud%E5%BA%93/" style="font-size: 10px;">wordcloud库</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 10px;">介绍</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 12.5px;">前缀和</a> <a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 10px;">博弈</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%BA%93/" style="font-size: 10px;">图形库</a> <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">埃氏筛法</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 17.5px;">基础</a> <a href="/tags/%E5%AE%9E%E8%B7%B5/" style="font-size: 15px;">实践</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 10px;">差分</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E6%97%A5%E5%BF%97/" style="font-size: 10px;">日志</a> <a href="/tags/%E6%A0%91/" style="font-size: 10px;">树</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/" style="font-size: 10px;">欧拉筛法</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 10px;">贪心</a> <a href="/tags/%E9%94%99%E6%8E%92%E5%85%AC%E5%BC%8F/" style="font-size: 10px;">错排公式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/posts/b68f41a0/">算法竞赛进阶指南学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/posts/374e1302/">数学知识</a>
+          </li>
+        
+          <li>
+            <a href="/posts/43934f6d/">搜索</a>
+          </li>
+        
+          <li>
+            <a href="/posts/b8859ab5/">二维前缀和</a>
+          </li>
+        
+          <li>
+            <a href="/posts/fc45aa12/">SQL Sever 学习笔记——图形化创建数据库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Amonologue<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
