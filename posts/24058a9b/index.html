@@ -485,6 +485,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -496,7 +499,9 @@
 <p><strong>解决方法：</strong></p>
 <p>在Anaconda3的目录下找到beautifulsoup4 的文件包，直接复制粘贴到python下的第三方库的文件夹就行了</p>
 <h3 id="Beautiful-Soup库的基本元素"><a href="#Beautiful-Soup库的基本元素" class="headerlink" title="Beautiful Soup库的基本元素"></a>Beautiful Soup库的基本元素</h3><p>demo.html</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">&quot;http://python123.io/ws/demo.html&quot;</span>)</span><br><span class="line">demo=r.text</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://python123.io/ws/demo.html"</span><span class="token punctuation">)</span>
+demo<span class="token operator">=</span>r<span class="token punctuation">.</span>text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(1).png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(2).png"></p>

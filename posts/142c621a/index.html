@@ -472,6 +472,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -484,7 +487,7 @@
 <h3 id="修改鼠标样式"><a href="#修改鼠标样式" class="headerlink" title="修改鼠标样式"></a>修改鼠标样式</h3><p>本来觉得在自己<strong>blog</strong>上，可以让用户有一个不同的鼠标样式，但是因为我不会<strong>css</strong>，而且在网上也没有找到我能看懂的资料，所以这个目标我现在还无法达成。</p>
 <h3 id="添加鼠标点击特效"><a href="#添加鼠标点击特效" class="headerlink" title="添加鼠标点击特效"></a>添加鼠标点击特效</h3><p>已完成。因为<strong>matery</strong>主题自带的爱心点击特效我不喜欢，于是就在网上找到了一个烟花点击特效，于是成果的完成了这个目标。</p>
 <h3 id="生成永久连接"><a href="#生成永久连接" class="headerlink" title="生成永久连接"></a>生成永久连接</h3><p>因为主题默认的生成链接的配置为</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">premalink: :year/:month/:day/:title</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">premalink<span class="token operator">:</span> <span class="token operator">:</span>year/<span class="token operator">:</span>month/<span class="token operator">:</span>day/<span class="token operator">:</span>title<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>但是这种生成的链接地址很长，而且如果博文是中文名的话，会出现一堆编码，非正常的长，一点也不美观，所以就加了一个生成现在这种很短的链接地址配置。</p>
 <h3 id="添加404页面"><a href="#添加404页面" class="headerlink" title="添加404页面"></a>添加404页面</h3><p>将404页面进行了简单的修改，加了一点背景图。</p>

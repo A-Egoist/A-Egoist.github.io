@@ -481,6 +481,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -510,40 +513,297 @@
 <h4 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h4><p>左移：n &lt;&lt; x = n*2^x</p>
 <p>右移：n &gt;&gt; x = n/2^x  (在C++中右移为算数右移，即移出去的位丢弃，空缺位用“符号位”来填充)</p>
 <h4 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h4><h5 id="原理解释："><a href="#原理解释：" class="headerlink" title="原理解释："></a>原理解释：</h5><p><img src="https://img2020.cnblogs.com/blog/1852543/202101/1852543-20210120145456615-1978955513.png"></p>
-<h5 id="代码模板："><a href="#代码模板：" class="headerlink" title="代码模板："></a>代码模板：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qmi</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> k, <span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span> % p, t = m;</span><br><span class="line">    <span class="keyword">while</span> (k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k&amp;<span class="number">1</span>) res = res * t % p;</span><br><span class="line">        t = t * t % p;</span><br><span class="line">        k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="代码模板："><a href="#代码模板：" class="headerlink" title="代码模板："></a>代码模板：</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int qmi(int m, int k, int p)
+&#123;
+    int res &#x3D; 1 % p, t &#x3D; m;
+    while (k)
+    &#123;
+        if (k&amp;1) res &#x3D; res * t % p;
+        t &#x3D; t * t % p;
+        k &gt;&gt;&#x3D; 1;
+    &#125;
+    return res;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h5><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/91/">AcWing 89. a^b</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a,b,p;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) res = res * a % p;</span><br><span class="line">        a *= a;</span><br><span class="line">        a %= p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res % p&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF&#x3D;0x3f3f3f3f;
+typedef long long ll;
+
+int main()
+&#123;
+    ll a,b,p;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;
+    ll res &#x3D; 1;
+    while(b)
+    &#123;
+        if(b&amp;1) res &#x3D; res * a % p;
+        a *&#x3D; a;
+        a %&#x3D; p;
+        b &gt;&gt;&#x3D; 1;
+    &#125;
+    cout&lt;&lt;res % p&lt;&lt;endl;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/92/">AcWing 90. 64位整数乘法</a></p>
 <p>与快速幂原理相同，将一个乘数分解成二进制来表示，然后再相乘，防止溢出。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a,b,p,res = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)res = (res + a) % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = <span class="number">2</span> * a % p;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res%p&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF&#x3D;0x3f3f3f3f;
+typedef long long ll;
+
+int main()
+&#123;
+    ll a,b,p,res &#x3D; 0;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;p;
+    while(b)
+    &#123;
+        if(b&amp;1)res &#x3D; (res + a) % p;
+        b &gt;&gt;&#x3D; 1;
+        a &#x3D; 2 * a % p;
+    &#125;
+    cout&lt;&lt;res%p&lt;&lt;endl;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="递推与递归"><a href="#递推与递归" class="headerlink" title="递推与递归"></a>递推与递归</h2><h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/94/">AcWing 92. 递归实现指数型枚举</a></p>
 <p>位运算解法：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    n = <span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i, cnt = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (temp)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp &amp; <span class="number">1</span>) cout &lt;&lt; cnt &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">            temp &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (temp == <span class="number">0</span>) cout &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF&#x3D;0x3f3f3f3f;
+typedef long long ll;
+
+int main()
+&#123;
+    int n;
+    cin &gt;&gt; n;
+    n &#x3D; pow(2, n);
+    for (int i &#x3D; 0;i &lt; n; i++)
+    &#123;
+        int temp &#x3D; i, cnt &#x3D; 1;
+        while (temp)
+        &#123;
+            if (temp &amp; 1) cout &lt;&lt; cnt &lt;&lt; &quot; &quot;;
+            cnt++;
+            temp &gt;&gt;&#x3D; 1;
+        &#125;
+        if (temp &#x3D;&#x3D; 0) cout &lt;&lt; &quot; &quot; &lt;&lt; endl;
+        else cout &lt;&lt; endl;
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>递归解法：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == n + <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; res.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">solve</span>(x + <span class="number">1</span>);</span><br><span class="line">    res.<span class="built_in">push_back</span>(x);</span><br><span class="line">    <span class="built_in">solve</span>(x + <span class="number">1</span>);</span><br><span class="line">    res.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF&#x3D;0x3f3f3f3f;
+typedef long long ll;
+int n;
+vector&lt;int&gt; res;
+void solve(int x)
+&#123;
+    if (x &#x3D;&#x3D; n + 1)
+    &#123;
+        for (int i &#x3D; 0;i &lt; res.size();i++)
+        &#123;
+            cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;;
+        &#125;
+        cout &lt;&lt; endl;
+        return ;
+    &#125;
+    solve(x + 1);
+    res.push_back(x);
+    solve(x + 1);
+    res.pop_back();
+&#125;
+int main()
+&#123;
+    cin &gt;&gt; n;
+    solve(1);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/95/">AcWing 93. 递归实现组合型枚举</a></p>
 <p>需要剪枝</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res.<span class="built_in">size</span>() + n - res.<span class="built_in">back</span>() + <span class="number">1</span> &lt; m) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span> (cnt == m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; res.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span> &amp;&amp; res.<span class="built_in">back</span>() &lt; i)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(i);</span><br><span class="line">            vis[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">solve</span>(cnt+<span class="number">1</span>);</span><br><span class="line">            vis[i] = <span class="number">0</span>;</span><br><span class="line">            res.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    res.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF &#x3D; 0x3f3f3f3f;
+typedef long long ll;
+int m,n;
+vector&lt;int&gt; res;
+bool vis[30];
+void solve(int cnt)
+&#123;
+    if (res.size() + n - res.back() + 1 &lt; m) return ;
+    if (cnt &#x3D;&#x3D; m)
+    &#123;
+        for (int i &#x3D; 1; i &lt; res.size(); i++)
+        &#123;
+            cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;; 
+        &#125;
+        cout &lt;&lt; endl;
+        return ;
+    &#125;
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
+    &#123;
+        if (vis[i] &#x3D;&#x3D; 0 &amp;&amp; res.back() &lt; i)
+        &#123;
+            res.push_back(i);
+            vis[i] &#x3D; 1;
+            solve(cnt+1);
+            vis[i] &#x3D; 0;
+            res.pop_back();
+        &#125;
+    &#125;
+&#125;
+int main()
+&#123;
+    cin &gt;&gt; n &gt;&gt; m;
+    res.push_back(0);
+    solve(0);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/96/">AcWing 94. 递归实现排列型枚举</a></p>
 <p>在上一题的基础上修改一部分代码就行</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//if (res.size() + n - res.back() + 1 &lt; n) return ;</span></span><br><span class="line">    <span class="keyword">if</span> (cnt == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; res[i] &lt;&lt; <span class="string">&quot; &quot;</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(i);</span><br><span class="line">            vis[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">solve</span>(cnt+<span class="number">1</span>);</span><br><span class="line">            vis[i] = <span class="number">0</span>;</span><br><span class="line">            res.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="comment">//res.push_back(0);</span></span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF &#x3D; 0x3f3f3f3f;
+typedef long long ll;
+int n;
+vector&lt;int&gt; res;
+bool vis[30];
+void solve(int cnt)
+&#123;
+    &#x2F;&#x2F;if (res.size() + n - res.back() + 1 &lt; n) return ;
+    if (cnt &#x3D;&#x3D; n)
+    &#123;
+        for (int i &#x3D; 0; i &lt; res.size(); i++)
+        &#123;
+            cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;; 
+        &#125;
+        cout &lt;&lt; endl;
+        return ;
+    &#125;
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
+    &#123;
+        if (vis[i] &#x3D;&#x3D; 0)
+        &#123;
+            res.push_back(i);
+            vis[i] &#x3D; 1;
+            solve(cnt+1);
+            vis[i] &#x3D; 0;
+            res.pop_back();
+        &#125;
+    &#125;
+&#125;
+int main()
+&#123;
+    cin &gt;&gt; n;
+    &#x2F;&#x2F;res.push_back(0);
+    solve(0);
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a>前缀和与差分</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/101/">AcWing 99. 激光炸弹</a></p>
 <p>二维前缀和</p>
 <p>根据容斥原理，可以推导出二维前缀和：<code>s[i][j]=s[i][j-1]+s[i-1][j]-s[i-1][j-1]</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">5050</span>][<span class="number">5050</span>];</span><br><span class="line"><span class="keyword">int</span> n,r;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; r;</span><br><span class="line">    <span class="keyword">int</span> x, y, w;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; y &gt;&gt; w;</span><br><span class="line">        x++,y++;</span><br><span class="line">        sum[x][y] += w;<span class="comment">//读数据，位置相同的点权值相加</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5001</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5001</span>; j++)</span><br><span class="line">            sum[i][j] += sum[i][j<span class="number">-1</span>] + sum[i<span class="number">-1</span>][j] - sum[i<span class="number">-1</span>][j<span class="number">-1</span>];<span class="comment">//以(0,0)为左下角的矩形求二维前缀和</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = r; i &lt;= <span class="number">5001</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = r; j &lt;= <span class="number">5001</span>; j++)</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, sum[i][j] - sum[i][j-r] - sum[i-r][j] + sum[i-r][j-r]);<span class="comment">//因为炸弹影响r*r矩形的范围，根据容斥原理同样可以推导出ans=sum[i][j]-sum[i][j-r]-sum[i-r][j]+sum[i][j]，最后再取一个最大值就行</span></span><br><span class="line">    cout &lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF &#x3D; 0x3f3f3f3f;
+typedef long long ll;
+int sum[5050][5050];
+int n,r;
+int main()
+&#123;
+    cin &gt;&gt; n &gt;&gt; r;
+    int x, y, w;
+    for (int i &#x3D; 0; i &lt; n; i++)
+    &#123;
+        cin &gt;&gt; x &gt;&gt; y &gt;&gt; w;
+        x++,y++;
+        sum[x][y] +&#x3D; w;&#x2F;&#x2F;读数据，位置相同的点权值相加
+    &#125;
+    for (int i &#x3D; 1; i &lt;&#x3D; 5001; i++)
+        for (int j &#x3D; 1; j &lt;&#x3D; 5001; j++)
+            sum[i][j] +&#x3D; sum[i][j-1] + sum[i-1][j] - sum[i-1][j-1];&#x2F;&#x2F;以(0,0)为左下角的矩形求二维前缀和
+    int ans &#x3D; 0;
+    for (int i &#x3D; r; i &lt;&#x3D; 5001; i++)
+        for (int j &#x3D; r; j &lt;&#x3D; 5001; j++)
+            ans &#x3D; max(ans, sum[i][j] - sum[i][j-r] - sum[i-r][j] + sum[i-r][j-r]);&#x2F;&#x2F;因为炸弹影响r*r矩形的范围，根据容斥原理同样可以推导出ans&#x3D;sum[i][j]-sum[i][j-r]-sum[i-r][j]+sum[i][j]，最后再取一个最大值就行
+    cout &lt;&lt; ans &lt;&lt;endl;
+    
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/103/">AcWing 101. 最高的牛</a></p>
 <p>简单的差分题，注意去重</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">10005</span>], res[<span class="number">10005</span>];</span><br><span class="line">set&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; vis;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, p, h, m, a, b;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; p &gt;&gt; h &gt;&gt; m;</span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">min</span>(a, b), r = <span class="built_in">max</span>(a, b);</span><br><span class="line">        <span class="keyword">if</span> (vis.<span class="built_in">count</span>(&#123;l, r&#125;)) <span class="keyword">continue</span>;</span><br><span class="line">        vis.<span class="built_in">insert</span>(&#123;l, r&#125;);</span><br><span class="line">        d[l + <span class="number">1</span>] --;</span><br><span class="line">        d[r] ++;</span><br><span class="line">    &#125;</span><br><span class="line">    res[<span class="number">0</span>] = h;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        res[i] = res[i - <span class="number">1</span>] + d[i]; </span><br><span class="line">        cout &lt;&lt; res[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF &#x3D; 0x3f3f3f3f;
+typedef long long ll;
+int d[10005], res[10005];
+set&lt;pair&lt;int, int&gt; &gt; vis;
+int main()
+&#123;
+    int n, p, h, m, a, b;
+    cin &gt;&gt; n &gt;&gt; p &gt;&gt; h &gt;&gt; m;
+    while (m--)
+    &#123;
+        cin &gt;&gt; a &gt;&gt; b;
+        int l &#x3D; min(a, b), r &#x3D; max(a, b);
+        if (vis.count(&#123;l, r&#125;)) continue;
+        vis.insert(&#123;l, r&#125;);
+        d[l + 1] --;
+        d[r] ++;
+    &#125;
+    res[0] &#x3D; h;
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
+    &#123;
+        res[i] &#x3D; res[i - 1] + d[i]; 
+        cout &lt;&lt; res[i] &lt;&lt; endl;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/104/">AcWing 102. 最佳牛围栏</a></p>
 <p>二分出平均值，然后再用前缀和找出该平均值条件下的最大子段和，在利用这个最大子段和来确定二分方向</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">50</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> n, f;</span><br><span class="line"><span class="keyword">double</span> s[maxn], a[maxn], l, r, mid, ans, min_value;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; f;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; a[i];</span><br><span class="line">    l = <span class="number">-3000</span>, r = <span class="number">3000</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; eps)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="comment">// 前缀和</span></span><br><span class="line">            s[i] = s[i - <span class="number">1</span>] + a[i] - mid;</span><br><span class="line">        ans = <span class="number">-1e8</span>, min_value = <span class="number">1e8</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = f; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            min_value = <span class="built_in">min</span>(min_value, s[i - f]);</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, s[i] - min_value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans &gt;= <span class="number">0</span>) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; (<span class="keyword">int</span>)(r * <span class="number">1000</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int INF &#x3D; 0x3f3f3f3f;
+const double eps &#x3D; 1e-5;
+const int maxn &#x3D; 1e6 + 50;
+typedef long long ll;
+int n, f;
+double s[maxn], a[maxn], l, r, mid, ans, min_value;
+int main()
+&#123;
+    cin &gt;&gt; n &gt;&gt; f;
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++) cin &gt;&gt; a[i];
+    l &#x3D; -3000, r &#x3D; 3000;
+    while (r - l &gt; eps)
+    &#123;
+        mid &#x3D; (l + r) &#x2F; 2;
+        for (int i &#x3D; 1; i &lt;&#x3D; n; i++) &#x2F;&#x2F; 前缀和
+            s[i] &#x3D; s[i - 1] + a[i] - mid;
+        ans &#x3D; -1e8, min_value &#x3D; 1e8;
+        for (int i &#x3D; f; i &lt;&#x3D; n; i++)
+        &#123;
+            min_value &#x3D; min(min_value, s[i - f]);
+            ans &#x3D; max(ans, s[i] - min_value);
+        &#125;
+        if (ans &gt;&#x3D; 0) l &#x3D; mid;
+        else r &#x3D; mid;
+    &#125;
+    cout &lt;&lt; (int)(r * 1000) &lt;&lt; endl;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
