@@ -474,9 +474,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-05
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
                 
 
                 
@@ -502,6 +517,7 @@
 <h3 id="文件的打开和关闭"><a href="#文件的打开和关闭" class="headerlink" title="文件的打开和关闭"></a>文件的打开和关闭</h3><p>打开：<code>a=open(&lt;文件名&gt;,&lt;打开模式&gt;)</code>(文件名指文件路径和名称)</p>
 <p>关闭：<code>a.close()</code></p>
 <p>打开模式：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -509,7 +525,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>‘r’</td>
 <td>只读模式，默认值，如果文件不存在，返回FileNotFoundError</td>
 </tr>
@@ -537,7 +554,9 @@
 <td>‘+’</td>
 <td>与r/w/x/a一同使用，在原功能基础上增加同时读写功能</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">)</span><span class="token comment">#文本形式、只读模式、默认值</span>
 f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">,</span><span class="token string">"rt"</span><span class="token punctuation">)</span><span class="token comment">#文本形式、只读模式、同默认值</span>
 f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">)</span><span class="token comment">#文本形式、覆盖写模式</span>
@@ -545,15 +564,16 @@ f<span class="token operator">=</span><span class="token builtin">open</span><sp
 f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">,</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token comment">#文本形式、创建写模式</span>
 f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token comment">#二进制形式、只读模式</span>
 f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"f.txt"</span><span class="token punctuation">,</span><span class="token string">"wb"</span><span class="token punctuation">)</span><span class="token comment">#二进制形式、覆盖写模式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="文件的内容读取"><a href="#文件的内容读取" class="headerlink" title="文件的内容读取"></a>文件的内容读取</h3><table>
+<h3 id="文件的内容读取"><a href="#文件的内容读取" class="headerlink" title="文件的内容读取"></a>文件的内容读取</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>操作方法</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>.read(size=-1)</td>
 <td>读入全部内容，如果给出参数，读入前size长度</td>
 </tr>
@@ -565,15 +585,19 @@ f<span class="token operator">=</span><span class="token builtin">open</span><sp
 <td>.readlines(hint=-1)</td>
 <td>读入文件所有行，以每行为元素形成列表，如果给出参数，读入前hint行</td>
 </tr>
-</tbody></table>
-<h3 id="数据的文件写入"><a href="#数据的文件写入" class="headerlink" title="数据的文件写入"></a>数据的文件写入</h3><table>
+</tbody>
+</table>
+</div>
+<h3 id="数据的文件写入"><a href="#数据的文件写入" class="headerlink" title="数据的文件写入"></a>数据的文件写入</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>操作方法</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>.write(s)</td>
 <td>向文件写入一个字符串或字节流</td>
 </tr>
@@ -585,10 +609,13 @@ f<span class="token operator">=</span><span class="token builtin">open</span><sp
 <td>.seek(offset)</td>
 <td>改变当前文件操作指针的位置，offset含义如下：0-文件开头；1-当前位置；2-文件结尾</td>
 </tr>
-</tbody></table>
-<h2 id="wordcloud库的使用"><a href="#wordcloud库的使用" class="headerlink" title="wordcloud库的使用"></a>wordcloud库的使用</h2><p>安装：<code>pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/ </code></p>
+</tbody>
+</table>
+</div>
+<h2 id="wordcloud库的使用"><a href="#wordcloud库的使用" class="headerlink" title="wordcloud库的使用"></a>wordcloud库的使用</h2><p>安装：<code>pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple/</code></p>
 <p>使用：<code>w=wordcloud.WordCloud()</code></p>
 <p>常用方法：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -596,7 +623,8 @@ f<span class="token operator">=</span><span class="token builtin">open</span><sp
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>w.generate(txt)</td>
 <td>向WordCloud对象w中加在文本txt</td>
 </tr>
@@ -604,14 +632,16 @@ f<span class="token operator">=</span><span class="token builtin">open</span><sp
 <td>w.to_file(filename)</td>
 <td>将词云输出为图像文件，.png或.jpg格式</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> wordcloud
 c<span class="token operator">=</span>wordcloud<span class="token punctuation">.</span>WordCloud<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#步骤1：配置对象参数</span>
 c<span class="token punctuation">.</span>generate<span class="token punctuation">(</span><span class="token string">"wordcloudby Python"</span><span class="token punctuation">)</span><span class="token comment">#步骤2：加载词云文本</span>
 c<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span><span class="token string">"pywordcloud.png"</span><span class="token punctuation">)</span><span class="token comment">#配置3：输出词云文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespy6(1).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespy6(1" alt="">.png)</p>
 <p>配置对象参数：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -619,7 +649,8 @@ c<span class="token punctuation">.</span>to_file<span class="token punctuation">
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>width</td>
 <td>置顶词云对象生成图片的宽度，默认400像素<br />&gt;&gt;&gt;w=wordcloud.WordCloud(width=600)</td>
 </tr>
@@ -659,14 +690,15 @@ c<span class="token punctuation">.</span>to_file<span class="token punctuation">
 <td>background_color</td>
 <td>指定词云图片的背景颜色，默认为黑色<br />&gt;&gt;&gt;w=wordcloud.wordCloud(background_color=”white”)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>实例1：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> wordcloud
 txt<span class="token operator">=</span><span class="token string">"life is short, you need python"</span>
 w<span class="token operator">=</span>wordcloud<span class="token punctuation">.</span>WordCloud<span class="token punctuation">(</span>background_color<span class="token operator">=</span><span class="token string">"white"</span><span class="token punctuation">)</span>
 w<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>txt<span class="token punctuation">)</span>
 w<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span><span class="token string">"pywcloud.png"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>实例2：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> jieba
 <span class="token keyword">import</span> wordcloud
@@ -676,7 +708,6 @@ txt<span class="token operator">=</span>"程序设计语言是计算机能够理
 w<span class="token operator">=</span>wordcloud<span class="token punctuation">.</span>wordCloud<span class="token punctuation">(</span>width<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span>font_path<span class="token operator">=</span><span class="token string">"msyh.ttc"</span><span class="token punctuation">,</span>height<span class="token operator">=</span><span class="token number">700</span><span class="token punctuation">)</span>
 w<span class="token punctuation">.</span>generate<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>jieba<span class="token punctuation">.</span>lcut<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 w<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span><span class="token string">"pycloud.png"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="体育竞技分析"><a href="#体育竞技分析" class="headerlink" title="体育竞技分析"></a>体育竞技分析</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> random
 
 <span class="token keyword">def</span> <span class="token function">printIntro</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -731,7 +762,6 @@ w<span class="token punctuation">.</span>to_file<span class="token punctuation">
     printSummary<span class="token punctuation">(</span>winsA<span class="token punctuation">,</span>winsB<span class="token punctuation">)</span>
 
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="安装第三方库的多种方法"><a href="#安装第三方库的多种方法" class="headerlink" title="安装第三方库的多种方法"></a>安装第三方库的多种方法</h2><p>python社区：<a target="_blank" rel="noopener" href="https://pypi.org/">PyPi</a></p>
 <p>常用方法：<code>win+r-&gt;cmd-&gt;pip install &lt;第三方库名&gt;</code></p>
 <p>常用pip指令</p>
@@ -743,7 +773,7 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
 <p>pip search &lt;第三方库名&gt; #根据关键词在名称和介绍中搜索第三方库</p>
 <p>pip list #列出当前系统已经安装的第三方库</p>
 </blockquote>
-<p>集成安装：<a target="_blank" rel="noopener" href="https://www.continuum.io/">Anaconda</a></p>
+<p>集成安装：<a target="_blank" rel="noopener" href="https://www.continuum.io">Anaconda</a></p>
 <h2 id="第三方库安装脚本"><a href="#第三方库安装脚本" class="headerlink" title="第三方库安装脚本"></a>第三方库安装脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 libs <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"numpy"</span><span class="token punctuation">,</span><span class="token string">"matplotlib"</span><span class="token punctuation">,</span><span class="token string">"pillow"</span><span class="token punctuation">,</span><span class="token string">"sklearn"</span><span class="token punctuation">,</span><span class="token string">"requests"</span><span class="token punctuation">,</span>\
         <span class="token string">"jieba"</span><span class="token punctuation">,</span><span class="token string">"beautifulsoup4"</span><span class="token punctuation">,</span><span class="token string">"wheel"</span><span class="token punctuation">,</span><span class="token string">"networkx"</span><span class="token punctuation">,</span><span class="token string">"sympy"</span><span class="token punctuation">,</span>\
@@ -755,8 +785,7 @@ libs <span class="token operator">=</span> <span class="token punctuation">&#123
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Successful"</span><span class="token punctuation">)</span>        
 <span class="token keyword">except</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Failed Somehow"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespy6(2).png"></p>
+<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespy6(2" alt="">.png)</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content">https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content</a></p>
 
                 
@@ -1307,6 +1336,9 @@ libs <span class="token operator">=</span> <span class="token punctuation">&#123
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

@@ -482,9 +482,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-11-12
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
                 
 
                 
@@ -534,7 +549,6 @@ string s<span class="token punctuation">;</span>
     
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="B-Max-and-Mex"><a href="#B-Max-and-Mex" class="headerlink" title="B Max and Mex"></a>B <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1496/problem/B">Max and Mex</a></h2><p>Tag：思维、二分</p>
 <p>题意：</p>
 <p>给定一个集合S，和一个操作数k，每次将 mex 和 max 的和的一半向上取整后加入集合，其中mex表示集合中不存在的最小非负整数，max表示集合中的最大数，最后输出集合中数字的个数。</p>
@@ -542,7 +556,7 @@ string s<span class="token punctuation">;</span>
 <p>读入输入之后，先特判一下k的值：</p>
 <p>如果k为0，则直接输出n；</p>
 <p>如果k不为0，则再从mex和max的大小来看，推导如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images7C3355583A1E00F2D9A3371B1F8E44F7.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images7C3355583A1E00F2D9A3371B1F8E44F7.png" alt=""></p>
 <p>题解：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
@@ -586,14 +600,12 @@ ll k<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="C-Diamond-Miner"><a href="#C-Diamond-Miner" class="headerlink" title="C Diamond Miner"></a>C <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1496/problem/C">Diamond Miner</a></h2><p>Tag：贪心 </p>
 <p>题意：</p>
 <p>给定n个矿工和n个矿脉的位置，矿工在y轴，矿脉在x轴，(0, 0)位置没有矿工也没有矿脉；矿工和矿脉一一匹配，求矿工到矿脉的距离总和的最小值。</p>
 <p>思路：</p>
 <p>用两个数组分别存矿工和矿脉，读取数据的时候在负半轴的数据映射到正半轴，然后从小到大排序，相同序号的矿工和矿脉配对计算距离然后求和。证明：三角形两边之和大于第三边</p>
-<img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images62A128D7BB385BD58B95F9DC897BD192.png" style="zoom:50%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images62A128D7BB385BD58B95F9DC897BD192.png" style="zoom:50%;" /></p>
 <p>题解：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
@@ -629,13 +641,12 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="D-Let’s-Go-Hiking"><a href="#D-Let’s-Go-Hiking" class="headerlink" title="D Let’s Go Hiking"></a>D <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1496/problem/D">Let’s Go Hiking</a></h2><p>Tag：博弈、思维</p>
 <p>题意：</p>
 <p>给定一个整数序列，Qingshan选择该序列中的一个位置，然后告诉Daniel，Daniel再选择一个位置。游戏开始，每次Qingshan的要选择一个相邻且低于当前位置的位置行动，Daniel选择一个相邻且高于当前位置的位置行动，重复进行，无法行动的人败。问：当给定一个序列p的时候，Qingshan获胜的方案数是多少个。</p>
 <p>思路：</p>
 <p>直接上分析图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images737BE4FC2FE5DD66CBFB2C2526A202D3.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images737BE4FC2FE5DD66CBFB2C2526A202D3.png" alt=""></p>
 <p>题解：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
@@ -679,13 +690,11 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token keyword">else</span> cout <span class="token operator">&lt;&lt;</span> <span class="token number">0</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="E-Garden-of-the-Sun"><a href="#E-Garden-of-the-Sun" class="headerlink" title="E Garden of the Sun"></a>E <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1496/problem/E">Garden of the Sun</a></h2><p>Tag：</p>
 <p>题意：</p>
 <p>思路：</p>
 <p>题解：</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h2 id="F-BFS-Trees"><a href="#F-BFS-Trees" class="headerlink" title="F BFS Trees"></a>F <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1496/problem/F">BFS Trees</a></h2><p>Tag：</p>
 <p>题意：</p>
 <p>思路：</p>
@@ -943,12 +952,12 @@ using namespace std<span class="token punctuation">;</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/7c0a38a4/">
+                <a href="/posts/f43198be/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_181.jpg" class="responsive-img" alt="CUDA Vector Addition">
+                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/pic/1 (156).jpg" class="responsive-img" alt="LaTex入门笔记">
                         
-                        <span class="card-title">CUDA Vector Addition</span>
+                        <span class="card-title">LaTex入门笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -965,8 +974,8 @@ using namespace std<span class="token punctuation">;</span>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Parallel-Computing/" class="post-category">
-                                    Parallel Computing
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -976,8 +985,8 @@ using namespace std<span class="token punctuation">;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CUDA/">
-                        <span class="chip bg-color">CUDA</span>
+                    <a href="/tags/LaTex/">
+                        <span class="chip bg-color">LaTex</span>
                     </a>
                     
                 </div>
@@ -991,12 +1000,12 @@ using namespace std<span class="token punctuation">;</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/a44b8419/">
+                <a href="/posts/187a0336/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_352.jpg" class="responsive-img" alt="Attention is all you need">
+                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images153.jpg" class="responsive-img" alt="爬虫实战——豆瓣电影Top250">
                         
-                        <span class="card-title">Attention is all you need</span>
+                        <span class="card-title">爬虫实战——豆瓣电影Top250</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1007,14 +1016,22 @@ using namespace std<span class="token punctuation">;</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/DeepLearning/" class="post-category">
-                                    DeepLearning
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -1024,12 +1041,8 @@ using namespace std<span class="token punctuation">;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/transformer/">
-                        <span class="chip bg-color">transformer</span>
-                    </a>
-                    
-                    <a href="/tags/attention/">
-                        <span class="chip bg-color">attention</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -1231,6 +1244,9 @@ using namespace std<span class="token punctuation">;</span>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

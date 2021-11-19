@@ -461,9 +461,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-12
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    419
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
                 
 
                 
@@ -482,7 +497,7 @@
             <div id="articleContent">
                 <h1 id="哈夫曼树-最优二叉树"><a href="#哈夫曼树-最优二叉树" class="headerlink" title="哈夫曼树(最优二叉树)"></a>哈夫曼树(最优二叉树)</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​        利用一个字符串中符号的出现频率(即出现概率)作为输入，并差生编码这个字符串的一个前缀码作为输出，在这些符号的所有可能的二叉前缀码中，这个编码使用最少的位。</p>
 <h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>1、根据给定的<strong>n</strong>个权值，构造n棵只有一个结点的二叉树，<strong>n</strong>个权值分别为这些树根结点的全。设森林<strong>F</strong>是由这<strong>n</strong>棵树构成的集合；(<strong>原始森林</strong>)</p>
-<p>2、在<strong>F</strong>中选取两棵根的权值最小的树作为左、右子树，构造一棵新二叉树，置新二叉树的权值**=**左、右子树根结点权值之和；(<strong>每次新增一个结点</strong>)</p>
+<p>2、在<strong>F</strong>中选取两棵根的权值最小的树作为左、右子树，构造一棵新二叉树，置新二叉树的权值<strong>=</strong>左、右子树根结点权值之和；(<strong>每次新增一个结点</strong>)</p>
 <p>3、从<strong>F</strong>中删除这两棵树，并将新树加入<strong>F</strong>；(<strong>每次少一棵树</strong>)</p>
 <p>4、重复2、3，直到<strong>F</strong>中只含一棵树为止。(<strong>重复n-1次</strong>)</p>
 <p>具体构造图示：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29519041/article/details/81428934">链接</a></p>
@@ -491,7 +506,6 @@
 &#123;
     int weight,parent,lchild,rchild;
 &#125;HTNode;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>构造算法</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">CreatHuffmanTree</span><span class="token punctuation">(</span>HTNode <span class="token operator">*</span>ht<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
 <span class="token punctuation">&#123;</span>
@@ -528,8 +542,7 @@
 		ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rchild<span class="token operator">=</span>r<span class="token punctuation">;</span>
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesQQ%E5%9B%BE%E7%89%8720200622113021.png"></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesQQ图片20200622113021.png" alt=""></p>
 
                 
             </div>
@@ -1063,6 +1076,9 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

@@ -470,9 +470,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-07
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
                 
 
                 
@@ -502,14 +517,12 @@
 
 <span class="token comment"># 设置随机数种子</span>
 np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>生成随机数：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#直接采用np生成等差数列的方法，生成100个点，每个点取值在-1~1之间</span>
 x_data<span class="token operator">=</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
 
 <span class="token comment">#y=2x+1+噪声，其中，噪声的维度与x_data一致</span>
 y_data<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>x_data<span class="token operator">+</span><span class="token number">1.0</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token operator">*</span>x_data<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>画出生成的散点和目标线性函数：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 画出随机生成数据的散点图</span>
 
@@ -518,19 +531,16 @@ plt<span class="token punctuation">.</span>scatter<span class="token punctuation
 <span class="token comment"># 画出想要通过学习得到的目标线性函数y=2x+1</span>
 
 plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span>x_data<span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token string">"red"</span><span class="token punctuation">,</span>linewidth<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>输出展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(1).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(1" alt="">.png)</p>
 <h3 id="构建线性模型"><a href="#构建线性模型" class="headerlink" title="构建线性模型"></a>构建线性模型</h3><p>定义x和y的占位符：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义训练数据的占位符，x是特征值，y是标签值</span>
 
 x<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span><span class="token string">"float"</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"x"</span><span class="token punctuation">)</span>
 y<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span><span class="token string">"float"</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"y"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>构建回归模型：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">model</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>w<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> tf<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>x<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token operator">+</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>创建变量</p>
 <ul>
 <li>TensorFlow变量的声明函数是tf.Variable</li>
@@ -542,11 +552,9 @@ w<span class="token operator">=</span>tf<span class="token punctuation">.</span>
 
 <span class="token comment"># 构建线性函数的截距，变量b</span>
 b<span class="token operator">=</span>tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"bO"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>预测值表示：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># pred是预测值，前向计算</span>
 pred<span class="token operator">=</span>model<span class="token punctuation">(</span>x<span class="token punctuation">,</span>w<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h3 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h3><p>设置训练参数：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 迭代次数(训练轮数)</span>
 train_epochs<span class="token operator">=</span><span class="token number">10</span>
@@ -554,25 +562,20 @@ train_epochs<span class="token operator">=</span><span class="token number">10</
 learning_rate<span class="token operator">=</span><span class="token number">0.05</span>
 <span class="token comment"># 控制显示loss值的粒度</span>
 display_step<span class="token operator">=</span><span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="定义损失函数"><a href="#定义损失函数" class="headerlink" title="定义损失函数"></a>定义损失函数</h3><ul>
 <li>损失函数用于描述预测值与真实值之间的误差，从而指导模型收敛方向</li>
 <li>常见损失函数：均方差和交叉熵</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 采用均方差作为损失函数</span>
 loss_function<span class="token operator">=</span>tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span>y<span class="token operator">-</span>pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h3 id="定义优化器、定义最小化损失函数"><a href="#定义优化器、定义最小化损失函数" class="headerlink" title="定义优化器、定义最小化损失函数"></a>定义优化器、定义最小化损失函数</h3><p>选择优化器：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 梯度下降优化器</span>
 optimizer<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_function<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h3 id="执行训练"><a href="#执行训练" class="headerlink" title="执行训练"></a>执行训练</h3><p>声明会话：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sess<span class="token operator">=</span>tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>变量初始化：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">init<span class="token operator">=</span>tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span>
 sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>训练开始：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 开始训练，轮数为 epoch，采用SGD随机梯度下降优化方法</span>
 
@@ -582,20 +585,17 @@ sess<span class="token punctuation">.</span>run<span class="token punctuation">(
     bOtemp<span class="token operator">=</span>b<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     wOtemp<span class="token operator">=</span>w<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>wOtemp<span class="token operator">*</span>x_data<span class="token operator">+</span>bOtemp<span class="token punctuation">)</span><span class="token comment"># 画图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>输出展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(2).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(2" alt="">.png)</p>
 <h3 id="训练结果的可视化"><a href="#训练结果的可视化" class="headerlink" title="训练结果的可视化"></a>训练结果的可视化</h3><p>输出w和b：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"w:"</span><span class="token punctuation">,</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"b:"</span><span class="token punctuation">,</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>可视化：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>y_data<span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">"Original data"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>x_data<span class="token operator">*</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">+</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token string">"Fitted line"</span><span class="token punctuation">,</span>color<span class="token operator">=</span><span class="token string">"r"</span><span class="token punctuation">,</span>linewidth<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>输出展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(3).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(3" alt="">.png)</p>
 <h3 id="利用学习到的模型进行预测"><a href="#利用学习到的模型进行预测" class="headerlink" title="利用学习到的模型进行预测"></a>利用学习到的模型进行预测</h3><p>预测方法一：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x_test<span class="token operator">=</span><span class="token number">3.21</span>
 
@@ -604,7 +604,6 @@ predict<span class="token operator">=</span>sess<span class="token punctuation">
 
 target<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>x_test<span class="token operator">+</span><span class="token number">1.0</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"目标值：%f"</span><span class="token operator">%</span>target<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>输出展示：</p>
 <blockquote>
 <p>预测值：7.405184 </p>
@@ -614,7 +613,6 @@ target<span class="token operator">=</span><span class="token number">2</span><s
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x_test<span class="token operator">=</span><span class="token number">3.21</span>
 predict<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token operator">*</span>x_test<span class="token operator">+</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"预测值：%f"</span><span class="token operator">%</span>predict<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>预测值：7.405184</p>
 </blockquote>
@@ -639,20 +637,16 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
     bOtemp<span class="token operator">=</span>b<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     wOtemp<span class="token operator">=</span>w<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>wOtemp<span class="token operator">*</span>x_data<span class="token operator">+</span>bOtemp<span class="token punctuation">)</span><span class="token comment"># 画图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>显示loss图（1）：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>loss_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>输出展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(4).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(4" alt="">.png)</p>
 <p>显示loss图（2）：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>loss_list<span class="token punctuation">,</span><span class="token string">"g2"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>输出展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(5).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(5" alt="">.png)</p>
 <p>输出异常点：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span>x <span class="token keyword">for</span> x <span class="token keyword">in</span> loss_list <span class="token keyword">if</span> x<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>输出展示：</p>
 <blockquote>
 <p>[1.0133754, 1.2284044, 1.0088208, 1.2116321, 2.3539772, 2.3148305, 1.3175836, 1.0387748, 1.5018207, 1.547514, 1.5513999, 1.5517284, 1.5517554, 1.5517581, 1.5517581, 1.5517581, 1.5517581]</p>
@@ -1206,6 +1200,9 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

@@ -17,6 +17,7 @@
 
 
 
+
 一维前缀和
 
 S[i]=S[i-1]+a[i]
@@ -24,7 +25,7 @@ S[i]=S[i-1]+a[i]
 
 二维前缀和
 
-S[i][j]=S[i-1][j]+S[i][j-1]-S[i-1">
+S[i][j]=S[i-1][j]+S[i][j-1]-S[i-">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -479,9 +480,24 @@ S[i][j]=S[i-1][j]+S[i][j-1]-S[i-1">
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-05
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    326
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
                 
 
                 
@@ -499,27 +515,30 @@ S[i][j]=S[i-1][j]+S[i][j-1]-S[i-1">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h2><p>之前已经说过一维前缀和了，二位前缀和就是在此基础上拓展出来的。</p>
-<img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/blog-material/b8859ab5/1.png" style="zoom:80%;" />
-
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/blog-material/b8859ab5/1.png" style="zoom:80%;" /></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th></th>
-<th align="left">定义式</th>
+<th style="text-align:left">定义式</th>
 <th>递推式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>一维前缀和</td>
-<td align="left"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images1.png" style="zoom: 80%;" /></td>
+<td style="text-align:left"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images1.png" style="zoom: 80%;" /></td>
 <td><code>S[i]=S[i-1]+a[i]</code></td>
 </tr>
 <tr>
 <td>二维前缀和</td>
-<td align="left"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/blog-material/b8859ab5/1.png" style="zoom: 67%;" /></td>
+<td style="text-align:left"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/blog-material/b8859ab5/1.png" style="zoom: 67%;" /></td>
 <td><code>S[i][j]=S[i-1][j]+S[i][j-1]-S[i-1][j-1]+a[i][j]</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="二维差分"><a href="#二维差分" class="headerlink" title="二维差分"></a>二维差分</h2><h3 id="引例："><a href="#引例：" class="headerlink" title="引例："></a>引例：</h3><p>对于一个给定的 n * m 的矩阵 a ，再给出 q 次操作，每次询问给定 x1 ，y1 ，x2 ， y2 ，k ，表示对(x1,y1)为左上角，(x2,y2)为右下角的子矩阵加 k ，最后再输出以(x1,y1)为左上角，(x2,y2)为右下角的子矩阵的所有元素的和。</p>
 <h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>为了减少时间的消耗，我们可以利用差分的方式来对这q次操作进行存储，即利用差分的方式，因此我们需要构造一个二维的差分数组，我们用二维数组d来表示差分数组，那么每次操作，我们只需要对数组b进行如下操作</p>
 <p><code>b[x1][y1]+=k;</code></p>
@@ -1070,6 +1089,9 @@ S[i][j]=S[i-1][j]+S[i][j-1]-S[i-1">
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

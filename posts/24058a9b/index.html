@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="爬虫入门(二), 算法，美化，日常，随笔">
-    <meta name="description" content="网络爬虫之提取Beautiful Soup库入门安装：pip install beautifulsoup4 
+    <meta name="description" content="网络爬虫之提取Beautiful Soup库入门安装：pip install beautifulsoup4
 遇到的问题：
-和上一篇一样，又遇到了同样的问题，然后又在百度找解决方法，发现了我也曾经因安装库而抓狂，直到我遇到了这篇文章，直到这">
+和上一篇一样，又遇到了同样的问题，然后又在百度找解决方法，发现了我也曾经因安装库而抓狂，直到我遇到了这篇文章，直到这个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -474,9 +474,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-06
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    328
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
                 
 
                 
@@ -493,31 +508,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="网络爬虫之提取"><a href="#网络爬虫之提取" class="headerlink" title="网络爬虫之提取"></a>网络爬虫之提取</h2><h3 id="Beautiful-Soup库入门"><a href="#Beautiful-Soup库入门" class="headerlink" title="Beautiful Soup库入门"></a>Beautiful Soup库入门</h3><p><strong>安装：</strong><code>pip install beautifulsoup4 </code></p>
+                <h2 id="网络爬虫之提取"><a href="#网络爬虫之提取" class="headerlink" title="网络爬虫之提取"></a>网络爬虫之提取</h2><h3 id="Beautiful-Soup库入门"><a href="#Beautiful-Soup库入门" class="headerlink" title="Beautiful Soup库入门"></a>Beautiful Soup库入门</h3><p><strong>安装：</strong><code>pip install beautifulsoup4</code></p>
 <p><strong>遇到的问题：</strong></p>
-<p>和<a href="">上一篇</a>一样，又遇到了同样的问题，然后又在百度找解决方法，发现了<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650167858&idx=1&sn=daae966c476142ddcdbccb059585c960&chksm=be4b574a893cde5c98cafa2b9a333b9796113403027930dbe2141cc76b4dbf4ce20cd2d1089f&scene=21#wechat_redirect">我也曾经因安装库而抓狂，直到我遇到了</a>这篇文章，直到这个时候我才意识到，我之前安装的Anaconda3包含了几百个第三方库(详细介绍可以看看这篇文章)。</p>
+<p>和<a href="">上一篇</a>一样，又遇到了同样的问题，然后又在百度找解决方法，发现了<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&amp;mid=2650167858&amp;idx=1&amp;sn=daae966c476142ddcdbccb059585c960&amp;chksm=be4b574a893cde5c98cafa2b9a333b9796113403027930dbe2141cc76b4dbf4ce20cd2d1089f&amp;scene=21#wechat_redirect">我也曾经因安装库而抓狂，直到我遇到了</a>这篇文章，直到这个时候我才意识到，我之前安装的Anaconda3包含了几百个第三方库(详细介绍可以看看这篇文章)。</p>
 <p><strong>解决方法：</strong></p>
 <p>在Anaconda3的目录下找到beautifulsoup4 的文件包，直接复制粘贴到python下的第三方库的文件夹就行了</p>
 <h3 id="Beautiful-Soup库的基本元素"><a href="#Beautiful-Soup库的基本元素" class="headerlink" title="Beautiful Soup库的基本元素"></a>Beautiful Soup库的基本元素</h3><p>demo.html</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://python123.io/ws/demo.html"</span><span class="token punctuation">)</span>
 demo<span class="token operator">=</span>r<span class="token punctuation">.</span>text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(1).png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(2).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(1" alt="">.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(2" alt="">.png)</p>
 <p><strong>遍历方式：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(3).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(3" alt="">.png)</p>
 <p><strong>下行遍历：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(4).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(4" alt="">.png)</p>
 <p><strong>上行遍历：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(5).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(5" alt="">.png)</p>
 <p><strong>平行遍历：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(6).png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(7).png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(8).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(6" alt="">.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(7" alt="">.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(8" alt="">.png)</p>
 <p><strong>让HTML内容更加“友好”的显示：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(9).png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(10).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(9" alt="">.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagespc2(10" alt="">.png)</p>
 <h3 id="三种信息标记形式"><a href="#三种信息标记形式" class="headerlink" title="三种信息标记形式"></a>三种信息标记形式</h3><p><strong>XML：</strong>最早的通用信息标记语言，可扩展性好，但繁琐；Internet上的信息交互与传递</p>
 <p><strong>JSON：</strong>信息有类型，时候程序处理(js)，较XML简洁；移动应用云端和节点的信息通信，无注释</p>
 <p><strong>YAML：</strong>信息无类型，文本信息比利最高，可读性好；各类系统的配置文件，有注释易读</p>
@@ -1075,6 +1089,9 @@ demo<span class="token operator">=</span>r<span class="token punctuation">.</spa
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

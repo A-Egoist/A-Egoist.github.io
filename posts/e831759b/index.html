@@ -468,9 +468,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-08
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    644
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
                 
 
                 
@@ -495,18 +510,15 @@
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>utils <span class="token keyword">import</span> shuffle<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="通过Pandas导入数据"><a href="#通过Pandas导入数据" class="headerlink" title="通过Pandas导入数据"></a>通过Pandas导入数据</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 读取数据文件</span>
 df<span class="token operator">=</span>pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"data/boston.csv"</span><span class="token punctuation">,</span>header<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
 <span class="token comment">#显示数据摘要描述信息</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="载入本例所需数据"><a href="#载入本例所需数据" class="headerlink" title="载入本例所需数据"></a>载入本例所需数据</h3><p>相关数据<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZUCC-1206146808?tid=1206445215#/learn/content?type=detail&id=1211173168&cid=1213736792">下载</a></p>
+<h3 id="载入本例所需数据"><a href="#载入本例所需数据" class="headerlink" title="载入本例所需数据"></a>载入本例所需数据</h3><p>相关数据<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZUCC-1206146808?tid=1206445215#/learn/content?type=detail&amp;id=1211173168&amp;cid=1213736792">下载</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取df的值</span>
 df<span class="token operator">=</span>df<span class="token punctuation">.</span>values
 <span class="token comment"># 把df转换为np的数组格式</span>
 df<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>df<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="特征数据归一化"><a href="#特征数据归一化" class="headerlink" title="特征数据归一化"></a>特征数据归一化</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 对特征数据[0~11]列做(0-1)归一化处理</span>
 
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -516,11 +528,9 @@ df<span class="token operator">=</span>np<span class="token punctuation">.</span
 x_data<span class="token operator">=</span>df<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">]</span>
 <span class="token comment"># y_data为最后1列标签数据</span>
 y_data<span class="token operator">=</span>df<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="构建模型"><a href="#构建模型" class="headerlink" title="构建模型"></a>构建模型</h3><p><strong>定义占位符</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"X"</span><span class="token punctuation">)</span> <span class="token comment"># 12个特征数据(12列)</span>
 y<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"Y"</span><span class="token punctuation">)</span> <span class="token comment"># 1个标签数据(1列)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>创建变量</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义了一个命名空间</span>
 
@@ -534,24 +544,19 @@ y<span class="token operator">=</span>tf<span class="token punctuation">.</span>
         <span class="token keyword">return</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>x<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token operator">+</span>b
     <span class="token comment"># 预测计算操作，前向计算节点</span>
     pred<span class="token operator">=</span>model<span class="token punctuation">(</span>x<span class="token punctuation">,</span>w<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>定义超参数</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 迭代轮次</span>
 train_epochs<span class="token operator">=</span><span class="token number">50</span>
 <span class="token comment"># 学习率</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>定义均方损失函数</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">"LossFunction"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     loss_function<span class="token operator">=</span>tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">(</span>y<span class="token operator">-</span>pred<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 均方误差</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>选择优化器</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 创建优化器</span>
 optimizer<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_function<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sess<span class="token operator">=</span>tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
 init<span class="token operator">=</span>tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">loss_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 用于保存loss值的列表</span>
 
 <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>train_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -577,7 +582,6 @@ init<span class="token operator">=</span>tf<span class="token punctuation">.</sp
     
     <span class="token comment">#print("epoch=",epoch+1,"loss=",loss_average,"b=",b0temp,"w=",w0temp)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"epoch="</span><span class="token punctuation">,</span>epoch<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="检测模型"><a href="#检测模型" class="headerlink" title="检测模型"></a>检测模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">n<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">506</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 x_test<span class="token operator">=</span>x_data<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
@@ -589,11 +593,9 @@ predict<span class="token operator">=</span>sess<span class="token punctuation">
 target<span class="token operator">=</span>y_data<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"标签值：%f"</span><span class="token operator">%</span>target<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>可视化</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>loss_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensduo(1).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensduo(1" alt="">.png)</p>
 
                 
             </div>
@@ -1139,6 +1141,9 @@ target<span class="token operator">=</span>y_data<span class="token punctuation"
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

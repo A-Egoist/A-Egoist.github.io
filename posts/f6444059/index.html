@@ -465,9 +465,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-22
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
                 
 
                 
@@ -485,8 +500,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="递推总结-持续更新"><a href="#递推总结-持续更新" class="headerlink" title="递推总结(持续更新!!!)"></a>递推总结(持续更新!!!)</h2><h3 id="错排公式"><a href="#错排公式" class="headerlink" title="错排公式"></a>错排公式</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/bengshakalakaka/article/details/83420150">介绍</a></h4><p><strong>问题：</strong>现有10本书按照顺序摆放，现要求重新排列，使得新的书的顺序中每一本书都不在原来的位置，求有多少种排列方式？</p>
-<p>这个问题推广一下，就是<strong>错排问题</strong>，是<strong>组合数学</strong>中的问题之一。考虑一个有n个元素的排列，若一个排列中所有的元素都不在自己原来的位置上，那么这样的排列就称为原排列的一个错排。 n个元素的错排数记为<strong>D(n)<strong>。 研究一个排列错排个数的问题，叫做</strong>错排问题</strong>或称为<strong>更列问题</strong>。</p>
-<p>OK，现在详细分析这个问题，我们要的最终结果就是书的编号与所在位置的编号不同，在这里，我们把n本书的错排操作数记为<strong>D(n)<strong>，那</strong>n-1</strong>本就是<strong>D(n-1)<strong>，</strong>n-2</strong>本就是**D(n-2)**啦，下面，我们把放置问题分为两步（初始位置号与书的编号相同）：</p>
+<p>这个问题推广一下，就是<strong>错排问题</strong>，是<strong>组合数学</strong>中的问题之一。考虑一个有n个元素的排列，若一个排列中所有的元素都不在自己原来的位置上，那么这样的排列就称为原排列的一个错排。 n个元素的错排数记为<strong>D(n)</strong>。 研究一个排列错排个数的问题，叫做<strong>错排问题</strong>或称为<strong>更列问题</strong>。</p>
+<p>OK，现在详细分析这个问题，我们要的最终结果就是书的编号与所在位置的编号不同，在这里，我们把n本书的错排操作数记为<strong>D(n)</strong>，那<strong>n-1</strong>本就是<strong>D(n-1)</strong>，<strong>n-2</strong>本就是<strong>D(n-2)</strong>啦，下面，我们把放置问题分为两步（初始位置号与书的编号相同）：</p>
 <p><strong>第一步：</strong></p>
 <ul>
 <li>我们取一本书，书的编号为m，现在这本书就在我们手中，注意，按照题目要求，最开始的时候这本书的位置号也是m号，按照题目要求，我们现在放书时不能放回这个位置m了，而是要选择其他位置，那么有多少种选择呢?</li>
@@ -497,15 +512,15 @@
 <li><p>我们把手里这本编号为k的书本放到书架，注意，放的过程中我们又面临两种情况，可以想到，此时此刻现在书架上编号m的位置是空着的，所以我们可以选择放在这个位置上，书的编号为k，位置编号为m，没错，满足题意，这是第一种情况，还有一种就是我不选择这个空着的位置m，我再重新选择一个新的位置，我们称之为第二种情况，下面详细分析</p>
 </li>
 <li><p><strong>第一种情况：</strong>我把这本编号为k的书放到这个编号为m的地址，那现在我们面前是什么状况呢，就是位置k和位置m的书交换位置，也就是位置号不等于书号，即满足错排，总共n个位置，我们只动了m和k这两个位置，那么剩下的n-2个位置还是纹丝不动，保持一一对应的关系呢</p>
-<p>​    那么对于剩下的这n-2本书的错排操作，我们又回到了问题的起点，求n-2本的错排操作数D(n-2)，结合第一步，我们可以得到第一种情况总共有**(n-1)*D(n-2)**种方法</p>
+<p>​    那么对于剩下的这n-2本书的错排操作，我们又回到了问题的起点，求n-2本的错排操作数D(n-2)，结合第一步，我们可以得到第一种情况总共有<strong>(n-1)*D(n-2)</strong>种方法</p>
 </li>
 <li><p><strong>第二种情况：</strong>我们不选择这个空着的位置m啦，我们手持这本编号为k的书，我们从除了位置m以及位置k的剩下的n-2个位置中选择一个位置。 </p>
 <p>​    OK，我们现在开始想，我手里这本书不能放在这个位置m，嗯嗯，除了第一步我们放置的那本书m不用管了，我们还要搞手里这本和剩下的n-2本，也就是n-1本，同时又要求手里这本k还不能放到位置m，这是不是就相当于把手里这本加上剩下的n-2本也就是n-1本书进行错排呢？  </p>
-<p>​    哇哇哇，想一想，错排的定义，要求每本书都不能呆在某一个特定位置，是不是刚好符合呢QWQ，所以，现在的为题就到了求手里这本和剩下的n-2本总共是n-1本书的错排操作数，我们记为D(n-1)，结合第一步，我们得出这第二种情况共有**(n-1)*D(n-1)**种方法</p>
+<p>​    哇哇哇，想一想，错排的定义，要求每本书都不能呆在某一个特定位置，是不是刚好符合呢QWQ，所以，现在的为题就到了求手里这本和剩下的n-2本总共是n-1本书的错排操作数，我们记为D(n-1)，结合第一步，我们得出这第二种情况共有<strong>(n-1)*D(n-1)</strong>种方法</p>
 </li>
 </ul>
 <p>好的，现在我们总结两种情况，结果进行相加，就可以得到递推公式啦<br><strong>递推公式为：</strong><code>D(n)=(n-1)*(D(n-1)+D(n-2))</code></p>
-<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p>1、**<a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2048">神、上帝以及老天爷</a>**</p>
+<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p>1、<strong><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2048">神、上帝以及老天爷</a></strong></p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 using namespace std<span class="token punctuation">;</span>
@@ -532,10 +547,6 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bengshakalakaka/article/details/83420150">https://blog.csdn.net/bengshakalakaka/article/details/83420150</a></p>
 <h3 id="组合-错排"><a href="#组合-错排" class="headerlink" title="组合+错排"></a>组合+错排</h3><h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h4><p>2、<a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2049">不容易系列之(4)——考新郎</a></p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
@@ -565,9 +576,6 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="单纯地递推"><a href="#单纯地递推" class="headerlink" title="单纯地递推"></a>单纯地递推</h3><h4 id="例题-2"><a href="#例题-2" class="headerlink" title="例题"></a>例题</h4><p>3、<a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2050">折线分割平面</a></p>
 <p><strong>思路：列举找规律</strong></p>
 <blockquote>
@@ -593,7 +601,6 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1127,6 +1134,9 @@ using namespace std<span class="token punctuation">;</span>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

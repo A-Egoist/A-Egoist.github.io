@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="string用法, 算法，美化，日常，随笔">
-    <meta name="description" content="string类简介string是c++中的一级成员，纯c中没有，使用时需要用到头文件*#include*，下面将总结string的常用方法。
+    <meta name="description" content="string类简介string是c++中的一级成员，纯c中没有，使用时需要用到头文件#include，下面将总结string的常用方法。
 string的定义及初始化string str;//生成空字符串
-string s(str);//">
+string s(str);//生成">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -466,9 +466,24 @@ string s(str);//">
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-24
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
                 
 
                 
@@ -485,7 +500,7 @@ string s(str);//">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>string是c++中的一级成员，纯c中没有，使用时需要用到头文件*#include<string>*，下面将总结string的常用方法。</p>
+                <h1 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>string是c++中的一级成员，纯c中没有，使用时需要用到头文件<em>#include<string></em>，下面将总结string的常用方法。</p>
 <h2 id="string的定义及初始化"><a href="#string的定义及初始化" class="headerlink" title="string的定义及初始化"></a>string的定义及初始化</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c">string str<span class="token punctuation">;</span><span class="token comment">//生成空字符串</span>
 string <span class="token function">s</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//生成字符串为str的复制品</span>
 string <span class="token function">s</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span>str_begin<span class="token punctuation">,</span>str_len<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将字符串str中从下标str_begin开始、长度为str_len的部分作为字符串初值</span>
@@ -501,12 +516,10 @@ string <span class="token function">s1</span><span class="token punctuation">(</
 string <span class="token function">s2</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//s2="llo";从s1的2位置的字符开始，连续3个字符赋值给s5</span>
 string <span class="token function">s3</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//s3="ello";从s1的2位置的字符开始，将后续的字符都赋值给s6</span>
 string <span class="token function">s4</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//s4="aaaaa";</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的读入"><a href="#string的读入" class="headerlink" title="string的读入"></a>string的读入</h2><p>string 类支持 cin 方式和 getline() 方式两种输入方式。简单示例如下：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">string s<span class="token punctuation">;</span>
 cin<span class="token operator">>></span>s<span class="token punctuation">;</span><span class="token comment">//不能读空格，遇到空白字符即停止读入</span>
 <span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以读空格，读取一整行的内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的大小和容量"><a href="#string的大小和容量" class="headerlink" title="string的大小和容量"></a>string的大小和容量</h2><p>s.size()和s.length()返回string对象的字符个数。</p>
 <p>s.max_size()返回string对象最多包含的字符数。</p>
 <h2 id="string的比较"><a href="#string的比较" class="headerlink" title="string的比较"></a>string的比较</h2><p>1、支持 ==、&gt;=、&lt;=、!=、&gt;、&lt;等比较运算符</p>
@@ -517,7 +530,6 @@ string <span class="token function">c</span><span class="token punctuation">(</s
 a<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token operator">-></span> <span class="token operator">-</span><span class="token number">1</span>
 b<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">-></span>  <span class="token number">1</span>
 b<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token operator">-></span>  <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的插入"><a href="#string的插入" class="headerlink" title="string的插入"></a>string的插入</h2><p>1、push_back();</p>
 <p>2、insert();</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">string s<span class="token punctuation">;</span>
@@ -531,7 +543,6 @@ string s1 <span class="token operator">=</span> <span class="token string">"hell
 s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"ins"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//从s1的1位置开始，插入"ins"字符串，即s1="hinsello";</span>
 s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"ins"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//从s1的1位置开始，插入"ins"字符串的前2个字符，即s1="hinello";</span>
 s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"ins"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//从s1的1位置开始，插入"ins"字符串的从1位置开始的2个字符，即s1="hnsello";</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string拼接字符串"><a href="#string拼接字符串" class="headerlink" title="string拼接字符串"></a>string拼接字符串</h2><p>1、append();</p>
 <p>2、’+’’;</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">string <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -541,7 +552,6 @@ string s1<span class="token operator">=</span><span class="token string">"abc"</
 string s2<span class="token operator">=</span><span class="token string">"def"</span><span class="token punctuation">;</span>
 s1<span class="token operator">=</span>s1<span class="token operator">+</span>s2<span class="token punctuation">;</span><span class="token comment">//'='右边至少有一个string类型的对象</span>
 <span class="token comment">//s1: abcdef</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的遍历"><a href="#string的遍历" class="headerlink" title="string的遍历"></a>string的遍历</h2><p>1、借助迭代器</p>
 <p>2、下标法</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">string <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">"abcdef"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -568,7 +578,6 @@ string<span class="token operator">::</span>reverse_iterator riter<span class="t
     cout<span class="token operator">&lt;&lt;</span><span class="token operator">*</span>riter<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的删除"><a href="#string的删除" class="headerlink" title="string的删除"></a>string的删除</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">1.</span> iterator <span class="token function">erase</span><span class="token punctuation">(</span>iterator p<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除字符串中p所指的字符</span>
 <span class="token number">2.</span> iterator <span class="token function">erase</span><span class="token punctuation">(</span>iterator first<span class="token punctuation">,</span> iterator last<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除字符串中迭代器区间[first,last)上所有字符</span>
 <span class="token number">3.</span> string<span class="token operator">&amp;</span> <span class="token function">erase</span><span class="token punctuation">(</span><span class="token class-name">size_t</span> pos<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token class-name">size_t</span> len<span class="token operator">=</span>npos<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除字符串中从索引位置pos开始的len个字符</span>
@@ -586,7 +595,6 @@ string<span class="token operator">::</span>iterator iter <span class="token ope
 	<span class="token operator">*</span>iter<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的字符替换"><a href="#string的字符替换" class="headerlink" title="string的字符替换"></a>string的字符替换</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">1.</span> string<span class="token operator">&amp;</span> <span class="token function">replace</span><span class="token punctuation">(</span><span class="token class-name">size_t</span> pos<span class="token punctuation">,</span> <span class="token class-name">size_t</span> n<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将当前字符串从pos索引开始的n个字符，替换成字符串s</span>
 <span class="token number">2.</span> string<span class="token operator">&amp;</span> <span class="token function">replace</span><span class="token punctuation">(</span><span class="token class-name">size_t</span> pos<span class="token punctuation">,</span> <span class="token class-name">size_t</span> n<span class="token punctuation">,</span> <span class="token class-name">size_t</span> n1<span class="token punctuation">,</span> <span class="token keyword">char</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将当前字符串从pos索引开始的n个字符，替换成n1个字符c</span>
 <span class="token number">3.</span> string<span class="token operator">&amp;</span> <span class="token function">replace</span><span class="token punctuation">(</span>iterator i1<span class="token punctuation">,</span> iterator i2<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将当前字符串[i1,i2)区间中的字符串替换为字符串s</span>
@@ -599,7 +607,6 @@ s1<span class="token punctuation">.</span><span class="token function">replace</
 <span class="token comment">// s1.begin(),s1.begin()+5 是左闭右开区间</span>
  s1<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>s1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"boy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 结果：boy,girl.</span>
  cout<span class="token operator">&lt;&lt;</span>s1<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的查找"><a href="#string的查找" class="headerlink" title="string的查找"></a>string的查找</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">1.</span> <span class="token class-name">size_t</span> <span class="token function">find</span> <span class="token punctuation">(</span>constchar<span class="token operator">*</span> s<span class="token punctuation">,</span> <span class="token class-name">size_t</span> pos <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
 <span class="token comment">//在当前字符串的pos索引位置开始，查找子串s，返回找到的位置索引，-1表示查找不到子串</span>
 
@@ -651,12 +658,10 @@ cout <span class="token operator">&lt;&lt;</span> s<span class="token punctuatio
 
 <span class="token comment">// 8. 在该字符串最后中查找第一个不属于字符串s的字符------先匹配t--a---c，然后空格匹配不到，所以打印21</span>
 cout <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span><span class="token function">find_last_not_of</span><span class="token punctuation">(</span><span class="token string">"teac"</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span><span class="token comment">// 结果是：21</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="string的排序"><a href="#string的排序" class="headerlink" title="string的排序"></a>string的排序</h2><p>sort(s.begin(),s.end())</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">string <span class="token function">s</span><span class="token punctuation">(</span><span class="token string">"acdebf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">sort</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>s<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 cout<span class="token operator">&lt;&lt;</span>s<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span class="token comment">//s:"abcdef"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="刷题遇到的"><a href="#刷题遇到的" class="headerlink" title="刷题遇到的"></a>刷题遇到的</h2><ol>
 <li><code>std::reverse()</code>，顾名思义，用于反转序列。需要提供首尾迭代器作为参数。</li>
 <li><code>std::string::erase()</code>，传入两个迭代器 l,r，清除[l,r)范围内的字符。</li>
@@ -1203,6 +1208,9 @@ cout<span class="token operator">&lt;&lt;</span>s<span class="token operator">&l
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

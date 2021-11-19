@@ -475,9 +475,24 @@ Flood Fill 模型连通块思想
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-04-02
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    826
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
                 
 
                 
@@ -542,7 +557,6 @@ bool vis<span class="token punctuation">[</span>N<span class="token punctuation"
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> cnt<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="最短路模型"><a href="#最短路模型" class="headerlink" title="最短路模型"></a>最短路模型</h4><p>常规BFS，加上一个存地址的数组。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
@@ -592,7 +606,6 @@ pii pre<span class="token punctuation">[</span>N<span class="token punctuation">
     cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token string">' '</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="多源BFS"><a href="#多源BFS" class="headerlink" title="多源BFS"></a>多源BFS</h4><p>BFS 找最短路正确性的证明：</p>
 <p>①：两段性</p>
 <p>②：单调性</p>
@@ -653,17 +666,10 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="最小步数模型"><a href="#最小步数模型" class="headerlink" title="最小步数模型"></a>最小步数模型</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="双端队列广搜"><a href="#双端队列广搜" class="headerlink" title="双端队列广搜"></a>双端队列广搜</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="双向广搜"><a href="#双向广搜" class="headerlink" title="双向广搜"></a>双向广搜</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="A"><a href="#A" class="headerlink" title="A*"></a>A*</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 <h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3>
                 
             </div>
@@ -909,12 +915,12 @@ using namespace std<span class="token punctuation">;</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/374e1302/">
+                <a href="/posts/b68f41a0/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/cdn/pic/1 (116).jpg" class="responsive-img" alt="数学知识">
+                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images1.jpg" class="responsive-img" alt="算法竞赛进阶指南学习笔记">
                         
-                        <span class="card-title">数学知识</span>
+                        <span class="card-title">算法竞赛进阶指南学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -935,11 +941,7 @@ using namespace std<span class="token punctuation">;</span>
                                     ACM
                                 </a>
                             
-                            <a href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            <a href="/categories/ACM/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AE%97%E6%B3%95/" class="post-category">
+                            <a href="/categories/ACM/%E7%AE%97%E6%B3%95/" class="post-category">
                                     算法
                                 </a>
                             
@@ -950,8 +952,8 @@ using namespace std<span class="token punctuation">;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E8%AE%BA/">
-                        <span class="chip bg-color">数论</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -1201,6 +1203,9 @@ using namespace std<span class="token punctuation">;</span>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

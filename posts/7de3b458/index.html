@@ -469,9 +469,24 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-30
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
                 
 
                 
@@ -493,40 +508,32 @@
 <span class="token comment"># 从本地读取实验数据，如果本地没有，TensorFlow会自动从网上下载相关数据</span>
 <span class="token keyword">from</span> tensorflow<span class="token punctuation">.</span>examples<span class="token punctuation">.</span>tutorials<span class="token punctuation">.</span>mnist <span class="token keyword">import</span> input_data
 mnist<span class="token operator">=</span>input_data<span class="token punctuation">.</span>read_data_sets<span class="token punctuation">(</span><span class="token string">"MNIST_data/"</span><span class="token punctuation">,</span>one_hot<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="构建模型"><a href="#构建模型" class="headerlink" title="构建模型"></a>构建模型</h3><p><strong>创建占位符</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># mnist 图中每张图片共有28*28784个像素点</span>
 x<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token number">784</span><span class="token punctuation">]</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"X"</span><span class="token punctuation">)</span>
 
 <span class="token comment"># 0-9一共10个数字，=>10个类别</span>
 y<span class="token operator">=</span>tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"Y"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>定义变量</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义变量</span>
 W<span class="token operator">=</span>tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>random_normal<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"W"</span><span class="token punctuation">)</span>
 b<span class="token operator">=</span>tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span> <span class="token comment"># 以常数0初始化b</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>用单个神经元构建神经网络</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">forward<span class="token operator">=</span>tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>x<span class="token punctuation">,</span>W<span class="token punctuation">)</span><span class="token operator">+</span>b <span class="token comment"># 前向计算</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 结果分类</span>
 pred<span class="token operator">=</span>tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>softmax<span class="token punctuation">(</span>forward<span class="token punctuation">)</span> <span class="token comment"># Softmax分类</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>设置训练参数</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train_epochs<span class="token operator">=</span><span class="token number">100</span> <span class="token comment">#训练轮数</span>
 batch_size<span class="token operator">=</span><span class="token number">10</span> <span class="token comment"># 单词训练样本数</span>
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>定义损失函数</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义交叉熵损失函数</span>
 loss_function<span class="token operator">=</span>tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span><span class="token operator">-</span>tf<span class="token punctuation">.</span>reduce_sum<span class="token punctuation">(</span>y<span class="token operator">*</span>tf<span class="token punctuation">.</span>log<span class="token punctuation">(</span>pred<span class="token punctuation">)</span><span class="token punctuation">,</span>reduction_indices<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>选择优化器</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 梯度下降优化器</span>
 optimizer<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_function<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>定义准确率、声明会话、初始化变量</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 检查预测类别tf.argmax(pred,1)与实际类别tf.argmax(y,1)的匹配情况</span>
 correct_prediction<span class="token operator">=</span>tf<span class="token punctuation">.</span>equal<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>pred<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>y<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -535,7 +542,6 @@ accuracy<span class="token operator">=</span>tf<span class="token punctuation">.
 sess<span class="token operator">=</span>tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 声明会话</span>
 init<span class="token operator">=</span>tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 变量初始化</span>
 sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 开始训练</span>
 <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>train_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> batch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>total_batch<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -551,7 +557,6 @@ sess<span class="token punctuation">.</span>run<span class="token punctuation">(
               <span class="token string">"Accuracy="</span><span class="token punctuation">,</span><span class="token string">"&#123;:.4f&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>acc<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Train Finished!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 100 Loss= 0.303404093 Accuracy= 0.9156</p>
 </blockquote>
@@ -560,7 +565,6 @@ accu_test<span class="token operator">=</span>sess<span class="token punctuation
                   feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>test<span class="token punctuation">.</span>images<span class="token punctuation">,</span>y<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>test<span class="token punctuation">.</span>labels<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Test Accuracy:"</span><span class="token punctuation">,</span>accu_test<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Test Accuracy: 0.8616</p>
 </blockquote>
@@ -569,7 +573,6 @@ accu_validation<span class="token operator">=</span>sess<span class="token punct
                   feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>images<span class="token punctuation">,</span>y<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>labels<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Test Accuracy:"</span><span class="token punctuation">,</span>accu_validation<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Test Accuracy: 0.8644</p>
 </blockquote>
@@ -578,17 +581,14 @@ accu_train<span class="token operator">=</span>sess<span class="token punctuatio
                   feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>images<span class="token punctuation">,</span>y<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>labels<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Test Accuracy:"</span><span class="token punctuation">,</span>accu_train<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Test Accuracy: 0.854909</p>
 </blockquote>
 <h3 id="应用模型"><a href="#应用模型" class="headerlink" title="应用模型"></a>应用模型</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 由于pred预测结果是one-hot编码格式，所以需要转换为0~9数字</span>
 prediction_result<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>pred<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                           feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>mnist<span class="token punctuation">.</span>test<span class="token punctuation">.</span>images<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 查看预测结果</span>
 prediction_result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><strong>定义可视化函数</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -618,11 +618,9 @@ prediction_result<span class="token punctuation">[</span><span class="token numb
     
     plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plot_images_labels_prediction<span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>test<span class="token punctuation">.</span>images<span class="token punctuation">,</span>
                               mnist<span class="token punctuation">.</span>test<span class="token punctuation">.</span>labels<span class="token punctuation">,</span>
                               prediction_result<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="实验改进"><a href="#实验改进" class="headerlink" title="实验改进"></a>实验改进</h3><p>实验记录：(目标：0.9)</p>
 <p>第一次：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train_epochs<span class="token operator">=</span><span class="token number">50</span> <span class="token comment">#训练轮数</span>
@@ -630,7 +628,6 @@ batch_size<span class="token operator">=</span><span class="token number">100</s
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 50 Loss= 0.612978339 Accuracy= 0.8644</p>
 </blockquote>
@@ -640,7 +637,6 @@ batch_size<span class="token operator">=</span><span class="token number">100</s
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 80 Loss= 0.553618193 Accuracy= 0.8728</p>
 </blockquote>
@@ -650,7 +646,6 @@ batch_size<span class="token operator">=</span><span class="token number">50</sp
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 80 Loss= 0.456805855 Accuracy= 0.8938</p>
 </blockquote>
@@ -660,7 +655,6 @@ batch_size<span class="token operator">=</span><span class="token number">50</sp
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 100 Loss= 0.410435736 Accuracy= 0.8994</p>
 </blockquote>
@@ -670,7 +664,6 @@ batch_size<span class="token operator">=</span><span class="token number">25</sp
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 100 Loss= 0.357385010 Accuracy= 0.9064</p>
 </blockquote>
@@ -680,7 +673,6 @@ batch_size<span class="token operator">=</span><span class="token number">25</sp
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 200 Loss= 0.319452822 Accuracy= 0.9184</p>
 </blockquote>
@@ -690,7 +682,6 @@ batch_size<span class="token operator">=</span><span class="token number">10</sp
 total_batch<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>mnist<span class="token punctuation">.</span>train<span class="token punctuation">.</span>num_examples<span class="token operator">/</span>batch_size<span class="token punctuation">)</span> <span class="token comment"># 一轮训练有多少批次</span>
 display_step<span class="token operator">=</span><span class="token number">1</span> <span class="token comment"># 显示粒度</span>
 learning_rate<span class="token operator">=</span><span class="token number">0.01</span> <span class="token comment"># 学习率</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>Train Epoch: 100 Loss= 0.303404093 Accuracy= 0.9156</p>
 </blockquote>
@@ -1247,6 +1238,9 @@ learning_rate<span class="token operator">=</span><span class="token number">0.0
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             

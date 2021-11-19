@@ -468,9 +468,24 @@ def f">
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-05
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    905
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
                 
 
                 
@@ -493,7 +508,6 @@ def f">
     <span class="token keyword">return</span> <span class="token operator">&lt;</span>返回值<span class="token operator">></span>
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>m<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> n<span class="token operator">//</span>m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>可变参数传递</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>函数名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数<span class="token operator">></span><span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token operator">&lt;</span>函数体<span class="token operator">></span>
@@ -505,12 +519,11 @@ def f">
     <span class="token keyword">for</span> item <span class="token keyword">in</span> b<span class="token punctuation">:</span>
         s<span class="token operator">*=</span>item
     <span class="token keyword">return</span> s       <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323.png" alt=""></p>
 <h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4><blockquote>
 <p>return可以传递0个返回值，也可以传递任意多个返回值</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(1).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(1" alt="">.png)</p>
 <h4 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h4><p>在函数内部引用全局变量的时候要用<strong>global</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">n<span class="token punctuation">,</span>s<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">100</span>
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -519,11 +532,10 @@ def f">
         s<span class="token operator">*=</span>i
     <span class="token keyword">return</span> s
 <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>组合数据类型，如果局部变量未真实创建，则是全局变量</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(2).png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(3).png"></p>
-<h4 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h4><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(4).png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(2" alt="">.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(3" alt="">.png)</p>
+<h4 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h4><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images2323(4" alt="">.png)</p>
 <h3 id="实例：七段数码管绘制"><a href="#实例：七段数码管绘制" class="headerlink" title="实例：七段数码管绘制"></a>实例：七段数码管绘制</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> turtle
 <span class="token keyword">import</span> time
 <span class="token keyword">def</span> <span class="token function">drawGap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -571,7 +583,6 @@ def f">
     turtle<span class="token punctuation">.</span>hideturtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
     turtle<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span>
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="代码复用与函数递归"><a href="#代码复用与函数递归" class="headerlink" title="代码复用与函数递归"></a>代码复用与函数递归</h3><p>汉诺塔1：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">cnt<span class="token operator">=</span><span class="token number">0</span>
 <span class="token keyword">def</span> <span class="token function">han</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -586,7 +597,6 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
         han<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>mid<span class="token punctuation">,</span>dst<span class="token punctuation">,</span>src<span class="token punctuation">)</span>
 han<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>cnt<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="pyinstaller库的使用"><a href="#pyinstaller库的使用" class="headerlink" title="pyinstaller库的使用"></a>pyinstaller库的使用</h3><p>作用：将<code>.py</code>源代码转换成无需源代码的可执行文件</p>
 <p>安装：</p>
 <p><code>pip install pyinstaller -i https://pypi.tuna.tsinghua.edu.cn/simple/</code></p>
@@ -612,7 +622,6 @@ han<span class="token punctuation">(</span><span class="token number">3</span><s
     koch<span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>     <span class="token comment"># 0阶科赫曲线长度，阶数</span>
     turtle<span class="token punctuation">.</span>hideturtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>科赫雪花绘制：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#KochDrawV2.py</span>
 <span class="token keyword">import</span> turtle
@@ -637,7 +646,6 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
     koch<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span>level<span class="token punctuation">)</span>
     turtle<span class="token punctuation">.</span>hideturtle<span class="token punctuation">(</span><span class="token punctuation">)</span>
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248249">https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248249</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248250">https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248250</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248251">https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094145&amp;cid=1215248251</a></p>
@@ -1191,6 +1199,9 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35k</span>
             
             
             
