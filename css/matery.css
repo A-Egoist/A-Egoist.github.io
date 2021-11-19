@@ -241,7 +241,8 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #a5236a 0%, #4c1cbd 100%);
+    opacity: 0.7;  /*透明效果 值范围 0~1，看情况自己修改*/
 }
 
 .text-color {
@@ -564,7 +565,7 @@ header .go-back i {
     display: block;
     left: 0;
     top: 0;
-    content: "";
+    /* content: ""; */
 }
 
 .bg-cover .container {
