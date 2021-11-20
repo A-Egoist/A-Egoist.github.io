@@ -512,7 +512,7 @@
 <p>从上图可以看到，GPU 中有着更多的运算核心，非常适合数据并行的计算密集型任务，比如大型的矩阵计算。</p>
 <h2 id="CUDA-编程模型基础"><a href="#CUDA-编程模型基础" class="headerlink" title="CUDA 编程模型基础"></a>CUDA 编程模型基础</h2><p>在了解了 CUDA 的基本概念之后，还需要了解 CUDA 编程模型的基本概念以便于之后利用 CUDA 编写并行计算程序。</p>
 <p>CUDA 模型时一个异构模型，需要 CPU 和 GPU 协同工作，在 CUDA 中一般用 Host 指代 CPU 及其内存，Device 指代 GPU 及其内存。CUDA 程序中既包含在 Host 上运行的程序，也包含在 Device 上运行的程序，并且 Host 和 Device 之间可以进行通信，如进行数据拷贝等操作。一般的将需要串行执行的程序放在 Host 上执行，需要并行执行的程序放在 Device 上进行。</p>
-<p><img src="CUDA编程入门.assets/image-20211120163002840.png" alt="异构编程"></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211120163002840.png" alt="异构编程"></p>
 <p>CUDA 程序一般的执行流程：</p>
 <ol>
 <li>分配 Host 内存，并进行数据初始化</li>
@@ -534,13 +534,13 @@
     */</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Kernel-的层次结构"><a href="#Kernel-的层次结构" class="headerlink" title="Kernel 的层次结构"></a>Kernel 的层次结构</h3><p>Kernel 在 Device 执行的时候实际上是启动很多线程，这些线程都执行 Kernel 这个函数。其中，由这个 Kernel 启动的所有线程称为一个 grid，同一个 grid 中的线程共享相同的 Global memory，grid 是线程结构的第一个层次。一个 grid 又可以划分为多个 block，每一个 block 包含多个线程，其中的所有线程又共享 Per-block shared memory，block 是线程结构的第二个层次。最后，每一个线程(thread)有着自己的 Per-thread local memory。</p>
-<p><img src="CUDA编程入门.assets/image-20211120170339118.png" alt="线程两层组织结构"></p>
-<p><img src="CUDA编程入门.assets/image-20211120170021535.png" alt="内存层次结构"></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211120170339118.png" alt="线程两层组织结构"></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211120170021535.png" alt="内存层次结构"></p>
 <p>下图是一个线程两层组织结构的示意图，其中 grid 和 block 均为 2-dim 的线程组织。grid 和 block 都是定义为 <code>dim3</code> 类型的变量，<code>dim3</code> 可以看成是包含三个无符号整数(x, y, z)成员的结构体变量，在定义时，缺省值初始化为1。</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">dim3 <span class="token function">grid</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 dim3 <span class="token function">block</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 kernel<span class="token operator">&lt;&lt;</span><span class="token operator">&lt;</span>grid<span class="token punctuation">,</span> block<span class="token operator">>></span><span class="token operator">></span><span class="token punctuation">(</span>parameters<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="CUDA编程入门.assets/v2-aa6aa453ff39aa7078dde59b59b512d8_720w.jpg" alt="img"></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/v2-aa6aa453ff39aa7078dde59b59b512d8_720w.jpg" alt="img"></p>
 <p>从线程的组织结构可以得知，一个线程是由(blockIdx, threadIdx)来唯一标识的，blockIdx 和 threadIdx 都是 <code>dim3</code> 类型的变量，其中 blockIdx 指定线程所在 block 在 grid 中的位置，threadIdx 指定线程在 block 中的位置，如图中的 Thread(2,1) 满足：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c">threadIdx<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 threadIdx<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
