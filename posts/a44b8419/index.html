@@ -570,7 +570,7 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
 <p>Self-attention 会考虑当前输入和全局输入的关系。</p>
 <p>总的来说，Self-attention 可以表述为：给定序列 $\mathbf{x}_{1},\ldots,\mathbf{x}_{n},\forall \mathbf{x}_{i}\in\mathbb{R}^{d}$，自注意力池化层将 $\mathbf{x}_{i}$ 当做 key, value, query 来对序列抽取特征得到  $\mathbf{y}_{1},\ldots,\mathbf{y}_{n}$，这里</p>
 <script type="math/tex; mode=display">
-\mathbf{y}_{i}=f\left(\mathbf{x}_{i},\left(\mathbf{x}_{1}, \mathbf{x}_{1}\right), \ldots,\left(\mathbf{x}_{n}, \mathbf{x}_{n}\right)\right) \in \mathbb{R}^{d}</script><p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211112102751408.png" alt="image-20211112102751408"></p>
+\mathbf{y}_{i}=f\left(\mathbf{x}_{i},\left(\mathbf{x}_{1}, \mathbf{x}_{1}\right), \ldots,\left(\mathbf{x}_{n}, \mathbf{x}_{n}\right)\right) \in \mathbb{R}^{d}</script><p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211112102751408.png" alt=""></p>
 <h3 id="2-2-Self-attention-怎样运作"><a href="#2-2-Self-attention-怎样运作" class="headerlink" title="2.2 Self-attention 怎样运作"></a>2.2 Self-attention 怎样运作</h3><p>对于每一个输入 $a^i$ 在考虑其与全局的关联性之后得到 $b^i$</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211125213823110.png" style="zoom: 67%;" /></p>
 <p>如何计算 $a^1$ 和 $a^2,a^3,a^4$ 的关联性？在 <a href="#1.4 注意力分数">1.4</a> 中介绍的注意力分数计算方法就是用于计算 query 和 key 之间关联性的方法。即常用的 <a href="#1.4.2 Scaled Dot-Product Attention">Dot-product attention</a> 和 <a href="#1.4.1 Additive Attention">Additive attention</a>。</p>
