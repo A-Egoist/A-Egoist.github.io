@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Attention is all you need, 算法，美化，日常，随笔">
-    <meta name="description" content="Attention is all you need1 Attention1.1 什么是 Attention灵长类动物的视觉系统中的视神经接受了⼤量的感官输⼊。在检查视觉场景时，我们的视觉神经系统⼤约每秒收到 $10^8$ 位的信息，这远远超">
+    <meta name="keywords" content="What is attention, 算法，美化，日常，随笔">
+    <meta name="description" content="1 Attention1.1 什么是 Attention灵长类动物的视觉系统中的视神经接受了大量的感官输入。在检查视觉场景时，我们的视觉神经系统大约每秒收到 $10^8$ 位的信息，这远远超过了大脑能够完全处理的水平。但是，并非所有刺激的影">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Attention is all you need | A-Egoist</title>
+    <title>What is attention | A-Egoist</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -320,7 +320,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Attention is all you need</h1>
+                    <h1 class="description center-align post-title">What is attention</h1>
                 </div>
             </div>
         </div>
@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    11 分
                 </div>
                 
 
@@ -509,9 +509,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Attention-is-all-you-need"><a href="#Attention-is-all-you-need" class="headerlink" title="Attention is all you need"></a>Attention is all you need</h1><h2 id="1-Attention"><a href="#1-Attention" class="headerlink" title="1 Attention"></a>1 Attention</h2><h3 id="1-1-什么是-Attention"><a href="#1-1-什么是-Attention" class="headerlink" title="1.1 什么是 Attention"></a>1.1 什么是 Attention</h3><p>灵长类动物的视觉系统中的视神经接受了⼤量的感官输⼊。在检查视觉场景时，我们的视觉神经系统⼤约每秒收到 $10^8$ 位的信息，这远远超过了⼤脑能够完全处理的⽔平。但是，并非所有刺激的影响都是相等的。意识的聚集和专注使灵长类动物能够在复杂的视觉环境中将注意⼒引向感兴趣的物体，例如猎物和天敌。</p>
+                <h2 id="1-Attention"><a href="#1-Attention" class="headerlink" title="1 Attention"></a>1 Attention</h2><h3 id="1-1-什么是-Attention"><a href="#1-1-什么是-Attention" class="headerlink" title="1.1 什么是 Attention"></a>1.1 什么是 Attention</h3><p>灵长类动物的视觉系统中的视神经接受了大量的感官输入。在检查视觉场景时，我们的视觉神经系统大约每秒收到 $10^8$ 位的信息，这远远超过了大脑能够完全处理的水平。但是，并非所有刺激的影响都是相等的。意识的聚集和专注使灵长类动物能够在复杂的视觉环境中将注意力引向感兴趣的物体，例如猎物和天敌。</p>
 <p>在心理学框架中，人类根据<strong>随意(有意识)线索</strong>和<strong>不随意(无意识)线索</strong>选择注意点。下面两张图展现了在<strong>随意线索</strong>和<strong>不随意线索</strong>的影响改下，眼的注意力集中的位置。</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211122155257114.png" alt="基于不随意线索，注意力集中在红色杯子上" style="zoom: 60%;" /><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211122155325467.png" alt="基于随意线索，注意力集中在报纸上" style="zoom:60%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211122155257114.png" alt="基于不随意线索，注意力集中在红色杯子上" style="zoom: 60%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211122155325467.png" alt="基于随意线索，注意力集中在报纸上" style="zoom:60%;" /></p>
 <p>卷积、全连接层、池化层基本上都只考虑<strong>不随意线索</strong>，注意力机制则显示的考虑<strong>随意线索</strong>。</p>
 <p>在注意力机制中，定义以下三点：</p>
 <ul>
@@ -587,7 +588,26 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126110708373.png" style="zoom:67%;" /></p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126110845466.png" style="zoom:67%;" /></p>
 <p>通过上面的几张图可以看出，虽然 Self-attention 中间做了很多复杂的工作，但是在 Self-attention 中需要学习的参数只有 $W^q,W^k,W^v$，其他的参数都是预先设定好的。</p>
-<h3 id="2-3-Multi-head-Self-attention"><a href="#2-3-Multi-head-Self-attention" class="headerlink" title="2.3 Multi-head Self-attention"></a>2.3 Multi-head Self-attention</h3><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://zh-v2.d2l.ai/index.html">《动手学深度学习》</a></p>
+<h3 id="2-3-Multi-head-Self-attention"><a href="#2-3-Multi-head-Self-attention" class="headerlink" title="2.3 Multi-head Self-attention"></a>2.3 Multi-head Self-attention</h3><p>在 Self-attention 中，我们使用 query 去需要相关的 key，但是相关有很多种不同的定义，不同的定义与不同的 query 绑定，即同一个输入需要有多个 query。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126163650293.png" style="zoom:67%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126163718123.png" style="zoom:67%;" /></p>
+<p>在上图中，在 Self-attention 的基础上对于每个 $q^i,k^i,v^i$ 其左乘上一个矩阵可以得到 $q^{i,1},q^{i,2},k^{i,1},k^{i,2},v^{i,1},v^{i,2}$，然后按照 Self-attention 中相同的计算方式可以得到 $b^{i,1},b^{i,2}$。</p>
+<p>然后将得到的 $b^{i,1},b^{i,2}$ 接起来左乘一个矩阵就可以得到 Multi-head Self-attention 的输出 $b^i$。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126170914847.png" alt="image-20211126170914847" style="zoom:80%;" /></p>
+<h3 id="2-4-Position-Encoding"><a href="#2-4-Position-Encoding" class="headerlink" title="2.4 Position Encoding"></a>2.4 Position Encoding</h3><p>因为 Self-attention 考虑的是全局的信息，而且即便输入的顺序改变了，也不会影响输出的结果。但是在实际的应用中，很多时候需要考虑位置信息，例如一个 sequence。因此，为了让 Self-attention 能够考虑到位置信息，为每个输入加上一个 position encoding。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126175153186.png" alt="image-20211126175153186" style="zoom:80%;" /></p>
+<p>其中 $e^i$ 表示在每个输入上增加的 position encoding 信息，对于每个 $a^i$ 都有一个专属的 $e^i$ 与之对应。$e^i$ 产生的方式有很多种，在论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2003.09229.pdf">Learning to Encode Position for Transformer with Continuous Dynamical Model</a> 中提出并比较了 position encoding。</p>
+<h3 id="2-5-Self-attention-for-Image"><a href="#2-5-Self-attention-for-Image" class="headerlink" title="2.5 Self-attention for Image"></a>2.5 Self-attention for Image</h3><p>对于一张 shape = (5, 10, 3) 的 RGB 图片，可以将其看成一个 vector set，其中的每一个 pixel 都可以看成一个 vector (r, g, b)，然后就可以将其放入 Self-attention 模型进行计算。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126182324503.png" style="zoom:80%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215014003.png" alt="image-20211126215014003" style="zoom:67%;" /></p>
+<h2 id="3-Self-attention-v-s-CNN"><a href="#3-Self-attention-v-s-CNN" class="headerlink" title="3 Self-attention v.s. CNN"></a>3 Self-attention v.s. CNN</h2><p>CNN 和 Self-attention 都可以考虑一定范围内的信息，但是 CNN 只能够考虑到感受野内的信息，而 Self-attention 能够考虑到全局的信息。因此可以把 CNN 看做 Self-attention 的简化版本，Self-attention 看做 CNN 的复杂化版本。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215255573.png" style="zoom:80%;" /></p>
+<p>从集合的角度来看，CNN 可以看做是 Self-attention 的子集。在论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1911.03584.pdf">ON THE RELATIONSHIP BETWEEN SELF-ATTENTION AND CONVOLUTIONAL LAYERS</a> 中详细介绍了 Self-attention 和 CNN 的关系。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215729192.png" style="zoom:80%;" /></p>
+<p>从下图(出自论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2010.11929.pdf">AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</a>)中的数据可以看出，利用较小的数据量训练时，CNN 的效果优于 Self-attention，但是随着数据量的增大，Self-attention 的效果越来越好，在数据量达到 300 Million 的时候 Self-attention 的效果会优于 CNN。</p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215900812.png" style="zoom:80%;" /></p>
+<h2 id="4-Summary"><a href="#4-Summary" class="headerlink" title="4 Summary"></a>4 Summary</h2><p>本篇博客对 attention 做了一个基本介绍，然后又介绍了 attention 最常用的一种实现 Self-attention，Self-attention 在 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.03762">Transformer</a> 和 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1810.04805">BERT</a> 中有着举足轻重的地位。我最开始学习 attention 的目的，是为了了解其在 computer vision 方向的应用，所以在之后的博客中我会更加详细的介绍目前 attention 在 computer vision 方向的应用以及遇到的问题。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://zh-v2.d2l.ai/index.html">《动手学深度学习》</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1264y1i7R1?spm_id_from=333.999.0.0">64 注意力机制【动手学深度学习v2】</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Tb4y167rb?spm_id_from=333.999.0.0">65 注意力分数【动手学深度学习v2】</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19o4y1m7mo?spm_id_from=333.999.0.0">67 自注意力【动手学深度学习v2】</a></p>
@@ -740,9 +760,9 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
                 <a href="/posts/a44b8419/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_373.jpg" class="responsive-img" alt="Attention is all you need">
+                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_373.jpg" class="responsive-img" alt="What is attention">
                         
-                        <span class="card-title">Attention is all you need</span>
+                        <span class="card-title">What is attention</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1018,7 +1038,7 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">41.5k</span>
+                        class="white-color">42.2k</span>
             
             
             
