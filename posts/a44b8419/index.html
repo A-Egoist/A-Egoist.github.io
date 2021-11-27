@@ -593,9 +593,9 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126163718123.png" style="zoom:67%;" /></p>
 <p>在上图中，在 Self-attention 的基础上对于每个 $q^i,k^i,v^i$ 其左乘上一个矩阵可以得到 $q^{i,1},q^{i,2},k^{i,1},k^{i,2},v^{i,1},v^{i,2}$，然后按照 Self-attention 中相同的计算方式可以得到 $b^{i,1},b^{i,2}$。</p>
 <p>然后将得到的 $b^{i,1},b^{i,2}$ 接起来左乘一个矩阵就可以得到 Multi-head Self-attention 的输出 $b^i$。</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126170914847.png" alt="image-20211126170914847" style="zoom:80%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126170914847.png" style="zoom:80%;" /></p>
 <h3 id="2-4-Position-Encoding"><a href="#2-4-Position-Encoding" class="headerlink" title="2.4 Position Encoding"></a>2.4 Position Encoding</h3><p>因为 Self-attention 考虑的是全局的信息，而且即便输入的顺序改变了，也不会影响输出的结果。但是在实际的应用中，很多时候需要考虑位置信息，例如一个 sequence。因此，为了让 Self-attention 能够考虑到位置信息，为每个输入加上一个 position encoding。</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126175153186.png" alt="image-20211126175153186" style="zoom:80%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126175153186.png" style="zoom:80%;" /></p>
 <p>其中 $e^i$ 表示在每个输入上增加的 position encoding 信息，对于每个 $a^i$ 都有一个专属的 $e^i$ 与之对应。$e^i$ 产生的方式有很多种，在论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2003.09229.pdf">Learning to Encode Position for Transformer with Continuous Dynamical Model</a> 中提出并比较了 position encoding。</p>
 <h3 id="2-5-Self-attention-for-Image"><a href="#2-5-Self-attention-for-Image" class="headerlink" title="2.5 Self-attention for Image"></a>2.5 Self-attention for Image</h3><p>对于一张 shape = (5, 10, 3) 的 RGB 图片，可以将其看成一个 vector set，其中的每一个 pixel 都可以看成一个 vector (r, g, b)，然后就可以将其放入 Self-attention 模型进行计算。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126182324503.png" style="zoom:80%;" /></p>
