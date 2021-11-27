@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-26
+                    2021-11-27
                 </div>
                 
 
@@ -599,7 +599,7 @@ a\left(\mathbf{q}, \mathbf{k}_i\right)=\left\langle\mathbf{q}, \mathbf{k}_i\righ
 <p>其中 $e^i$ 表示在每个输入上增加的 position encoding 信息，对于每个 $a^i$ 都有一个专属的 $e^i$ 与之对应。$e^i$ 产生的方式有很多种，在论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2003.09229.pdf">Learning to Encode Position for Transformer with Continuous Dynamical Model</a> 中提出并比较了 position encoding。</p>
 <h3 id="2-5-Self-attention-for-Image"><a href="#2-5-Self-attention-for-Image" class="headerlink" title="2.5 Self-attention for Image"></a>2.5 Self-attention for Image</h3><p>对于一张 shape = (5, 10, 3) 的 RGB 图片，可以将其看成一个 vector set，其中的每一个 pixel 都可以看成一个 vector (r, g, b)，然后就可以将其放入 Self-attention 模型进行计算。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126182324503.png" style="zoom:80%;" /></p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215014003.png" alt="image-20211126215014003" style="zoom:67%;" /></p>
+<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215014003.png" style="zoom:67%;" /></p>
 <h2 id="3-Self-attention-v-s-CNN"><a href="#3-Self-attention-v-s-CNN" class="headerlink" title="3 Self-attention v.s. CNN"></a>3 Self-attention v.s. CNN</h2><p>CNN 和 Self-attention 都可以考虑一定范围内的信息，但是 CNN 只能够考虑到感受野内的信息，而 Self-attention 能够考虑到全局的信息。因此可以把 CNN 看做 Self-attention 的简化版本，Self-attention 看做 CNN 的复杂化版本。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211126215255573.png" style="zoom:80%;" /></p>
 <p>从集合的角度来看，CNN 可以看做是 Self-attention 的子集。在论文 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1911.03584.pdf">ON THE RELATIONSHIP BETWEEN SELF-ATTENTION AND CONVOLUTIONAL LAYERS</a> 中详细介绍了 Self-attention 和 CNN 的关系。</p>
