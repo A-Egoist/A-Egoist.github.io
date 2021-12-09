@@ -34,7 +34,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -479,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    834
+                    815
                 </div>
                 
 
@@ -521,16 +523,16 @@
 <p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2%26%5Ccolor%7Bblue%7D3%26%5Ccancel4%26%5Ccolor%7Bblue%7D5%26%5Ccancel6%26%5Ccolor%7Bblue%7D7%26%5Ccancel8%26%5Ccancel%7B9%7D%26%5Ccancel%7B10%7D%26%5Ccolor%7Bblue%7D%7B11%7D%26%5Ccancel%7B12%7D%26%5Ccolor%7Bblue%7D%7B13%7D%26%5Ccancel%7B14%7D%26%5Ccancel%7B15%7D%26%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D" alt=""></p>
 <p>如何？是不是比一个一个判断快多了？这个过程写成代码就是：</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">init_is_prime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment">//n表示上限</span>
-<span class="token punctuation">&#123;</span>
+<span class="token punctuation">{</span>
     <span class="token function">memset</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">//is_prime[0]=0;is_prime[1]=0;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>is_prime<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
         ans<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token comment">//如果是素数的话，就加入ans中</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">+=</span>i<span class="token punctuation">)</span>is_prime<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​        这个算法的复杂度是 <strong>O(n*loglogn)</strong> ，还是非常优秀了。但是我们可能会发现，在筛的过程中我们会重复筛到同一个数，例如12同时被2和3筛到，30同时被2、3和5筛到。所以我们引入<strong>欧拉筛</strong>，也叫<strong>线性筛</strong>，可以在 <strong>O(n)</strong>时间内完成对2~n的筛选。它的核心思想是：<strong>让每一个合数被其最小质因数筛到</strong>。</p>
 <h3 id="欧拉筛"><a href="#欧拉筛" class="headerlink" title="欧拉筛"></a>欧拉筛</h3><p>我们这次除了把2~n列出来，还维护一个<strong>质数表</strong>：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D2%263%264%265%266%267%268%269%2610%2611%2612%2613%2614%2615%2616%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes%3A%7D%5C%3B%28%29" alt=""></p>
@@ -550,58 +552,58 @@
 <p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bmatrix%7D%5Ccolor%7Bblue%7D2%26%5Ccolor%7Bblue%7D3%26%5Ccancel4%26%5Ccolor%7Bblue%7D5%26%5Ccancel6%26%5Ccolor%7Bblue%7D7%26%5Ccancel8%26%5Ccancel9%26%5Ccancel%7B10%7D%26%5Ccolor%7Bblue%7D%7B11%7D%26%5Ccancel%7B12%7D%26%5Ccolor%7Bblue%7D%7B13%7D%26%5Ccancel%7B14%7D%26%5Ccancel%7B15%7D%26%5Ccancel%7B16%7D%5Cend%7Bmatrix%7D+%5C%5C%5Ctext%7Bprimes%3A%7D%5C%3B%282%2C3%2C5%2C7%2C11%2C13%29" alt=""></p>
 <p>详细证明见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100051075">https://zhuanlan.zhihu.com/p/100051075</a></p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token comment">//n表示上限</span>
-<span class="token punctuation">&#123;</span>
+<span class="token punctuation">{</span>
     <span class="token function">memset</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>ans<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>cnt<span class="token operator">&amp;&amp;</span>i<span class="token operator">*</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">{</span>
             is_prime<span class="token punctuation">[</span>i<span class="token operator">*</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>​        还是多多练习欧拉筛吧，$O(n)$还是挺香的，然后还要注意数据读取的优化。</p>
 <h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3383">洛谷P3383 【模板】线性筛素数</a></p>
 <p>AC code</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
 using namespace std<span class="token punctuation">;</span>
 bool is_prime<span class="token punctuation">[</span><span class="token number">100000001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">long</span> <span class="token keyword">long</span> ans<span class="token punctuation">[</span><span class="token number">100000001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
+<span class="token punctuation">{</span>
 	string s<span class="token punctuation">;</span>
-	cin<span class="token operator">>></span>s<span class="token punctuation">;</span>
+	cin<span class="token operator">&gt;&gt;</span>s<span class="token punctuation">;</span>
 	<span class="token keyword">long</span> <span class="token keyword">long</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
 	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-	<span class="token punctuation">&#123;</span>
+	<span class="token punctuation">{</span>
 		sum<span class="token operator">=</span>sum<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">}</span>
 	<span class="token keyword">return</span> sum<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<span class="token punctuation">}</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">long</span> <span class="token keyword">long</span> n<span class="token punctuation">,</span>q<span class="token punctuation">,</span>k<span class="token punctuation">,</span>cnt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//开longlong以防万一</span>
     n<span class="token operator">=</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这样读数据应该快一点</span>
     <span class="token comment">//把函数体放在main里面省去调用函数的时间</span>
     <span class="token function">memset</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>is_prime<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>ans<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>cnt<span class="token operator">&amp;&amp;</span>i<span class="token operator">*</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment">//注意不能越界</span>
-        <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">{</span>
             is_prime<span class="token punctuation">[</span>i<span class="token operator">*</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span>ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">{</span>
         <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lld"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld\n"</span><span class="token punctuation">,</span>ans<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1008,7 +1010,7 @@ bool is_prime<span class="token punctuation">[</span><span class="token number">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.4k</span>
+                        class="white-color">42.5k</span>
             
             
             

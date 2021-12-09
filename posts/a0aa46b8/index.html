@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Python基础(五), 算法，美化，日常，随笔">
     <meta name="description" content="函数和代码复用函数的定义和使用函数的理解与定义函数的使用及调用函数参数的传递可选参数的传递
-def &amp;lt;函数名&gt;(&amp;lt;非可选参数&gt;,&amp;lt;可选参数&gt;):
-    &amp;lt;函数体&gt;
-    return &amp;lt;返回值&gt;
-def f">
+def &amp;lt;函数名&amp;gt;(&amp;lt;非可选参数&amp;gt;,&amp;lt;可选参数&amp;gt;):
+    &amp;lt;函数体&amp;gt;
+    return &amp;l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +33,9 @@ def f">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -475,7 +476,7 @@ def f">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    905
+                    904
                 </div>
                 
 
@@ -506,15 +507,15 @@ def f">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="函数和代码复用"><a href="#函数和代码复用" class="headerlink" title="函数和代码复用"></a>函数和代码复用</h2><h3 id="函数的定义和使用"><a href="#函数的定义和使用" class="headerlink" title="函数的定义和使用"></a>函数的定义和使用</h3><h4 id="函数的理解与定义"><a href="#函数的理解与定义" class="headerlink" title="函数的理解与定义"></a>函数的理解与定义</h4><h4 id="函数的使用及调用"><a href="#函数的使用及调用" class="headerlink" title="函数的使用及调用"></a>函数的使用及调用</h4><h4 id="函数参数的传递"><a href="#函数参数的传递" class="headerlink" title="函数参数的传递"></a>函数参数的传递</h4><p>可选参数的传递</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>函数名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>非可选参数<span class="token operator">></span><span class="token punctuation">,</span><span class="token operator">&lt;</span>可选参数<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token operator">&lt;</span>函数体<span class="token operator">></span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>返回值<span class="token operator">></span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>函数名<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>非可选参数<span class="token operator">&gt;</span><span class="token punctuation">,</span><span class="token operator">&lt;</span>可选参数<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>函数体<span class="token operator">&gt;</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>返回值<span class="token operator">&gt;</span>
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>m<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> n<span class="token operator">//</span>m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可变参数传递</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>函数名<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数<span class="token operator">></span><span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token operator">&lt;</span>函数体<span class="token operator">></span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>返回值<span class="token operator">></span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>函数名<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span><span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>函数体<span class="token operator">&gt;</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>返回值<span class="token operator">&gt;</span>
 <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     s<span class="token operator">=</span><span class="token number">1</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -591,11 +592,11 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
 <span class="token keyword">def</span> <span class="token function">han</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">global</span> cnt
     <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&#123;&#125;:&#123;&#125;->&#123;&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}:{}-&gt;{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">)</span><span class="token punctuation">)</span>
         cnt<span class="token operator">+=</span><span class="token number">1</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         han<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>src<span class="token punctuation">,</span>mid<span class="token punctuation">,</span>dst<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&#123;&#125;:&#123;&#125;->&#123;&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}:{}-&gt;{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>src<span class="token punctuation">,</span>dst<span class="token punctuation">)</span><span class="token punctuation">)</span>
         cnt<span class="token operator">+=</span><span class="token number">1</span>
         han<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>mid<span class="token punctuation">,</span>dst<span class="token punctuation">,</span>src<span class="token punctuation">)</span>
 han<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">)</span>
@@ -1043,7 +1044,7 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.4k</span>
+                        class="white-color">42.5k</span>
             
             
             

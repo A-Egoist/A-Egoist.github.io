@@ -35,7 +35,9 @@ DDL、DML、DCL
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -483,7 +485,7 @@ DDL、DML、DCL
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -507,7 +509,7 @@ DDL、DML、DCL
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="SQL学习笔记"><a href="#SQL学习笔记" class="headerlink" title="SQL学习笔记"></a>SQL学习笔记</h1><h2 id="一、SQL概述"><a href="#一、SQL概述" class="headerlink" title="一、SQL概述"></a>一、SQL概述</h2><p>SQL按其功能可以分为三大部分：</p>
-<font color=green size=5 >数据定义</font>功能、<font color=green size=5 >数据操纵</font>功能和<font color=green size=5 >数据控制</font>功能
+<font color="green" size="5">数据定义</font>功能、<font color="green" size="5">数据操纵</font>功能和<font color="green" size="5">数据控制</font>功能
 DDL、DML、DCL
 
 | SQL功能  | 命令动词                       |
@@ -577,7 +579,7 @@ FILEGROWTH <span class="token operator">=</span> <span class="token number">1</s
 ### 4、创建基本表
 定义基本表的一般格式：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201129134608274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Nlc2FyZUJvcmdpYQ==,size_16,color_FFFFFF,t_70)
-<font color=red size=6>warning</font>
+<font color="red" size="6">warning</font>
 在SQL Server 建立新建查询的时候注意手动选择数据库
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020112913504458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Nlc2FyZUJvcmdpYQ==,size_16,color_FFFFFF,t_70)
 样例：
@@ -593,7 +595,7 @@ Sdept <span class="token keyword">char</span><span class="token punctuation">(</
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201129135622277.png)
 在上面的例子中，我们创建表格的时候没有确立约束条件。
-一个表的约束条件分为两类：<font color=blue size=5>列级约束条件</font>和<font color=blue size=5>表级约束条件</font>。
+一个表的约束条件分为两类：<font color="blue" size="5">列级约束条件</font>和<font color="blue" size="5">表级约束条件</font>。
 #### 1)列级约束条件
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020112914000774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Nlc2FyZUJvcmdpYQ==,size_16,color_FFFFFF,t_70)
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">Sname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token comment">--取值非空</span>
@@ -616,7 +618,7 @@ PRIMARY表级约束：
 Sno <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
 Sname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
 Ssex <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Ssex<span class="token operator">=</span><span class="token string">'男'</span> <span class="token operator">OR</span> Ssex<span class="token operator">=</span><span class="token string">'女'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-Sage <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Sage<span class="token operator">>=</span><span class="token number">15</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;=</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Sage <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Sage<span class="token operator">&gt;=</span><span class="token number">15</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;=</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 Sdept <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'计算机系'</span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201129143229352.png)
@@ -626,9 +628,9 @@ Sdept <span class="token keyword">char</span><span class="token punctuation">(</
 <span class="token punctuation">(</span>
 Cno <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 Cname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-Ccredit <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Ccredit<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-Semester <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Semester<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-Period <span class="token keyword">int</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Period<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Ccredit <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Ccredit<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Semester <span class="token keyword">tinyint</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Semester<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Period <span class="token keyword">int</span> <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Period<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>Cno<span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201129143241897.png)
@@ -639,7 +641,7 @@ Period <span class="token keyword">int</span> <span class="token keyword">CHECK<
 Sno <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
 Cno <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
 Grade <span class="token keyword">tinyint</span><span class="token punctuation">,</span>
-<span class="token keyword">CHECK</span><span class="token punctuation">(</span>Grade<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">AND</span> Grade <span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">CHECK</span><span class="token punctuation">(</span>Grade<span class="token operator">&gt;=</span><span class="token number">0</span> <span class="token operator">AND</span> Grade <span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>Sno<span class="token punctuation">,</span>Cno<span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>Sno<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Student<span class="token punctuation">(</span>Sno<span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>Cno<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Course<span class="token punctuation">(</span>Cno<span class="token punctuation">)</span>
@@ -678,7 +680,7 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
 
 <span class="token comment">--添加检查约束</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Student
-<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> CK_S <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Sage<span class="token operator">></span><span class="token number">15</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token comment">--ADD CONSTRAINT 约束名 CHECK(约束表达式)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> CK_S <span class="token keyword">CHECK</span><span class="token punctuation">(</span>Sage<span class="token operator">&gt;</span><span class="token number">15</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token comment">--ADD CONSTRAINT 约束名 CHECK(约束表达式)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ### 6、删除基本表
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> 表<span class="token number">1</span><span class="token punctuation">[</span><span class="token punctuation">,</span>表<span class="token number">2</span><span class="token punctuation">,</span>表<span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> Student<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -714,12 +716,12 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">--比较</span>
 <span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sdept<span class="token operator">=</span><span class="token string">'IS'</span>
 <span class="token keyword">SELECT</span> Sname<span class="token punctuation">,</span>Sage <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage<span class="token operator">&lt;</span><span class="token number">20</span>
-<span class="token keyword">SELECT</span> Sname<span class="token punctuation">,</span>Sage <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> <span class="token operator">NOT</span> Sage<span class="token operator">>=</span><span class="token number">20</span>
+<span class="token keyword">SELECT</span> Sname<span class="token punctuation">,</span>Sage <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> <span class="token operator">NOT</span> Sage<span class="token operator">&gt;=</span><span class="token number">20</span>
 <span class="token comment">--范围</span>
 <span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage <span class="token operator">BETWEEN</span> <span class="token number">20</span> <span class="token operator">AND</span> <span class="token number">23</span>
-<span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage<span class="token operator">>=</span><span class="token number">20</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;=</span><span class="token number">23</span>
+<span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage<span class="token operator">&gt;=</span><span class="token number">20</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;=</span><span class="token number">23</span>
 <span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage <span class="token operator">NOT</span> <span class="token operator">BETWEEN</span> <span class="token number">20</span> <span class="token operator">AND</span> <span class="token number">23</span>
-<span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage<span class="token operator">&lt;</span><span class="token number">20</span> <span class="token operator">OR</span> Sage<span class="token operator">></span><span class="token number">23</span>
+<span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sage<span class="token operator">&lt;</span><span class="token number">20</span> <span class="token operator">OR</span> Sage<span class="token operator">&gt;</span><span class="token number">23</span>
 <span class="token comment">--集合</span>
 <span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sdept <span class="token operator">IN</span><span class="token punctuation">(</span><span class="token string">'IS'</span><span class="token punctuation">,</span><span class="token string">'MA'</span><span class="token punctuation">,</span><span class="token string">'CS'</span><span class="token punctuation">)</span>
 <span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sdept <span class="token operator">NOT</span> <span class="token operator">IN</span><span class="token punctuation">(</span><span class="token string">'IS'</span><span class="token punctuation">,</span><span class="token string">'MA'</span><span class="token punctuation">,</span><span class="token string">'CS'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -744,7 +746,7 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
 其中`AND`的优先级高于`OR`
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Sname <span class="token keyword">FROM</span> Student <span class="token keyword">WHERE</span> Sdept<span class="token operator">=</span><span class="token string">'IS'</span> <span class="token operator">AND</span> Sage<span class="token operator">&lt;</span><span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 #### 8)`ORDER BY`
-`ORDER BY <列名> [ASC | DESC][,<列名>···]`
+`ORDER BY &lt;列名&gt; [ASC | DESC][,&lt;列名&gt;···]`
 可以按一个或多个属性列排序
 `ASC`：升序、`DESC`降序、缺省值为升序
 当排序列含空值时：
@@ -756,11 +758,11 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
 #### 10)聚集函数
 聚集函数也称为集合函数或聚合函数、计算函数，其作用是对一组值进行计算并返回一个单值。SQL提供的聚合函数有：
 `COUNT(*)`：统计表中元组个数
-`COUNT(<列名>)`：统计本列列值个数
-`SUM(<列名>)`：计算列值综合
-`AVG(<列名>)`：计算列值平均值
-`MAX(<列名>)`：求列值最大值
-`MIN(<列名>)`：求列值最小值
+`COUNT(&lt;列名&gt;)`：统计本列列值个数
+`SUM(&lt;列名&gt;)`：计算列值综合
+`AVG(&lt;列名&gt;)`：计算列值平均值
+`MAX(&lt;列名&gt;)`：求列值最大值
+`MIN(&lt;列名&gt;)`：求列值最小值
 除`COUNT(*)`外，其他函数在计算过程中均忽略`NULL`值
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> 总人数 <span class="token keyword">FROM</span> Student
 <span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Sno<span class="token punctuation">)</span> 选课人数 <span class="token keyword">FROM</span> SC
@@ -768,17 +770,17 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
 <span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> 平均成绩 <span class="token keyword">FROM</span> SC <span class="token keyword">WHERE</span> Cno<span class="token operator">=</span><span class="token string">'C01'</span>
 <span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> 最高分 <span class="token keyword">FROM</span> SC <span class="token keyword">WHERE</span> Cno<span class="token operator">=</span><span class="token string">'C01'</span>
 <span class="token keyword">SELECT</span> <span class="token function">MIN</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> 最低分 <span class="token keyword">FROM</span> SC <span class="token keyword">WHERE</span> Cno<span class="token operator">=</span><span class="token string">'C01'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<font color=red>聚合函数不能出现在WHERE子句中</font>
+<font color="red">聚合函数不能出现在WHERE子句中</font>
 #### 11)`GROUP BY`
 `GROUP BY`可将计算控制在组一级，分组的目的是细化计算函数的作用对象
 分组语句位置在`WHERE`子句的后边，一般形式为：
-`GROUP BY <分组依据列>`
-`[HAVING <组过滤条件>]`
+`GROUP BY &lt;分组依据列&gt;`
+`[HAVING &lt;组过滤条件&gt;]`
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Cno 课程号<span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>Sno<span class="token punctuation">)</span> 选课人数 <span class="token keyword">FROM</span> SC <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Cno
 <span class="token keyword">SELECT</span> Sno 学号<span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>Cno<span class="token punctuation">)</span> 选课门数<span class="token punctuation">,</span><span class="token function">AVG</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> 平均成绩 
 <span class="token keyword">FROM</span> SC <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Sno<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<font size=6 color=blue>暂时只学到了这里，之后再更新o(╥﹏╥)o</font>
+<font size="6" color="blue">暂时只学到了这里，之后再更新o(╥﹏╥)o</font>
 
 <h4 id="12-其他"><a href="#12-其他" class="headerlink" title="12)其他"></a>12)其他</h4><h3 id="2、数据更改"><a href="#2、数据更改" class="headerlink" title="2、数据更改"></a>2、数据更改</h3><h2 id="四、SQL数据控制"><a href="#四、SQL数据控制" class="headerlink" title="四、SQL数据控制"></a>四、SQL数据控制</h2>
                 
@@ -1166,7 +1168,7 @@ Grade <span class="token keyword">tinyint</span><span class="token punctuation">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.4k</span>
+                        class="white-color">42.5k</span>
             
             
             

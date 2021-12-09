@@ -38,7 +38,9 @@ time库包含三类函数
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -479,7 +481,7 @@ time库包含三类函数
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    726
+                    719
                 </div>
                 
 
@@ -532,15 +534,15 @@ time库包含三类函数
 <tbody>
 <tr>
 <td>time()</td>
-<td>获取当前时间戳，即计算机内部时间值，浮点数<br />&gt;&gt;&gt;time.time()<br />1581250590.4828136</td>
+<td>获取当前时间戳，即计算机内部时间值，浮点数<br>&gt;&gt;&gt;time.time()<br>1581250590.4828136</td>
 </tr>
 <tr>
 <td>ctime()</td>
-<td>获取当前时间并以易读方式表示，返回字符串<br />&gt;&gt;&gt;time.ctime()<br />“Sun Feb  9 20:17:35 2020”</td>
+<td>获取当前时间并以易读方式表示，返回字符串<br>&gt;&gt;&gt;time.ctime()<br>“Sun Feb  9 20:17:35 2020”</td>
 </tr>
 <tr>
 <td>gmtime()</td>
-<td>获取当前时间，表示为计算机可处理的时间格式<br />&gt;&gt;&gt;time.gmtime()<br />time.struct_time(tm_year=2020, tm_mon=2, <br />tm_mday=9, tm_hour=12, tm_min=18, tm_sec=27, <br />tm_wday=6, tm_yday=40, tm_isdst=0)</td>
+<td>获取当前时间，表示为计算机可处理的时间格式<br>&gt;&gt;&gt;time.gmtime()<br>time.struct_time(tm_year=2020, tm_mon=2, <br>tm_mday=9, tm_hour=12, tm_min=18, tm_sec=27, <br>tm_wday=6, tm_yday=40, tm_isdst=0)</td>
 </tr>
 </tbody>
 </table>
@@ -562,11 +564,11 @@ time库包含三类函数
 <tbody>
 <tr>
 <td>strftime(tpl,ts)</td>
-<td>tpl是格式化模板字符串，用来定义输出效果<br />ts是计算机内部时间类型变量<br />&gt;&gt;&gt;t = time.gmtime()<br />&gt;&gt;&gt;time.strftime(“%Y-%m-%d %H:%M:%S”,t)<br />“2020-02-09 12:22:49”</td>
+<td>tpl是格式化模板字符串，用来定义输出效果<br>ts是计算机内部时间类型变量<br>&gt;&gt;&gt;t = time.gmtime()<br>&gt;&gt;&gt;time.strftime(“%Y-%m-%d %H:%M:%S”,t)<br>“2020-02-09 12:22:49”</td>
 </tr>
 <tr>
 <td>strptime(str,tpl)</td>
-<td>str是字符串形式的时间值<br />tpl是格式化模板字符串，用来定义输入效果<br />&gt;&gt;&gt;timestr = “2020-02-09 12:22:49”<br />&gt;&gt;&gt;time.strptime(timestr,”%Y-%m-%d %H:%M:%S”)<br />time.struct_time(tm_year=2020, tm_mon=2, <br />tm_mday=9, tm_hour=12, tm_min=22, tm_sec=49, <br />tm_wday=6, tm_yday=40, tm_isdst=-1)</td>
+<td>str是字符串形式的时间值<br>tpl是格式化模板字符串，用来定义输入效果<br>&gt;&gt;&gt;timestr = “2020-02-09 12:22:49”<br>&gt;&gt;&gt;time.strptime(timestr,”%Y-%m-%d %H:%M:%S”)<br>time.struct_time(tm_year=2020, tm_mon=2, <br>tm_mday=9, tm_hour=12, tm_min=22, tm_sec=49, <br>tm_wday=6, tm_yday=40, tm_isdst=-1)</td>
 </tr>
 </tbody>
 </table>
@@ -660,11 +662,11 @@ time库包含三类函数
 <tbody>
 <tr>
 <td>per_counter()</td>
-<td>返回一个CPU级别的精准时间计数值，单位为秒<br />由于这个计数值七点不确定，连续调用差值才有意义<br />&gt;&gt;&gt;start = time.perf_counter()<br />42.6483905<br />&gt;&gt;&gt;end = time.perf_counter()<br />62.1302614<br />&gt;&gt;&gt;end - start<br />19.481870900000004</td>
+<td>返回一个CPU级别的精准时间计数值，单位为秒<br>由于这个计数值七点不确定，连续调用差值才有意义<br>&gt;&gt;&gt;start = time.perf_counter()<br>42.6483905<br>&gt;&gt;&gt;end = time.perf_counter()<br>62.1302614<br>&gt;&gt;&gt;end - start<br>19.481870900000004</td>
 </tr>
 <tr>
 <td>sleep(s)</td>
-<td>s拟休眠的时间，单位是秒，可以是浮点数<br />&gt;&gt;&gt;def wait():<br />              time.sleep(5)<br />&gt;&gt;&gt;wait() #程序将等待5秒后再退出</td>
+<td>s拟休眠的时间，单位是秒，可以是浮点数<br>&gt;&gt;&gt;def wait():<br>              time.sleep(5)<br>&gt;&gt;&gt;wait() #程序将等待5秒后再退出</td>
 </tr>
 </tbody>
 </table>
@@ -678,7 +680,7 @@ start <span class="token operator">=</span> time<span class="token punctuation">
     b <span class="token operator">=</span> <span class="token string">'.'</span> <span class="token operator">*</span> <span class="token punctuation">(</span>scale <span class="token operator">-</span> i<span class="token punctuation">)</span>
     c <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">/</span> scale<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span>
     dur <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\r&#123;:^3.0f&#125;%[&#123;&#125;->&#123;&#125;]&#123;:.2f&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>dur<span class="token punctuation">)</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\r{:^3.0f}%[{}-&gt;{}]{:.2f}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>dur<span class="token punctuation">)</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span>
     time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token operator">+</span><span class="token string">"执行结束"</span><span class="token punctuation">.</span>center<span class="token punctuation">(</span>scale<span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094131&amp;cid=1215248185">https://www.icourse163.org/learn/BIT-268001?tid=1207014257#/learn/content?type=detail&amp;id=1212094131&amp;cid=1215248185</a></p>
@@ -1068,7 +1070,7 @@ start <span class="token operator">=</span> time<span class="token punctuation">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.4k</span>
+                        class="white-color">42.5k</span>
             
             
             
