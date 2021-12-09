@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="CUDA view GPU information, 算法，美化，日常，随笔">
     <meta name="description" content="CUDA view GPU information详细代码如下所示：
-#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;time.h&amp;gt;
-#include &amp;lt;math.h&amp;gt;
-#include &#34;cu">
+#include &amp;lt;stdio.h&gt;
+#include &amp;lt;time.h&gt;
+#include &amp;lt;math.h&gt;
+#include &#34;cuda_runtim">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,9 +34,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -481,7 +479,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    99
+                    98
                 </div>
                 
 
@@ -512,15 +510,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="CUDA-view-GPU-information"><a href="#CUDA-view-GPU-information" class="headerlink" title="CUDA view GPU information"></a>CUDA view GPU information</h1><p>详细代码如下所示：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;time.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;math.h&gt;</span></span>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;time.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;math.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"cuda_runtime.h"</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"device_launch_parameters.h"</span></span>
 
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token punctuation">&#123;</span>
     cudaDeviceProp deviceProp<span class="token punctuation">;</span>
     <span class="token function">cudaGetDeviceProperties</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>deviceProp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"设备名称与型号: %s\n"</span><span class="token punctuation">,</span> deviceProp<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -528,7 +526,7 @@
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"含有的SM数量: %d\n"</span><span class="token punctuation">,</span> deviceProp<span class="token punctuation">.</span>multiProcessorCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"CUDA CORE数量: %d\n"</span><span class="token punctuation">,</span> deviceProp<span class="token punctuation">.</span>multiProcessorCount <span class="token operator">*</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"计算能力: %d.%d\n"</span><span class="token punctuation">,</span> deviceProp<span class="token punctuation">.</span>major<span class="token punctuation">,</span> deviceProp<span class="token punctuation">.</span>minor<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -967,7 +965,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

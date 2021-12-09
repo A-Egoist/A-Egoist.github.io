@@ -32,9 +32,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -483,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
@@ -590,7 +588,7 @@ sess<span class="token punctuation">.</span>run<span class="token punctuation">(
 
 <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>train_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> xs<span class="token punctuation">,</span>ys <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>y_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        _<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>x<span class="token punctuation">:</span> xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span> ys<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        _<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span> xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span> ys<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
     bOtemp<span class="token operator">=</span>b<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     wOtemp<span class="token operator">=</span>w<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>wOtemp<span class="token operator">*</span>x_data<span class="token operator">+</span>bOtemp<span class="token punctuation">)</span><span class="token comment"># 画图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -608,7 +606,7 @@ plt<span class="token punctuation">.</span>legend<span class="token punctuation"
 <h3 id="利用学习到的模型进行预测"><a href="#利用学习到的模型进行预测" class="headerlink" title="利用学习到的模型进行预测"></a>利用学习到的模型进行预测</h3><p>预测方法一：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x_test<span class="token operator">=</span><span class="token number">3.21</span>
 
-predict<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>pred<span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>x<span class="token punctuation">:</span>x_test<span class="token punctuation">}</span><span class="token punctuation">)</span>
+predict<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>pred<span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>x_test<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"预测值：%f"</span><span class="token operator">%</span>predict<span class="token punctuation">)</span>
 
 target<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>x_test<span class="token operator">+</span><span class="token number">1.0</span>
@@ -632,7 +630,7 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
 
 <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>train_epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> xs<span class="token punctuation">,</span>ys <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>x_data<span class="token punctuation">,</span>y_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        _<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>x<span class="token punctuation">:</span> xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span> ys<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        _<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span> xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span> ys<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
         <span class="token comment"># 显示损失值 loss</span>
         <span class="token comment"># display_step: 控制报告粒度</span>
         <span class="token comment"># 例如，如果display_step设为2，则将每训练2个样本输出一次损失值</span>
@@ -641,7 +639,7 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
         step<span class="token operator">+=</span><span class="token number">1</span>
         <span class="token keyword">if</span> step<span class="token operator">%</span>display_step<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Train Epoch:"</span><span class="token punctuation">,</span><span class="token string">"%02d"</span><span class="token operator">%</span><span class="token punctuation">(</span>epoch<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"step:%03d"</span><span class="token operator">%</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"loss="</span><span class="token punctuation">,</span>\
-                 <span class="token string">"{:.9f}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>loss<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                 <span class="token string">"&#123;:.9f&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>loss<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
     bOtemp<span class="token operator">=</span>b<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
     wOtemp<span class="token operator">=</span>w<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span>session<span class="token operator">=</span>sess<span class="token punctuation">)</span>
@@ -655,7 +653,7 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
 <p>输出展示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagestensdan(5" alt="">.png)</p>
 <p>输出异常点：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span>x <span class="token keyword">for</span> x <span class="token keyword">in</span> loss_list <span class="token keyword">if</span> x<span class="token operator">&gt;</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span>x <span class="token keyword">for</span> x <span class="token keyword">in</span> loss_list <span class="token keyword">if</span> x<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>输出展示：</p>
 <blockquote>
 <p>[1.0133754, 1.2284044, 1.0088208, 1.2116321, 2.3539772, 2.3148305, 1.3175836, 1.0387748, 1.5018207, 1.547514, 1.5513999, 1.5517284, 1.5517554, 1.5517581, 1.5517581, 1.5517581, 1.5517581]</p>
@@ -1062,7 +1060,7 @@ loss_list<span class="token operator">=</span><span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

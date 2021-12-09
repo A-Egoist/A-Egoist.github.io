@@ -30,9 +30,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -481,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    640
+                    644
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -575,7 +573,7 @@ init<span class="token operator">=</span>tf<span class="token punctuation">.</sp
         xs<span class="token operator">=</span>xs<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span>
         ys<span class="token operator">=</span>ys<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
         
-        _<span class="token punctuation">,</span>summary_str<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>sum_loss_op<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>x<span class="token punctuation">:</span>xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span>ys<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        _<span class="token punctuation">,</span>summary_str<span class="token punctuation">,</span>loss<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>optimizer<span class="token punctuation">,</span>sum_loss_op<span class="token punctuation">,</span>loss_function<span class="token punctuation">]</span><span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>xs<span class="token punctuation">,</span>y<span class="token punctuation">:</span>ys<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
         
         writer<span class="token punctuation">.</span>add_summary<span class="token punctuation">(</span>summary_str<span class="token punctuation">,</span>epoch<span class="token punctuation">)</span>
         loss_sum<span class="token operator">=</span>loss_sum<span class="token operator">+</span>loss
@@ -596,7 +594,7 @@ init<span class="token operator">=</span>tf<span class="token punctuation">.</sp
 x_test<span class="token operator">=</span>x_data<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
 
 x_test<span class="token operator">=</span>x_test<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span>
-predict<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>pred<span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>x<span class="token punctuation">:</span>x_test<span class="token punctuation">}</span><span class="token punctuation">)</span>
+predict<span class="token operator">=</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>pred<span class="token punctuation">,</span>feed_dict<span class="token operator">=</span><span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span>x_test<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"预测值：%f"</span><span class="token operator">%</span>predict<span class="token punctuation">)</span>
 
 target<span class="token operator">=</span>y_data<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
@@ -1015,7 +1013,7 @@ target<span class="token operator">=</span>y_data<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

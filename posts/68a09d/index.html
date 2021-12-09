@@ -31,9 +31,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -482,7 +480,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    405
+                    419
                 </div>
                 
 
@@ -520,45 +518,45 @@
 <p>具体构造图示：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29519041/article/details/81428934">链接</a></p>
 <h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>定义结点类型</p>
 <pre class="line-numbers language-C" data-language="C"><code class="language-C">typedef struct
-{
+&#123;
     int weight,parent,lchild,rchild;
-}HTNode;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;HTNode;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>构造算法</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">CreatHuffmanTree</span><span class="token punctuation">(</span>HTNode <span class="token operator">*</span>ht<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>l<span class="token punctuation">,</span>r<span class="token punctuation">,</span>min_1<span class="token punctuation">,</span>min_2<span class="token punctuation">;</span>
     <span class="token comment">//初始化</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>parent<span class="token operator">=</span>ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>lchild<span class="token operator">=</span>ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rchild<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span>n<span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-	<span class="token punctuation">{</span>
+	<span class="token punctuation">&#123;</span>
 		min_1<span class="token operator">=</span>min_2<span class="token operator">=</span><span class="token number">9999999</span><span class="token punctuation">;</span>
 		l<span class="token operator">=</span>r<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token comment">//找到权值最小的两个结点</span>
 		<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-		<span class="token punctuation">{</span>
+		<span class="token punctuation">&#123;</span>
 			<span class="token keyword">if</span><span class="token punctuation">(</span>ht<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-			<span class="token punctuation">{</span>
+			<span class="token punctuation">&#123;</span>
 				<span class="token keyword">if</span><span class="token punctuation">(</span>ht<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token operator">&lt;</span>min_1<span class="token punctuation">)</span>
-				<span class="token punctuation">{</span>
+				<span class="token punctuation">&#123;</span>
 					min_2<span class="token operator">=</span>min_1<span class="token punctuation">;</span>
 					r<span class="token operator">=</span>l<span class="token punctuation">;</span>
 					min_1<span class="token operator">=</span>ht<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token punctuation">;</span>
 					l<span class="token operator">=</span>j<span class="token punctuation">;</span>
-				<span class="token punctuation">}</span>
+				<span class="token punctuation">&#125;</span>
 				<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>ht<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token operator">&lt;</span>min_2<span class="token punctuation">)</span>
-				<span class="token punctuation">{</span>
+				<span class="token punctuation">&#123;</span>
 					min_2<span class="token operator">=</span>ht<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token punctuation">;</span>
 					r<span class="token operator">=</span>j<span class="token punctuation">;</span>
-				<span class="token punctuation">}</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
 		ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token operator">=</span>ht<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token operator">+</span>ht<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token punctuation">;</span>
 		ht<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">.</span>parent<span class="token operator">=</span>ht<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">.</span>parent<span class="token operator">=</span>i<span class="token punctuation">;</span>
 		ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>lchild<span class="token operator">=</span>l<span class="token punctuation">;</span>
 		ht<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>rchild<span class="token operator">=</span>r<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesQQ图片20200622113021.png" alt=""></p>
 
                 
@@ -954,7 +952,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

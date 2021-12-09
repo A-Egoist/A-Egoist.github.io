@@ -36,9 +36,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -653,43 +651,43 @@ c<span class="token punctuation">.</span>to_file<span class="token punctuation">
 <tbody>
 <tr>
 <td>width</td>
-<td>置顶词云对象生成图片的宽度，默认400像素<br>&gt;&gt;&gt;w=wordcloud.WordCloud(width=600)</td>
+<td>置顶词云对象生成图片的宽度，默认400像素<br />&gt;&gt;&gt;w=wordcloud.WordCloud(width=600)</td>
 </tr>
 <tr>
 <td>height</td>
-<td>指定词云对象生成图片的高度，默认200像素<br>&gt;&gt;&gt;w=wordcloud.WordCloud(height=400)</td>
+<td>指定词云对象生成图片的高度，默认200像素<br />&gt;&gt;&gt;w=wordcloud.WordCloud(height=400)</td>
 </tr>
 <tr>
 <td>min_font_size</td>
-<td>指定词云中字体的最小字号，默认4号<br>&gt;&gt;&gt;w=wordcloud.wordCloud(min_font_size=10)</td>
+<td>指定词云中字体的最小字号，默认4号<br />&gt;&gt;&gt;w=wordcloud.wordCloud(min_font_size=10)</td>
 </tr>
 <tr>
 <td>max_font_size</td>
-<td>指定词云中字体的最大字号，根据高度自动调节<br>&gt;&gt;&gt;w=wordcloud.wordCloud(max_font_size=20)</td>
+<td>指定词云中字体的最大字号，根据高度自动调节<br />&gt;&gt;&gt;w=wordcloud.wordCloud(max_font_size=20)</td>
 </tr>
 <tr>
 <td>font_step</td>
-<td>指定词云中字体字号的步进间隔，默认为1<br>&gt;&gt;&gt;w=wordcloud.wordCloud(font_step=2)</td>
+<td>指定词云中字体字号的步进间隔，默认为1<br />&gt;&gt;&gt;w=wordcloud.wordCloud(font_step=2)</td>
 </tr>
 <tr>
 <td>font_path</td>
-<td>指定字体文件的路径，默认None<br>&gt;&gt;&gt;w=wordcloud.wordCloud(font_path=”msyh.ttc”)</td>
+<td>指定字体文件的路径，默认None<br />&gt;&gt;&gt;w=wordcloud.wordCloud(font_path=”msyh.ttc”)</td>
 </tr>
 <tr>
 <td>max_words</td>
-<td>指定词云显示的最大单词数量，默认200<br>&gt;&gt;&gt;w=wordcloud.wordCloud(max_words=20)</td>
+<td>指定词云显示的最大单词数量，默认200<br />&gt;&gt;&gt;w=wordcloud.wordCloud(max_words=20)</td>
 </tr>
 <tr>
 <td>stop_words</td>
-<td>指定词云的排出词列表，即不显示的单词列表<br>&gt;&gt;&gt;w=wordcloud.wordCloud(stop_words={“python”})</td>
+<td>指定词云的排出词列表，即不显示的单词列表<br />&gt;&gt;&gt;w=wordcloud.wordCloud(stop_words={“python”})</td>
 </tr>
 <tr>
 <td>mask</td>
-<td>指定词云形状，默认为长方形，需要引用imread()函数<br>&gt;&gt;&gt;from scipy.misc import imread<br>mk=imread(“pic.png”)<br>&gt;&gt;&gt;w=wordcloud.wordCloud(mask=mk)</td>
+<td>指定词云形状，默认为长方形，需要引用imread()函数<br />&gt;&gt;&gt;from scipy.misc import imread<br />mk=imread(“pic.png”)<br />&gt;&gt;&gt;w=wordcloud.wordCloud(mask=mk)</td>
 </tr>
 <tr>
 <td>background_color</td>
-<td>指定词云图片的背景颜色，默认为黑色<br>&gt;&gt;&gt;w=wordcloud.wordCloud(background_color=”white”)</td>
+<td>指定词云图片的背景颜色，默认为黑色<br />&gt;&gt;&gt;w=wordcloud.wordCloud(background_color=”white”)</td>
 </tr>
 </tbody>
 </table>
@@ -723,9 +721,9 @@ w<span class="token punctuation">.</span>to_file<span class="token punctuation">
 
 <span class="token keyword">def</span> <span class="token function">printSummary</span><span class="token punctuation">(</span>winsA<span class="token punctuation">,</span>winsB<span class="token punctuation">)</span><span class="token punctuation">:</span>
     n<span class="token operator">=</span>winsA<span class="token operator">+</span>winsB
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"竞技分析开始，共模拟{}场比赛"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"选手A获胜{}场比赛，占比{:0.1%}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>winsA<span class="token punctuation">,</span>winsA<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"选手B获胜{}场比赛，占比{:0.1%}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>winsB<span class="token punctuation">,</span>winsB<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"竞技分析开始，共模拟&#123;&#125;场比赛"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"选手A获胜&#123;&#125;场比赛，占比&#123;:0.1%&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>winsA<span class="token punctuation">,</span>winsA<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"选手B获胜&#123;&#125;场比赛，占比&#123;:0.1%&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>winsB<span class="token punctuation">,</span>winsB<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">gameOver</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> a<span class="token operator">==</span><span class="token number">15</span> <span class="token keyword">or</span> b<span class="token operator">==</span><span class="token number">15</span>
@@ -750,7 +748,7 @@ w<span class="token punctuation">.</span>to_file<span class="token punctuation">
     winsA<span class="token punctuation">,</span>winsB<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
         scoreA<span class="token punctuation">,</span>scoreB<span class="token operator">=</span>simOneGame<span class="token punctuation">(</span>proA<span class="token punctuation">,</span>proB<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> scoreA<span class="token operator">&gt;</span>scoreB<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> scoreA<span class="token operator">></span>scoreB<span class="token punctuation">:</span>
             winsA<span class="token operator">+=</span><span class="token number">1</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             winsB<span class="token operator">+=</span><span class="token number">1</span>
@@ -776,10 +774,10 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
 </blockquote>
 <p>集成安装：<a target="_blank" rel="noopener" href="https://www.continuum.io">Anaconda</a></p>
 <h2 id="第三方库安装脚本"><a href="#第三方库安装脚本" class="headerlink" title="第三方库安装脚本"></a>第三方库安装脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
-libs <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"numpy"</span><span class="token punctuation">,</span><span class="token string">"matplotlib"</span><span class="token punctuation">,</span><span class="token string">"pillow"</span><span class="token punctuation">,</span><span class="token string">"sklearn"</span><span class="token punctuation">,</span><span class="token string">"requests"</span><span class="token punctuation">,</span>\
+libs <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"numpy"</span><span class="token punctuation">,</span><span class="token string">"matplotlib"</span><span class="token punctuation">,</span><span class="token string">"pillow"</span><span class="token punctuation">,</span><span class="token string">"sklearn"</span><span class="token punctuation">,</span><span class="token string">"requests"</span><span class="token punctuation">,</span>\
         <span class="token string">"jieba"</span><span class="token punctuation">,</span><span class="token string">"beautifulsoup4"</span><span class="token punctuation">,</span><span class="token string">"wheel"</span><span class="token punctuation">,</span><span class="token string">"networkx"</span><span class="token punctuation">,</span><span class="token string">"sympy"</span><span class="token punctuation">,</span>\
         <span class="token string">"pyinstaller"</span><span class="token punctuation">,</span><span class="token string">"django"</span><span class="token punctuation">,</span><span class="token string">"flask"</span><span class="token punctuation">,</span><span class="token string">"werobot"</span><span class="token punctuation">,</span><span class="token string">"pyqt5"</span><span class="token punctuation">,</span>\
-        <span class="token string">"pandas"</span><span class="token punctuation">,</span><span class="token string">"pyopengl"</span><span class="token punctuation">,</span><span class="token string">"pypdf2"</span><span class="token punctuation">,</span><span class="token string">"docopt"</span><span class="token punctuation">,</span><span class="token string">"pygame"</span><span class="token punctuation">}</span>
+        <span class="token string">"pandas"</span><span class="token punctuation">,</span><span class="token string">"pyopengl"</span><span class="token punctuation">,</span><span class="token string">"pypdf2"</span><span class="token punctuation">,</span><span class="token string">"docopt"</span><span class="token punctuation">,</span><span class="token string">"pygame"</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">try</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> lib <span class="token keyword">in</span> libs<span class="token punctuation">:</span>
         os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"pip3 install "</span><span class="token operator">+</span>lib<span class="token punctuation">)</span>
@@ -1174,7 +1172,7 @@ libs <span class="token operator">=</span> <span class="token punctuation">{</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

@@ -31,9 +31,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -474,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -511,28 +509,28 @@
 <h2 id="LaTex基础"><a href="#LaTex基础" class="headerlink" title="LaTex基础"></a>LaTex基础</h2><h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>LaTex 语言是以反斜杠 <code>\</code> 开头的宏标记语言</p>
 <p>注释以<code>%</code> 开头，若需要输入 <code>%</code> 则需要用 <code>\</code> 进行转义</p>
 <p>按照惯例，输出一个 <code>Hello world</code></p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span><span class="token comment">%文章类型为article，此外除了article之外还有：book，report</span>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span><span class="token comment">%文章类型为article，此外除了article之外还有：book，report</span>
 <span class="token comment">%导言区</span>
 <span class="token comment">%你可以将导言区理解为是对整篇文档进行设置的区域</span>
 <span class="token comment">%在导言区出现的控制序列，往往会影响整篇文档的格式。</span>
 <span class="token comment">%比如，我们通常在导言区设置页面大小、页眉页脚样式、章节标题样式等等。</span>
-<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span><span class="token comment">%文章开始的部分，只有位于document中的内容才会在PDF文件中显示</span>
+<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span class="token comment">%文章开始的部分，只有位于document中的内容才会在PDF文件中显示</span>
     Hello, world!<span class="token comment">%我们需要在PDF文件中显示的内容</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span><span class="token comment">%文章的结尾</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span class="token comment">%文章的结尾</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在LaTex中 <code>\begin</code> 和 <code>\end</code> 成对出现，两者之间的内容被称为<strong>环境</strong>，两者之后的第一个参数总是一致的，被称作环境名。</p>
 <p>在VSCode中我们写好上面的代码之后就可以点击<img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210329204354659.png" alt="image-20210329204354659">，从而将tex文件编译成PDF文件。然后我们就可以点击<code>View LaTex PDF</code>中的选项来查看编译结果。</p>
 <h3 id="组织文章"><a href="#组织文章" class="headerlink" title="组织文章"></a>组织文章</h3><h4 id="文档类型选择"><a href="#文档类型选择" class="headerlink" title="文档类型选择"></a>文档类型选择</h4><p>因为现在我主要用LaTex排版的内容是中文，因此我所需要使用的宏对中文的支持必须非常好，因此我在这里推荐是用CTeX，使用方法为：</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span>
-<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>UTF8<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctex</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>UTF8<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>CTeX 宏集提供了四个中文文档类：ctexart、ctexrep、ctexbook和ctexbeamer，分别对应 LaTeX 的标准文档类article、report、book和beamer。</p>
 <h4 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h4><p>在CTeX宏包中，默认的正常字体是宋体，粗体是黑体，意大利体是楷体。</p>
-<p>我们也可以通过使用<code>{\songti ......}</code>来修改字体</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token punctuation">{</span><span class="token function selector">\songti</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">}</span>
-<span class="token punctuation">{</span><span class="token function selector">\heiti</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">}</span>
-<span class="token punctuation">{</span><span class="token function selector">\fangsong</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">}</span>
-<span class="token punctuation">{</span><span class="token function selector">\kaishu</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们也可以通过使用<code>&#123;\songti ......&#125;</code>来修改字体</p>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token punctuation">&#123;</span><span class="token function selector">\songti</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span><span class="token function selector">\heiti</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span><span class="token function selector">\fangsong</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span><span class="token function selector">\kaishu</span> 什么是半加器和全加器？各自有何特点？<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>关于更加详细的字体介绍可以看看这本手册：<a target="_blank" rel="noopener" href="https://www.moonpapers.com/manual/latex/basic/text/typeface/use.html">字体使用</a></p>
 <h4 id="设置字号"><a href="#设置字号" class="headerlink" title="设置字号"></a>设置字号</h4><h5 id="局部修改字号"><a href="#局部修改字号" class="headerlink" title="局部修改字号"></a>局部修改字号</h5><p>对于字体的大小在LaTex中有很多命令来操纵：</p>
 <pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\Huge</span>
@@ -547,53 +545,53 @@
 <span class="token function selector">\tiny</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这些命令对应字体的大小和默认字体有关，具体对应关系如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images14174754-267e8aa705533a74.png" alt="img"></p>
-<h5 id="全局修改字号"><a href="#全局修改字号" class="headerlink" title="全局修改字号"></a>全局修改字号</h5><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>c5size<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span><span class="token comment">%直接在\documentclass后面添加相应的字体大小即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="全局修改字号"><a href="#全局修改字号" class="headerlink" title="全局修改字号"></a>全局修改字号</h5><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>c5size<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span><span class="token comment">%直接在\documentclass后面添加相应的字体大小即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>关于字号的详细信息可以看看这篇博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/68da21a1501a">latex 字体设置</a></p>
-<h4 id="设置行间距"><a href="#设置行间距" class="headerlink" title="设置行间距"></a>设置行间距</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\setlength</span><span class="token punctuation">{</span><span class="token function selector">\baselineskip</span><span class="token punctuation">}</span><span class="token punctuation">{</span>20pt<span class="token punctuation">}</span><span class="token comment">%20pt表示行间距大小为20磅</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="设置行间距"><a href="#设置行间距" class="headerlink" title="设置行间距"></a>设置行间距</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\setlength</span><span class="token punctuation">&#123;</span><span class="token function selector">\baselineskip</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>20pt<span class="token punctuation">&#125;</span><span class="token comment">%20pt表示行间距大小为20磅</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>关于LaTex长度单位可以看这篇博客：<a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_5e16f1770100fve8.html">LaTeX技巧18：LaTeX的长度单位入门</a></p>
-<h4 id="作者、标题、日期"><a href="#作者、标题、日期" class="headerlink" title="作者、标题、日期"></a>作者、标题、日期</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span>
-<span class="token function selector">\title</span><span class="token punctuation">{</span>你好，LaTex!<span class="token punctuation">}</span><span class="token comment">%标题</span>
-<span class="token function selector">\author</span><span class="token punctuation">{</span>A-Egoist<span class="token punctuation">}</span><span class="token comment">%作者</span>
-<span class="token function selector">\date</span><span class="token punctuation">{</span><span class="token function selector">\today</span><span class="token punctuation">}</span><span class="token comment">%时间</span>
-<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<h4 id="作者、标题、日期"><a href="#作者、标题、日期" class="headerlink" title="作者、标题、日期"></a>作者、标题、日期</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\title</span><span class="token punctuation">&#123;</span>你好，LaTex!<span class="token punctuation">&#125;</span><span class="token comment">%标题</span>
+<span class="token function selector">\author</span><span class="token punctuation">&#123;</span>A-Egoist<span class="token punctuation">&#125;</span><span class="token comment">%作者</span>
+<span class="token function selector">\date</span><span class="token punctuation">&#123;</span><span class="token function selector">\today</span><span class="token punctuation">&#125;</span><span class="token comment">%时间</span>
+<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
 <span class="token function selector">\maketitle</span><span class="token comment">%将在导言区中定义的标题、作者、日期按照预定的格式展现出来</span>
 <span class="token comment">%\tableofcontents%设置目录，但是需要进行两次编译才能体现出效果</span>
 你好，world!
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="章节和段落"><a href="#章节和段落" class="headerlink" title="章节和段落"></a>章节和段落</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span>
-<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">lipsum</span><span class="token punctuation">}</span>
-<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="章节和段落"><a href="#章节和段落" class="headerlink" title="章节和段落"></a>章节和段落</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">lipsum</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
 <span class="token function selector">\centering</span>
-<span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">\songti 什么是半加器和全加器？各自有何特点？</span><span class="token punctuation">}</span>
-<span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">半加器(half-adder)</span><span class="token punctuation">}</span>
-<span class="token function selector">\subsubsection</span><span class="token punctuation">{</span><span class="token headline class-name">概述</span><span class="token punctuation">}</span>
-<span class="token function selector">\subsubsection</span><span class="token punctuation">{</span><span class="token headline class-name">原理</span><span class="token punctuation">}</span>
-<span class="token function selector">\subsection</span><span class="token punctuation">{</span><span class="token headline class-name">全加器(full-adder)</span><span class="token punctuation">}</span>
-<span class="token function selector">\section</span><span class="token punctuation">{</span><span class="token headline class-name">根据组合逻辑电路设计步骤，设计半加器和全加器，并在Logisim中仿真。</span><span class="token punctuation">}</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">\songti 什么是半加器和全加器？各自有何特点？</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\subsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">半加器(half-adder)</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\subsubsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">概述</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\subsubsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">原理</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\subsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">全加器(full-adder)</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">根据组合逻辑电路设计步骤，设计半加器和全加器，并在Logisim中仿真。</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>效果展示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331145215340.png" style="zoom:80%;"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331145215340.png" style="zoom:80%;" /></p>
 <p>在文档类 <code>article</code>/<code>ctexart</code> 中，定义了五个控制序列来调整行文组织结构。他们分别是</p>
 <ul>
-<li><code>\section{·}</code></li>
-<li><code>\subsection{·}</code></li>
-<li><code>\subsubsection{·}</code></li>
-<li><code>\paragraph{·}</code></li>
-<li><code>\subparagraph{·}</code></li>
+<li><code>\section&#123;·&#125;</code></li>
+<li><code>\subsection&#123;·&#125;</code></li>
+<li><code>\subsubsection&#123;·&#125;</code></li>
+<li><code>\paragraph&#123;·&#125;</code></li>
+<li><code>\subparagraph&#123;·&#125;</code></li>
 </ul>
 <blockquote>
-<p>在<code>report</code>/<code>ctexrep</code>中，还有<code>\chapter{·}</code>；在文档类<code>book</code>/<code>ctexbook</code>中，还定义了<code>\part{·}</code>。</p>
+<p>在<code>report</code>/<code>ctexrep</code>中，还有<code>\chapter&#123;·&#125;</code>；在文档类<code>book</code>/<code>ctexbook</code>中，还定义了<code>\part&#123;·&#125;</code>。</p>
 </blockquote>
 <h4 id="插入目录"><a href="#插入目录" class="headerlink" title="插入目录"></a>插入目录</h4><p>在上一节的文档中，找到 <code>\maketitle</code>，在它的下面插入控制序列 <code>\tableofcontents</code>，保存并用 XeLaTeX 编译<strong>两次</strong></p>
 <blockquote>
 <p>第一次编译的时候和之前没有什么区别<br>但是当第二次编译的时候会在时间下方多出一个目录</p>
 </blockquote>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">ctexart</span><span class="token punctuation">}</span>
-<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8, c5size<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
     <span class="token function selector">\maketitle</span>
     <span class="token function selector">\tableofcontents</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>LaTeX 将一个换行当做是一个简单的空格来处理，如果需要换行另起一段，则需要用两个换行（一个空行）来实现。</p>
 <pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">简单来说半加器就是一个两输入两输出、只能进行两个一位二进制
 加法的器件，因为两输入两输出的特性使得半加器不需要考虑低位的进位。<span class="token comment">%这样没有达到换行的目的</span>
@@ -604,68 +602,68 @@
 <h3 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h3><p>LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。前者在正文的行文中，插入数学公式；后者独立排列单独成行，并自动居中。</p>
 <p>在行文中，使用 <script type="math/tex">...</script> 可以插入行内公式，使用 <code>\[ ... \]</code> 可以插入行间公式，如果需要对行间公式进行编号，则可以使用 <code>equation</code> 环境。</p>
 <blockquote>
-<p>行内公式也可以使用 <code>\(...\)</code> 或者 <code>\begin{math} ... \end{math}</code> 来插入，但略显麻烦。<br>无编号的行间公式也可以使用 <code>\begin{displaymath} ... \end{displaymath}</code> 或者 <code>\begin{equation*} ... \end{equation*}</code> 来插入，但略显麻烦。（<code>equation*</code> 中的 <code>*</code> 表示环境不编号）<br>也有 plainTeX 风格的 $$$ … $$$ 来插入不编号的行间公式。但是在 LaTeX 中这样做会改变行文的默认行间距，不推荐。</p>
+<p>行内公式也可以使用 <code>\(...\)</code> 或者 <code>\begin&#123;math&#125; ... \end&#123;math&#125;</code> 来插入，但略显麻烦。<br>无编号的行间公式也可以使用 <code>\begin&#123;displaymath&#125; ... \end&#123;displaymath&#125;</code> 或者 <code>\begin&#123;equation*&#125; ... \end&#123;equation*&#125;</code> 来插入，但略显麻烦。（<code>equation*</code> 中的 <code>*</code> 表示环境不编号）<br>也有 plainTeX 风格的 $$$ … $$$ 来插入不编号的行间公式。但是在 LaTeX 中这样做会改变行文的默认行间距，不推荐。</p>
 </blockquote>
 <p>在使用数学公式之前，我们需要导入包：</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">amsmath</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">amsmath</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h4><p>行内公式只需要放在两个$直接就行。</p>
 <pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$S = 1$</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h4><p>行间公式有两种一种是放在$$$…$$$中，还有一种是放在<code>\[...\]</code>中，推荐使用第二种。</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">\[<span class="token equation-command regex">\begin</span>{aligned}
-    S =&amp; <span class="token equation-command regex">\bar</span>{A}<span class="token equation-command regex">\bar</span>{B}Cin + <span class="token equation-command regex">\bar</span>{A}B<span class="token equation-command regex">\bar</span>{Cin} + A<span class="token equation-command regex">\bar</span>{B}<span class="token equation-command regex">\bar</span>{Cin} + ABCin <span class="token equation-command regex">\\</span>
-    =&amp; (<span class="token equation-command regex">\bar</span>{A}<span class="token equation-command regex">\bar</span>{B} + AB)Cin + (<span class="token equation-command regex">\bar</span>{A}B + A<span class="token equation-command regex">\bar</span>{B})<span class="token equation-command regex">\bar</span>{Cin} <span class="token equation-command regex">\\</span>
-    =&amp; (A<span class="token equation-command regex">\odot</span> B)Cin + (A<span class="token equation-command regex">\oplus</span> B)<span class="token equation-command regex">\bar</span>{Cin} <span class="token equation-command regex">\\</span>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">\[<span class="token equation-command regex">\begin</span>&#123;aligned&#125;
+    S =&amp; <span class="token equation-command regex">\bar</span>&#123;A&#125;<span class="token equation-command regex">\bar</span>&#123;B&#125;Cin + <span class="token equation-command regex">\bar</span>&#123;A&#125;B<span class="token equation-command regex">\bar</span>&#123;Cin&#125; + A<span class="token equation-command regex">\bar</span>&#123;B&#125;<span class="token equation-command regex">\bar</span>&#123;Cin&#125; + ABCin <span class="token equation-command regex">\\</span>
+    =&amp; (<span class="token equation-command regex">\bar</span>&#123;A&#125;<span class="token equation-command regex">\bar</span>&#123;B&#125; + AB)Cin + (<span class="token equation-command regex">\bar</span>&#123;A&#125;B + A<span class="token equation-command regex">\bar</span>&#123;B&#125;)<span class="token equation-command regex">\bar</span>&#123;Cin&#125; <span class="token equation-command regex">\\</span>
+    =&amp; (A<span class="token equation-command regex">\odot</span> B)Cin + (A<span class="token equation-command regex">\oplus</span> B)<span class="token equation-command regex">\bar</span>&#123;Cin&#125; <span class="token equation-command regex">\\</span>
     =&amp; A <span class="token equation-command regex">\oplus</span> B <span class="token equation-command regex">\oplus</span> Cin
-<span class="token equation-command regex">\end</span>{aligned}\]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token equation-command regex">\end</span>&#123;aligned&#125;\]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>关于数学公式的符号可以用用这个网站：<a target="_blank" rel="noopener" href="https://latexlive.com/">LaTeX公式编辑器</a></p>
 <h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>在插入图片前，我们需要导入相关的包</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">graphicx</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="插入一张图片"><a href="#插入一张图片" class="headerlink" title="插入一张图片"></a>插入一张图片</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\subsubsection</span><span class="token punctuation">{</span><span class="token headline class-name">电路图</span><span class="token punctuation">}</span>
-    如图<span class="token function selector">\ref</span><span class="token punctuation">{</span><span class="token keyword">half-adder-logisim-1</span><span class="token punctuation">}</span>所示。<span class="token comment">%\ref 表示引用图片或者表格</span>
-    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span><span class="token comment">%在这个区间放入图片</span>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">graphicx</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="插入一张图片"><a href="#插入一张图片" class="headerlink" title="插入一张图片"></a>插入一张图片</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\subsubsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">电路图</span><span class="token punctuation">&#125;</span>
+    如图<span class="token function selector">\ref</span><span class="token punctuation">&#123;</span><span class="token keyword">half-adder-logisim-1</span><span class="token punctuation">&#125;</span>所示。<span class="token comment">%\ref 表示引用图片或者表格</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">figure</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span><span class="token comment">%在这个区间放入图片</span>
         <span class="token function selector">\centering</span>
-        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width = .5<span class="token function selector">\textwidth</span><span class="token punctuation">]</span><span class="token punctuation">{</span>half-adder-1.png<span class="token punctuation">}</span><span class="token comment">%[]中表示图片显示大小，{}中填入图片地址    </span>
-        <span class="token function selector">\caption</span><span class="token punctuation">{</span>half-adder<span class="token punctuation">}</span><span class="token comment">%设置图片名称</span>
-        <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">half-adder-logisim-1</span><span class="token punctuation">}</span><span class="token comment">%创建标签名，在之后就可以使用\ref{标签名}引用图片</span>
-    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>width = .5<span class="token function selector">\textwidth</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>half-adder-1.png<span class="token punctuation">&#125;</span><span class="token comment">%[]中表示图片显示大小，&#123;&#125;中填入图片地址    </span>
+        <span class="token function selector">\caption</span><span class="token punctuation">&#123;</span>half-adder<span class="token punctuation">&#125;</span><span class="token comment">%设置图片名称</span>
+        <span class="token function selector">\label</span><span class="token punctuation">&#123;</span><span class="token keyword">half-adder-logisim-1</span><span class="token punctuation">&#125;</span><span class="token comment">%创建标签名，在之后就可以使用\ref&#123;标签名&#125;引用图片</span>
+    <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">figure</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>效果展示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123709331.png" alt="image-20210331123709331"><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331123725694.png" alt="image-20210331123725694"></p>
-<h4 id="在一排中插入两张图片"><a href="#在一排中插入两张图片" class="headerlink" title="在一排中插入两张图片"></a>在一排中插入两张图片</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
+<h4 id="在一排中插入两张图片"><a href="#在一排中插入两张图片" class="headerlink" title="在一排中插入两张图片"></a>在一排中插入两张图片</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">figure</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
     <span class="token function selector">\centering</span>
     <span class="token comment">%一个subfigure就表示一张子图</span>
-    <span class="token function selector">\subfigure</span><span class="token punctuation">[</span>half-adder-alter<span class="token punctuation">]</span><span class="token punctuation">{</span>
-        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">minipage</span><span class="token punctuation">}</span><span class="token punctuation">{</span>7cm<span class="token punctuation">}</span>
+    <span class="token function selector">\subfigure</span><span class="token punctuation">[</span>half-adder-alter<span class="token punctuation">]</span><span class="token punctuation">&#123;</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">minipage</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>7cm<span class="token punctuation">&#125;</span>
         <span class="token function selector">\centering</span>
-        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>scale=0.4<span class="token punctuation">]</span><span class="token punctuation">{</span>half-adder-2.png<span class="token punctuation">}</span>
-        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">minipage</span><span class="token punctuation">}</span><span class="token comment">%</span>
-    <span class="token punctuation">}</span><span class="token comment">%</span>
-    <span class="token function selector">\subfigure</span><span class="token punctuation">[</span>full-adder-alter<span class="token punctuation">]</span><span class="token punctuation">{</span>
-        <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">minipage</span><span class="token punctuation">}</span><span class="token punctuation">{</span>7cm<span class="token punctuation">}</span>
+        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>scale=0.4<span class="token punctuation">]</span><span class="token punctuation">&#123;</span>half-adder-2.png<span class="token punctuation">&#125;</span>
+        <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">minipage</span><span class="token punctuation">&#125;</span><span class="token comment">%</span>
+    <span class="token punctuation">&#125;</span><span class="token comment">%</span>
+    <span class="token function selector">\subfigure</span><span class="token punctuation">[</span>full-adder-alter<span class="token punctuation">]</span><span class="token punctuation">&#123;</span>
+        <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">minipage</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>7cm<span class="token punctuation">&#125;</span>
         <span class="token function selector">\centering</span>
-        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>scale=0.3<span class="token punctuation">]</span><span class="token punctuation">{</span>full-adder-2.png<span class="token punctuation">}</span>
-        <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">minipage</span><span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function selector">\caption</span><span class="token punctuation">{</span>根据芯片的结构改装之后的Logisim图<span class="token punctuation">}</span>
-    <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">alter</span><span class="token punctuation">}</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">figure</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token function selector">\includegraphics</span><span class="token punctuation">[</span>scale=0.3<span class="token punctuation">]</span><span class="token punctuation">&#123;</span>full-adder-2.png<span class="token punctuation">&#125;</span>
+        <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">minipage</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function selector">\caption</span><span class="token punctuation">&#123;</span>根据芯片的结构改装之后的Logisim图<span class="token punctuation">&#125;</span>
+    <span class="token function selector">\label</span><span class="token punctuation">&#123;</span><span class="token keyword">alter</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">figure</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>效果展示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331130527907.png" alt="image-20210331130527907"></p>
 <h3 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h3><p>在插入表格前，我们需要导入相关的包</p>
-<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">booktabs</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="普通表格"><a href="#普通表格" class="headerlink" title="普通表格"></a>普通表格</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span>
-    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span><span class="token punctuation">{</span>llll<span class="token punctuation">}</span><span class="token comment">%表示有4列左对齐的数据</span>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">booktabs</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="普通表格"><a href="#普通表格" class="headerlink" title="普通表格"></a>普通表格</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">center</span><span class="token punctuation">&#125;</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">tabular</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>llll<span class="token punctuation">&#125;</span><span class="token comment">%表示有4列左对齐的数据</span>
         <span class="token function selector">\hline</span>
         姓名<span class="token punctuation">&amp;</span>name<span class="token punctuation">&amp;</span>学号<span class="token punctuation">&amp;</span>id<span class="token function selector">\\</span>
         <span class="token function selector">\hline</span>
         专业<span class="token punctuation">&amp;</span>cs<span class="token punctuation">&amp;</span>年级<span class="token punctuation">&amp;</span>grade<span class="token function selector">\\</span>
         <span class="token function selector">\hline</span>
-    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">center</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="三线法"><a href="#三线法" class="headerlink" title="三线法"></a>三线法</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
+    <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">tabular</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">center</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="三线法"><a href="#三线法" class="headerlink" title="三线法"></a>三线法</h4><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">table</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span>htbp<span class="token punctuation">]</span>
     <span class="token function selector">\centering</span>
-    <span class="token function selector">\caption</span><span class="token punctuation">{</span>Half-adder Truth Table<span class="token punctuation">}</span><span class="token comment">%设置表格名称</span>
-    <span class="token function selector">\label</span><span class="token punctuation">{</span><span class="token keyword">half-adder-1</span><span class="token punctuation">}</span><span class="token comment">%创建标签名，在之后就可以使用\ref{标签名}引用表格</span>
-    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span><span class="token punctuation">{</span>cccc<span class="token punctuation">}</span><span class="token comment">%三线法绘制表格，{}中的字母表示每一列左对齐(l)，居中(c)，右对齐(r)，一个字母对应一列</span>
+    <span class="token function selector">\caption</span><span class="token punctuation">&#123;</span>Half-adder Truth Table<span class="token punctuation">&#125;</span><span class="token comment">%设置表格名称</span>
+    <span class="token function selector">\label</span><span class="token punctuation">&#123;</span><span class="token keyword">half-adder-1</span><span class="token punctuation">&#125;</span><span class="token comment">%创建标签名，在之后就可以使用\ref&#123;标签名&#125;引用表格</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">tabular</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>cccc<span class="token punctuation">&#125;</span><span class="token comment">%三线法绘制表格，&#123;&#125;中的字母表示每一列左对齐(l)，居中(c)，右对齐(r)，一个字母对应一列</span>
         <span class="token function selector">\toprule</span>
         A<span class="token punctuation">&amp;</span>B<span class="token punctuation">&amp;</span>S<span class="token punctuation">&amp;</span>Cout <span class="token function selector">\\</span>
         <span class="token function selector">\midrule</span>
@@ -674,8 +672,8 @@
         1<span class="token punctuation">&amp;</span>0<span class="token punctuation">&amp;</span>1<span class="token punctuation">&amp;</span>0 <span class="token function selector">\\</span>
         1<span class="token punctuation">&amp;</span>1<span class="token punctuation">&amp;</span>0<span class="token punctuation">&amp;</span>1 <span class="token function selector">\\</span>
         <span class="token function selector">\bottomrule</span>
-    <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tabular</span><span class="token punctuation">}</span>
-<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">table</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">tabular</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">table</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>效果展示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/imagesimage-20210331124046483.png" alt="image-20210331124046483"></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文是我个人在学习和使用LaTex过程中的学习笔记，同时也可以作为新手的一个简单入门指南和教程，本文参考了很多大佬的博客，文章。这些都放在参考资料中了。</p>
@@ -1092,7 +1090,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             

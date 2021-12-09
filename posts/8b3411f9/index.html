@@ -32,9 +32,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -641,7 +639,7 @@ url<span class="token operator">=</span><span class="token string">"https://item
 <h3 id="实例二：亚马逊商品页面的爬取"><a href="#实例二：亚马逊商品页面的爬取" class="headerlink" title="实例二：亚马逊商品页面的爬取"></a>实例二：亚马逊商品页面的爬取</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 url<span class="token operator">=</span><span class="token string">"https://www.amazon.cn/gp/product/B01M8L5Z3Y"</span>
 <span class="token keyword">try</span><span class="token punctuation">:</span>
-    kv<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'user-agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+    kv<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'user-agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0'</span><span class="token punctuation">&#125;</span>
     r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>kv<span class="token punctuation">)</span>
     r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
     r<span class="token punctuation">.</span>encoding<span class="token operator">=</span>r<span class="token punctuation">.</span>apparent_encoding
@@ -652,7 +650,7 @@ url<span class="token operator">=</span><span class="token string">"https://www.
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 keyword<span class="token operator">=</span><span class="token string">"Python"</span>
 <span class="token keyword">try</span><span class="token punctuation">:</span>
-    kv<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span>keyword<span class="token punctuation">}</span>
+    kv<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'q'</span><span class="token punctuation">:</span>keyword<span class="token punctuation">&#125;</span>
     r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://www.so.com/s"</span><span class="token punctuation">,</span>params<span class="token operator">=</span>kv<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
     r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -662,7 +660,7 @@ keyword<span class="token operator">=</span><span class="token string">"Python"<
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 keyword<span class="token operator">=</span><span class="token string">"Python"</span>
 <span class="token keyword">try</span><span class="token punctuation">:</span>
-    kv<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'wd'</span><span class="token punctuation">:</span>keyword<span class="token punctuation">}</span>
+    kv<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'wd'</span><span class="token punctuation">:</span>keyword<span class="token punctuation">&#125;</span>
     r<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://www.baidu.com/s"</span><span class="token punctuation">,</span>params<span class="token operator">=</span>kv<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
     r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1085,7 +1083,7 @@ url<span class="token operator">=</span><span class="token string">"http://m.ip1
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">42.5k</span>
+                        class="white-color">42.4k</span>
             
             
             
