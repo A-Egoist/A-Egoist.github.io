@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数学基础, 算法，美化，日常，随笔">
-    <meta name="description" content="本篇博客不包含深度学习中所有的数学知识，只是我在学习过程中，对不会或者不熟悉的数学知识的记录，因此部分内容和推导我会省略掉。
-微积分线性代数概率论条件概率
-P(A|B)=\frac{P(A,B)}{P(B)}乘法公式
-P(A,B)=P(B)">
+    <meta name="keywords" content="【论文精读系列】ESRGAN, 算法，美化，日常，随笔">
+    <meta name="description" content="ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks论文地址：https://openaccess.thecvf.com/content_ECCVW_2018/p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@ P(A,B)=P(B)">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数学基础 | A-Egoist</title>
+    <title>【论文精读系列】ESRGAN | A-Egoist</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -318,12 +315,12 @@ P(A,B)=P(B)">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images65-1Z22Q63RD96.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/A-Egoist/image_bed/raw/master/background/img_312.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数学基础</h1>
+                    <h1 class="description center-align post-title">【论文精读系列】ESRGAN</h1>
                 </div>
             </div>
         </div>
@@ -439,20 +436,8 @@ P(A,B)=P(B)">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
-                                <span class="chip bg-color">线性代数</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
-                                <span class="chip bg-color">微积分</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                                <span class="chip bg-color">概率论</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/">
-                                <span class="chip bg-color">信息论</span>
+                            <a href="/tags/GAN/">
+                                <span class="chip bg-color">GAN</span>
                             </a>
                         
                     </div>
@@ -463,16 +448,8 @@ P(A,B)=P(B)">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
-                            </a>
-                        
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                深度学习
-                            </a>
-                        
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6/" class="post-category">
-                                数学
+                            <a href="/categories/reading/" class="post-category">
+                                reading
                             </a>
                         
                     </div>
@@ -484,28 +461,28 @@ P(A,B)=P(B)">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-20
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-20
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    168
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    1 分
                 </div>
                 
 
@@ -528,66 +505,16 @@ P(A,B)=P(B)">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本篇博客不包含深度学习中所有的数学知识，只是我在学习过程中，对不会或者不熟悉的数学知识的记录，因此部分内容和推导我会省略掉。</p>
-<h2 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h2><h2 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h2><h2 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h2><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a><strong>条件概率</strong></h3><script type="math/tex; mode=display">
-P(A|B)=\frac{P(A,B)}{P(B)}</script><h3 id="乘法公式"><a href="#乘法公式" class="headerlink" title="乘法公式"></a><strong>乘法公式</strong></h3><script type="math/tex; mode=display">
-P(A,B)=P(B)\cdot P(A|B)\\s.t.\ P(B)\ >0\\
-P(A,B)=P(A)\cdot P(B|A)\\s.t.\ P(A)\ >0\\</script><h3 id="乘法公式推广"><a href="#乘法公式推广" class="headerlink" title="乘法公式推广"></a><strong>乘法公式推广</strong></h3><script type="math/tex; mode=display">
-P(A_1,A_2,A_3)=P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1,A_2)\\
-\\
-P(A_1,\dots,A_n)=P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1,A_2)\cdot P(A_4|A_1,A_2,A_3)\cdots\\s.t.\ P(A_1)>0,\dots ,P(A_1,\dots,A_{n-1})>0</script><h3 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a><strong>全概率公式</strong></h3><p>知原因推结果</p>
-<script type="math/tex; mode=display">
-P(A)=\sum_{i=1}^nP(B_i)P(A|B_i)</script><h3 id="Bayes-公式"><a href="#Bayes-公式" class="headerlink" title="Bayes 公式"></a><strong>Bayes 公式</strong></h3><p>知结果推原因</p>
-<script type="math/tex; mode=display">
-P(B_i|A)=\frac{P(A,B_i)}{P(A)}=\frac{P(B_i)P(A|B_i)}{\sum_{i=1}^nP(B_i)P(A|B_i)},i=1,\dots,n\\s.t.\ P(A|B_i)>0,i=1,\dots,n</script><h3 id="伯努利概型"><a href="#伯努利概型" class="headerlink" title="伯努利概型"></a><strong>伯努利概型</strong></h3><p>定义：试验结果只有两个的试验 E，称为伯努利试验</p>
-<p>定理：$n$ 重伯努利概型中，设 $P(A)=p$，$P(\overline{A})=1-p$，则 $n$ 重伯努利概型中 $A$ 发生 $k$ 次的概率为</p>
-<script type="math/tex; mode=display">
-P_n(k)=C_n^k\cdot{p^k}\cdot{(1-p)^{(n-k)}},k=0,1,\dots,n</script><h3 id="二项分布-X-sim-B-n-p"><a href="#二项分布-X-sim-B-n-p" class="headerlink" title="二项分布 $X\sim B(n,p)$"></a><strong>二项分布</strong> $X\sim B(n,p)$</h3><p>在 $n$ 重伯努利概型中，设 $P(A)=p$，$P(\overline{A})=1-p=q$，$X$ 为 $A$ 发生的次数，则</p>
-<script type="math/tex; mode=display">
-P(X=k)=C_n^k\cdot{p^k}\cdot{q^{(n-k)}},k=0,1,\dots,n</script><h3 id="泊松分布-X-sim-P-lambda"><a href="#泊松分布-X-sim-P-lambda" class="headerlink" title="泊松分布 $X\sim P(\lambda)$"></a><strong>泊松分布</strong> $X\sim P(\lambda)$</h3><script type="math/tex; mode=display">
-P(X=k)=\frac{\lambda^ke^{-\lambda}}{k!}\\s.t.\ \lambda>0且为常数,k=0,1,\dots</script><p><font color="red">注</font> 若 $X\sim B(n,p)$，$n&gt;10$，$p&lt;0.1$ 时，$P(X=k)\approx \frac{\lambda^ke^{-\lambda}}{k!}$</p>
-<h3 id="均匀分布-X-sim-mu-a-b"><a href="#均匀分布-X-sim-mu-a-b" class="headerlink" title="均匀分布 $X\sim \mu[a,b]$"></a><strong>均匀分布</strong> $X\sim \mu[a,b]$</h3><h3 id="指数分布-X-sim-e-lambda"><a href="#指数分布-X-sim-e-lambda" class="headerlink" title="指数分布 $X\sim e(\lambda)$"></a><strong>指数分布</strong> $X\sim e(\lambda)$</h3><h3 id="正态分布-X-sim-N-mu-theta-2"><a href="#正态分布-X-sim-N-mu-theta-2" class="headerlink" title="正态分布 $X\sim N(\mu,\theta^2)$"></a><strong>正态分布</strong> $X\sim N(\mu,\theta^2)$</h3><h3 id="标准正态分布-X-sim-N-0-1"><a href="#标准正态分布-X-sim-N-0-1" class="headerlink" title="标准正态分布 $X\sim N(0,1)$"></a><strong>标准正态分布</strong> $X\sim N(0,1)$</h3><h2 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h2><h3 id="自信息"><a href="#自信息" class="headerlink" title="自信息"></a><strong>自信息</strong></h3><p>任何事件都会承载着一定的信息量，包括已经发生的事件和未发生的事件，只是它们承载的信息量会有所不同。</p>
-<p>如昨天下雨这个已知事件，因为已经发生，既定事实，那么它的信息量就为 $0$。如明天会下雨这个事件，因为未有发生，那么这个事件的信息量就大。</p>
-<p>从上面例子可以看出信息量是一个与事件发生概率相关的概念，而且可以得出，事件发生的概率越小，其信息量越大。</p>
-<p>定义事件 $X=x$ 的自信息为</p>
-<script type="math/tex; mode=display">
-I\left(x\right)=-\log_2 P\left(x\right)</script><h3 id="香农熵-Shannon-Entropy"><a href="#香农熵-Shannon-Entropy" class="headerlink" title="香农熵(Shannon Entropy)"></a><strong>香农熵(Shannon Entropy)</strong></h3><p>当一个事件发生的概率为 $p\left(x\right)$，那么它的信息量是 $-\log{p\left(x\right)}$</p>
-<p>如果把这个事件的所有可能性罗列出来，就可以求得该事件信息量的期望</p>
-<p>信息量的期望就是熵，所以熵的公式为</p>
-<script type="math/tex; mode=display">
-H\left(\mathrm{x}\right)=\mathbb{E}_{\mathrm{x}\sim P}\left[I\left(x\right)\right]=-\mathbb{E}_{\mathrm{x}\sim P}\left[\log{P\left(x\right)}\right]</script><p>也可以表述为</p>
-<script type="math/tex; mode=display">
-H\left(\mathrm{x}\right)=-\sum_{i=1}^{n}p\left(x_i\right)\log{p\left(x_i\right)}</script><p>对于 0-1 分布问题，熵的计算可以简化为</p>
-<script type="math/tex; mode=display">
-H\left(\mathrm{x}\right)=-p\left(x\right)\log{\left(p\left(x\right)\right)}-\left(1-p\left(x\right)\right)\log\left(1-p\left(x\right)\right)</script><h3 id="相对熵-KL-散度-Kullback-Leibler-divergence"><a href="#相对熵-KL-散度-Kullback-Leibler-divergence" class="headerlink" title="相对熵(KL 散度)(Kullback-Leibler divergence)"></a><strong>相对熵(KL 散度)(Kullback-Leibler divergence)</strong></h3><p>对于同一个随机变量 $\mathbf{x}$，如果其有两个单独的概率分布 $P(\mathbf{x})$ 和 $Q(\mathbf{x})$，可以使用 KL 散度来衡量这两个分布的差异，KL 散度越小，真实分布与近似分布之间的匹配就越好。</p>
-<script type="math/tex; mode=display">
-D_{\mathrm{KL}}(P \| Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]</script><p>在机器学习中，$P$ 往往用来表示样本的真实分布，$Q$ 用来表示模型所预测的分布，那么 KL 散度就可以计算两个分布的差异，也就是 Loss</p>
-<script type="math/tex; mode=display">
-D_{KL}(P\|Q)=\sum_{i=1}^n{P(x_i)\log{\frac{P(x_i)}{Q(x_i)}}}</script><p>因为 KL 散度是非负的并且衡量的是两个分布之间的差异，它经常被用作分布之间的某种距离。然而，它并不是真的距离，因为它不是对称的：对于某些 $P$ 和 $Q$，$D_{KL}(P|Q)\ne D_{KL}(Q|P)$。这种非对称性意味着选择 $D_{KL}(P|Q)$ 还是 $D_{KL}(Q|P)$ 影响很大。</p>
-<p>对于 KL 散度的直观解释可以看这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37452654">初学机器学习：直观解读KL散度的数学概念</a></p>
-<p>如何证明 KL 散度大于等于 $0$ (未解决)</p>
-<h3 id="交叉熵-Cross-Entropy"><a href="#交叉熵-Cross-Entropy" class="headerlink" title="交叉熵(Cross Entropy)"></a><strong>交叉熵(Cross Entropy)</strong></h3><p>两个分布 $P$ 和 $Q$ 之间的交叉熵定义为：</p>
-<script type="math/tex; mode=display">
-H\left(P,Q\right)=-\mathbb{E}_{x\sim P}\log{Q\left(x\right)}</script><p>将 KL 散度公式变形：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-D_{\mathrm{KL}}(P \| Q)&=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]\\&=\mathbb{E}_{\mathrm{x}\sim{P}}[\log{P(x)}]-\mathbb{E}_{\mathrm{x}\sim{P}}[\log{Q(x)}]\\&=-H(P)-\mathbb{E}_{\mathbf{x}\sim P}[\log Q(x)]\\&=-H(P)+H(P,Q)
-\end{align}</script><p>所以可得到交叉熵和 KL 散度的关系：</p>
-<script type="math/tex; mode=display">
-H(P,Q)=H(P)+D_{KL}(P\|Q)</script><p>在机器学习中，需要评估 label 和 predicts 之间的差距，使用 KL 散度刚刚好，即 $D_{KL}(\mathbf{y}|\hat{\mathbf{y}})$。由于 KL 散度中的前一部分 $−H(y)$ 不变，故在优化过程中，只需要关注交叉熵就可以了。所以一般在机器学习中直接用交叉熵做 loss，评估模型。</p>
-<p>在信息论中，$\lim_{x\to 0}x\log x=0$</p>
-<h3 id="JS-散度-Jensen-Shannon-divergence"><a href="#JS-散度-Jensen-Shannon-divergence" class="headerlink" title="JS 散度(Jensen-Shannon divergence)"></a><strong>JS 散度(Jensen-Shannon divergence)</strong></h3><p><strong>JS 散度</strong>度量了两个概率分布的相似度，基于 KL 散度的变体，解决了 KL 散度非对称的问题。</p>
-<p>一般地，JS 散度是对称的，其取值是 $0$ 到 $1$ 之间。定义如下：</p>
-<script type="math/tex; mode=display">
-JS(P_1\|P_2)=\frac{1}{2}KL(P_1\|\frac{P_1+P_2}{2})+\frac{1}{2}KL(P_2\|\frac{P_1+P_2}{2})</script><h3 id="Wasserstein-距离"><a href="#Wasserstein-距离" class="headerlink" title="Wasserstein 距离"></a><strong>Wasserstein 距离</strong></h3><p>参考资料：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74075915">交叉熵、相对熵（KL散度）、JS散度和Wasserstein距离（推土机距离）</a></p>
-<p>KL 散度和 JS 散度的问题</p>
-<ul>
-<li>如果两个分布 $P,Q$ 离得很远，完全没有重叠的时候，那么 KL 散度值是没有意义的，而 JS 散度值是一个常数。这在学习算法中是比较致命的，这就意味着这一点的梯度为 $0$，梯度消失了。</li>
-</ul>
-<p><strong>Wasserstein距离</strong> 度量两个概率分布之间的距离，定义如下</p>
-<script type="math/tex; mode=display">
-W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-y\right\|]</script><h1 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h1><h3 id="Jensen-不等式"><a href="#Jensen-不等式" class="headerlink" title="Jensen 不等式"></a><strong>Jensen 不等式</strong></h3><p>参考资料：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/39315786">Jensen不等式初步理解及证明</a></p>
-
+                <h1 id="ESRGAN-Enhanced-Super-Resolution-Generative-Adversarial-Networks"><a href="#ESRGAN-Enhanced-Super-Resolution-Generative-Adversarial-Networks" class="headerlink" title="ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks"></a>ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks</h1><p>论文地址：<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_ECCVW_2018/papers/11133/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.pdf">https://openaccess.thecvf.com/content_ECCVW_2018/papers/11133/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.pdf</a></p>
+<p>代码：<a target="_blank" rel="noopener" href="https://github.com/xinntao/ESRGAN">https://github.com/xinntao/ESRGAN</a></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>这篇文章在 SRGAN 的基础上对其 network architecture、adversarial loss 和 perceptual loss 做了改进。</p>
+<ol>
+<li>使用 Residual-in-Residual Dense Block(RRDB) 替换掉 SRGAN 中所使用的 Residual Block 并去掉了 BN 层。</li>
+<li>参考 <a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=S1erHoR5t7">Relativistic GAN</a> 对 SRGAN 中所使用的 adversarial loss 做了改进</li>
+<li>使用激活层之前的 feature map 来计算 perceptual loss</li>
+</ol>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="1-使用-RRDB-替换-RB-并去掉-BN-层"><a href="#1-使用-RRDB-替换-RB-并去掉-BN-层" class="headerlink" title="1 使用 RRDB 替换 RB 并去掉 BN 层"></a>1 使用 RRDB 替换 RB 并去掉 BN 层</h3><p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211209163159040.png" alt="image-20211209163159040" style="zoom:80%;" /></p>
+<h3 id="2-参照-Relativistic-GAN-改进对抗损失-adversarial-loss"><a href="#2-参照-Relativistic-GAN-改进对抗损失-adversarial-loss" class="headerlink" title="2 参照 Relativistic GAN 改进对抗损失(adversarial loss)"></a>2 参照 Relativistic GAN 改进对抗损失(adversarial loss)</h3><h3 id="3-使用激活层之前的-feature-map-计算-perceptual-loss"><a href="#3-使用激活层之前的-feature-map-计算-perceptual-loss" class="headerlink" title="3 使用激活层之前的 feature map 计算 perceptual loss"></a>3 使用激活层之前的 feature map 计算 perceptual loss</h3><h3 id="4-使用-Network-Interpolation-的方法平衡主客观评价指标的矛盾"><a href="#4-使用-Network-Interpolation-的方法平衡主客观评价指标的矛盾" class="headerlink" title="4 使用 Network Interpolation 的方法平衡主客观评价指标的矛盾"></a>4 使用 Network Interpolation 的方法平衡主客观评价指标的矛盾</h3>
                 
             </div>
             <hr/>
@@ -613,7 +540,7 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://a-egoist.com/posts/e403a46/">https://a-egoist.com/posts/e403a46/</a>
+                    <a href="https://a-egoist.com/posts/fb6fe7b/">https://a-egoist.com/posts/fb6fe7b/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -651,20 +578,8 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
-                                    <span class="chip bg-color">线性代数</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">
-                                    <span class="chip bg-color">微积分</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                                    <span class="chip bg-color">概率论</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/">
-                                    <span class="chip bg-color">信息论</span>
+                                <a href="/tags/GAN/">
+                                    <span class="chip bg-color">GAN</span>
                                 </a>
                             
                         </div>
@@ -732,16 +647,17 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/63deb372/">
+                <a href="/posts/fb6fe7b/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_238.jpg" class="responsive-img" alt="CUDA 编程入门">
+                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_312.jpg" class="responsive-img" alt="【论文精读系列】ESRGAN">
                         
-                        <span class="card-title">CUDA 编程入门</span>
+                        <span class="card-title">【论文精读系列】ESRGAN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -751,26 +667,27 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Parallel-Computing/" class="post-category">
-                                    Parallel Computing
+                            <a href="/categories/reading/" class="post-category">
+                                    reading
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CUDA/">
-                        <span class="chip bg-color">CUDA</span>
+                    <a href="/tags/GAN/">
+                        <span class="chip bg-color">GAN</span>
                     </a>
                     
                 </div>
@@ -784,12 +701,12 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/eadfe50d/">
+                <a href="/posts/3d436878/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/A-Egoist/Blog-Figure-bed/images9c18db78f7a3b425a7c17631b6afc37a5067b854.jpg" class="responsive-img" alt="图论基础">
+                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_314.jpg" class="responsive-img" alt="【论文精读系列】目录">
                         
-                        <span class="card-title">图论基础</span>
+                        <span class="card-title">【论文精读系列】目录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -800,14 +717,14 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/" class="post-category">
-                                    算法竞赛
+                            <a href="/categories/reading/" class="post-category">
+                                    reading
                                 </a>
                             
                             
@@ -817,40 +734,12 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E8%AE%BA/">
-                        <span class="chip bg-color">图论</span>
+                    <a href="/tags/MachineLearning/">
+                        <span class="chip bg-color">MachineLearning</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
-                        <span class="chip bg-color">最短路</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                        <span class="chip bg-color">最小生成树</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">
-                        <span class="chip bg-color">二分图</span>
-                    </a>
-                    
-                    <a href="/tags/Dijkstra/">
-                        <span class="chip bg-color">Dijkstra</span>
-                    </a>
-                    
-                    <a href="/tags/Prim/">
-                        <span class="chip bg-color">Prim</span>
-                    </a>
-                    
-                    <a href="/tags/Kruskal/">
-                        <span class="chip bg-color">Kruskal</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9F%93%E8%89%B2%E6%B3%95/">
-                        <span class="chip bg-color">染色法</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">匈牙利算法</span>
+                    <a href="/tags/DeepLearning/">
+                        <span class="chip bg-color">DeepLearning</span>
                     </a>
                     
                 </div>
@@ -1018,13 +907,6 @@ W(P_1,P_2)=\inf_{\gamma\sim\prod(P_1,P_2)}\mathbb{E}_{(x,y)\sim\gamma}[\left\|x-
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 

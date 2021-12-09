@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【论文精读系列】ESRGAN</title>
+      <link href="/posts/fb6fe7b/"/>
+      <url>/posts/fb6fe7b/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ESRGAN-Enhanced-Super-Resolution-Generative-Adversarial-Networks"><a href="#ESRGAN-Enhanced-Super-Resolution-Generative-Adversarial-Networks" class="headerlink" title="ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks"></a>ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks</h1><p>论文地址：<a href="https://openaccess.thecvf.com/content_ECCVW_2018/papers/11133/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.pdf">https://openaccess.thecvf.com/content_ECCVW_2018/papers/11133/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.pdf</a></p><p>代码：<a href="https://github.com/xinntao/ESRGAN">https://github.com/xinntao/ESRGAN</a></p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>这篇文章在 SRGAN 的基础上对其 network architecture、adversarial loss 和 perceptual loss 做了改进。</p><ol><li>使用 Residual-in-Residual Dense Block(RRDB) 替换掉 SRGAN 中所使用的 Residual Block 并去掉了 BN 层。</li><li>参考 <a href="https://openreview.net/pdf?id=S1erHoR5t7">Relativistic GAN</a> 对 SRGAN 中所使用的 adversarial loss 做了改进</li><li>使用激活层之前的 feature map 来计算 perceptual loss</li></ol><h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="1-使用-RRDB-替换-RB-并去掉-BN-层"><a href="#1-使用-RRDB-替换-RB-并去掉-BN-层" class="headerlink" title="1 使用 RRDB 替换 RB 并去掉 BN 层"></a>1 使用 RRDB 替换 RB 并去掉 BN 层</h3><p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211209163159040.png" alt="image-20211209163159040" style="zoom:80%;" /></p><h3 id="2-参照-Relativistic-GAN-改进对抗损失-adversarial-loss"><a href="#2-参照-Relativistic-GAN-改进对抗损失-adversarial-loss" class="headerlink" title="2 参照 Relativistic GAN 改进对抗损失(adversarial loss)"></a>2 参照 Relativistic GAN 改进对抗损失(adversarial loss)</h3><h3 id="3-使用激活层之前的-feature-map-计算-perceptual-loss"><a href="#3-使用激活层之前的-feature-map-计算-perceptual-loss" class="headerlink" title="3 使用激活层之前的 feature map 计算 perceptual loss"></a>3 使用激活层之前的 feature map 计算 perceptual loss</h3><h3 id="4-使用-Network-Interpolation-的方法平衡主客观评价指标的矛盾"><a href="#4-使用-Network-Interpolation-的方法平衡主客观评价指标的矛盾" class="headerlink" title="4 使用 Network Interpolation 的方法平衡主客观评价指标的矛盾"></a>4 使用 Network Interpolation 的方法平衡主客观评价指标的矛盾</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> reading </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【论文精读系列】目录</title>
       <link href="/posts/3d436878/"/>
       <url>/posts/3d436878/</url>
@@ -17,6 +42,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> MachineLearning </tag>
+            
+            <tag> DeepLearning </tag>
+            
+        </tags>
       
     </entry>
     
