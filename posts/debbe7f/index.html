@@ -4,22 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="并行计算基础, 算法，美化，日常，随笔">
-    <meta name="description" content="并行计算基础
-
-本篇博客记录了我在学习并行计算过程中的收获，包含以下部分的内容：
-
-为什么要并行计算
-并行硬件和并行软件
-MPI编程
-Pthreads编程
-OpenMP编程
-并行程序开发
-CUDA编程基础。
-
-
-
-1 为什么要并行计算1.1">
+    <meta name="keywords" content="并行处理及分布式系统, 算法，美化，日常，随笔">
+    <meta name="description" content="并行处理及分布式系统1 为什么要并行计算1.1 为什么需要不断提升性能
+随着计算能力的增加，我们所面临的计算问题和需求也在增加
+随着技术的进步，我们从未想过的技术得到了解决，比如：人类基因解码、更准确的医疗成像、更快速准确的网络搜索……
+更">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +20,7 @@ CUDA编程基础。
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>并行计算基础 | A-Egoist</title>
+    <title>并行处理及分布式系统 | A-Egoist</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -334,7 +323,7 @@ CUDA编程基础。
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">并行计算基础</h1>
+                    <h1 class="description center-align post-title">并行处理及分布式系统</h1>
                 </div>
             </div>
         </div>
@@ -478,21 +467,21 @@ CUDA编程基础。
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-27
+                    2021-12-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    8 分
                 </div>
                 
 
@@ -515,34 +504,20 @@ CUDA编程基础。
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="并行计算基础"><a href="#并行计算基础" class="headerlink" title="并行计算基础"></a>并行计算基础</h1><hr>
-<blockquote>
-<p>本篇博客记录了我在学习并行计算过程中的收获，包含以下部分的内容：</p>
-<ol>
-<li>为什么要并行计算</li>
-<li>并行硬件和并行软件</li>
-<li>MPI编程</li>
-<li>Pthreads编程</li>
-<li>OpenMP编程</li>
-<li>并行程序开发</li>
-<li>CUDA编程基础。</li>
-</ol>
-</blockquote>
-<hr>
-<h2 id="1-为什么要并行计算"><a href="#1-为什么要并行计算" class="headerlink" title="1 为什么要并行计算"></a>1 为什么要并行计算</h2><h3 id="1-1-为什么需要不断提升性能"><a href="#1-1-为什么需要不断提升性能" class="headerlink" title="1.1 为什么需要不断提升性能"></a>1.1 为什么需要不断提升性能</h3><ul>
+                <h1 id="并行处理及分布式系统"><a href="#并行处理及分布式系统" class="headerlink" title="并行处理及分布式系统"></a>并行处理及分布式系统</h1><h2 id="1-为什么要并行计算"><a href="#1-为什么要并行计算" class="headerlink" title="1 为什么要并行计算"></a>1 为什么要并行计算</h2><h3 id="1-1-为什么需要不断提升性能"><a href="#1-1-为什么需要不断提升性能" class="headerlink" title="1.1 为什么需要不断提升性能"></a>1.1 为什么需要不断提升性能</h3><ul>
 <li>随着计算能力的增加，我们所面临的计算问题和需求也在增加</li>
 <li>随着技术的进步，我们从未想过的技术得到了解决，比如：人类基因解码、更准确的医疗成像、更快速准确的网络搜索……</li>
 <li>更复杂的问题仍有待解决，比如：气候模拟、蛋白质折叠、药物发现、能源研究、数据分析……</li>
 </ul>
-<h3 id="1-2-为什么要构建并行系统"><a href="#1-2-为什么要构建并行系统" class="headerlink" title="1.2 为什么要构建并行系统"></a>1.2 为什么要构建并行系统</h3><p>单处理器性能大幅度提升的主要方法是增加集成电路晶体管密度。但是随着晶体管尺寸的减小，晶体管的传递速度增快，它们的能耗也在增加，大多数的能量是以热能的形式消耗，当一块集成电路变得太热的时候，就会变得不可靠。在 21 世纪的第一个 10 年中，使用空气冷却集成电路的散热能力已达到极限。也就是说，只通过增加集成电路的速度来提升处理器的性能的方法不可取。在这种条件下，集成电路制造商提出==多核处理器==的思路。</p>
+<h3 id="1-2-为什么要构建并行系统"><a href="#1-2-为什么要构建并行系统" class="headerlink" title="1.2 为什么要构建并行系统"></a>1.2 为什么要构建并行系统</h3><p>单处理器性能大幅度提升的主要方法是增加集成电路晶体管密度。但是随着晶体管尺寸的减小，晶体管的传递速度增快，它们的能耗也在增加，大多数的能量是以热能的形式消耗，当一块集成电路变得太热的时候，就会变得不可靠。在 21 世纪的第一个 10 年中，使用空气冷却集成电路的散热能力已达到极限。也就是说，只通过增加集成电路的速度来提升处理器的性能的方法不可取。在这种条件下，集成电路制造商提出<span style='background:yellow'>多核处理器</span>的思路。</p>
 <h3 id="1-3-为什么要编写并行程序"><a href="#1-3-为什么要编写并行程序" class="headerlink" title="1.3 为什么要编写并行程序"></a>1.3 为什么要编写并行程序</h3><p>大多数为传统单核系统编写的程序无法利用多核处理器，为了使程序能够更快地运行，有更加逼真的图像，就需要将串行程序改写为并行程序。</p>
-<h3 id="1-4-如何编写并行程序"><a href="#1-4-如何编写并行程序" class="headerlink" title="1.4 如何编写并行程序"></a>1.4 如何编写并行程序</h3><p>想要解决某个问题，需要编写其对应的并行程序，首先需要对任务进行划分，确定其属于==任务并行==还是==数据并行==。</p>
+<h3 id="1-4-如何编写并行程序"><a href="#1-4-如何编写并行程序" class="headerlink" title="1.4 如何编写并行程序"></a>1.4 如何编写并行程序</h3><p>想要解决某个问题，需要编写其对应的并行程序，首先需要对任务进行划分，确定其属于<span style='background:yellow'>任务并行</span>还是<span style='background:yellow'>数据并行</span>。</p>
 <ul>
 <li>任务并行：当许多任务或函数可以独立地、大规模地并行执行时，这就是任务并行。任务并行的重点在于利用多核系统对任务进行分配，将待解决的问题所需要的执行的各个任务分配到各个核上执行。</li>
 <li>数据并行：当可以同时处理许多数据时，这就是数据并行。数据并行的重点在于利用多核系统对数据进行分配，每个核在分配到的数据集上执行大致相似的数据操作</li>
 </ul>
-<h3 id="1-5-接下来做什么"><a href="#1-5-接下来做什么" class="headerlink" title="1.5 接下来做什么"></a>1.5 接下来做什么</h3><p>首先我会参考《并行程序设计导论》所讲的 C 语言的三种拓展：==消息传递接口(Message-Passing Interface，MPI)==、==POSIX 线程(POSIX threads，Pthreads)== 和 ==OpenMP== 来编写基本的并行程序。这三种方式编写的并行程序都是利用多核 CPU 实现的，然后我会介绍利用 NVIDIA 的 GPU 进行并行程序编写的方式以及其相关基础，也就是 ==CUDA C== 编程的基础。</p>
-<p>选择并行程序实现框架的时候应该根据计算机的架构来选择，即根据硬件选择软件。Pthreads 和 OpenMP 是为==共享内存系统==的编程而设计的，它们提过访问共享内存的机制；而 MPI 是为==分布式内存系统==的编程而设计的，它提供发送消息的机制。</p>
+<h3 id="1-5-接下来做什么"><a href="#1-5-接下来做什么" class="headerlink" title="1.5 接下来做什么"></a>1.5 接下来做什么</h3><p>首先我会参考《并行程序设计导论》所讲的 C 语言的三种拓展：<span style='background:yellow'>消息传递接口(Message-Passing Interface，MPI)</span>、<span style='background:yellow'>POSIX 线程(POSIX threads，Pthreads)</span> 和 <span style='background:yellow'>OpenMP</span> 来编写基本的并行程序。这三种方式编写的并行程序都是利用多核 CPU 实现的，然后我会介绍利用 NVIDIA 的 GPU 进行并行程序编写的方式以及其相关基础，也就是 <span style='background:yellow'>CUDA C</span> 编程的基础。</p>
+<p>选择并行程序实现框架的时候应该根据计算机的架构来选择，即根据硬件选择软件。Pthreads 和 OpenMP 是为 <span style='background:yellow'>共享内存系统</span> 的编程而设计的，它们提过访问共享内存的机制；而 MPI 是为 <span style='background:yellow'>分布式内存系统</span> 的编程而设计的，它提供发送消息的机制。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211224164854593.png" alt=""></p>
 <p>图中(a)表示共享内存系统，(b)表示分布式内存系统。</p>
 <h3 id="1-6-并发、并行、分布式"><a href="#1-6-并发、并行、分布式" class="headerlink" title="1.6 并发、并行、分布式"></a>1.6 并发、并行、分布式</h3><ul>
@@ -556,7 +531,7 @@ CUDA编程基础。
 <li>并行程序设计(软件)</li>
 </ul>
 <p>硬件主要的目标就是为软件提供更快的计算速度，更低的性能功耗比，硬件结构上支持更快的并行。<br>软件的主要目的是使用当前的硬件压榨出最高的性能，给应用提供更稳定快速的计算结果。</p>
-<h4 id="2-1-1-冯-·-洛依曼结构"><a href="#2-1-1-冯-·-洛依曼结构" class="headerlink" title="2.1.1 冯 · 洛依曼结构"></a>2.1.1 冯 · 洛依曼结构</h4><p>经典的冯 · 洛依曼结构包括存储器、运算器、控制器、输入设备、输出设备，其中运算器和控制器都在 CPU 之中，CPU 和主存通过总线连接。当数据或指令从主存传送到 CPU 时，称为数据或指令从内存中取出或者读出；当数据或指令从 CPU 传送到主存时，称为数据或指令写入或者存入内存中。这样主存和 CPU 之间的分离称为==冯 · 洛依曼瓶颈==。</p>
+<h4 id="2-1-1-冯-·-洛依曼结构"><a href="#2-1-1-冯-·-洛依曼结构" class="headerlink" title="2.1.1 冯 · 洛依曼结构"></a>2.1.1 冯 · 洛依曼结构</h4><p>经典的冯 · 洛依曼结构包括存储器、运算器、控制器、输入设备、输出设备，其中运算器和控制器都在 CPU 之中，CPU 和主存通过总线连接。当数据或指令从主存传送到 CPU 时，称为数据或指令从内存中取出或者读出；当数据或指令从 CPU 传送到主存时，称为数据或指令写入或者存入内存中。这样主存和 CPU 之间的分离称为 <span style='background:yellow'>冯 · 洛依曼瓶颈</span>。</p>
 <h4 id="2-1-2-进程、多任务及线程"><a href="#2-1-2-进程、多任务及线程" class="headerlink" title="2.1.2 进程、多任务及线程"></a>2.1.2 进程、多任务及线程</h4><ul>
 <li><p>进程：正在运行的程序的一个实例。</p>
 </li>
@@ -576,13 +551,13 @@ CUDA编程基础。
 </blockquote>
 <p>CPU Cache 一般分为不同的层(level)，第一层(L1)最小但是访问速度最快，更高层的 Cache (L2, L3, …)更大但访问速度较慢。大多数系统采用 3 层 Cache，每层 Cache 中的数据不重合，且都会存放在主存中。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211226105856481.png" style="zoom:80%;" /></p>
-<p>当 CPU 需要访问数据或指令时，它会沿着 ==L1 Cache -&gt; L2 Cache -&gt; L3 Cache -&gt; 主存== 这条路径查询，若从 Cache 中查询到数据或指令时，则称为 ==Cache 命中==或==命中==；若没有从 Cache 中查询到则称为 ==Cache 缺失==或==缺失==。</p>
+<p>当 CPU 需要访问数据或指令时，它会沿着 <span style='background:yellow'>L1 Cache -&gt; L2 Cache -&gt; L3 Cache -&gt; 主存</span> 这条路径查询，若从 Cache 中查询到数据或指令时，则称为 <span style='background:yellow'>Cache 命中</span> 或 <span style='background:yellow'>命中</span>；若没有从 Cache 中查询到则称为 <span style='background:yellow'>Cache 缺失</span> 或 <span style='background:yellow'>缺失</span>。</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211226110626495.png" alt="Cache 命中" style="zoom:80%;" /></p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211226110720893.png" alt="Cache 缺失" style="zoom:80%;" /></p>
 <p>当 CPU 向 Cache 写数据时，会出现 Cache 中的值与主存中的值不一致的情况，为了解决这个问题，数中介绍了两种方法：</p>
 <ul>
 <li>写直达：当 CPU 向 Cache 写数据时，更新主存中的数据。</li>
-<li>写回：将 Cache 中的数据标记为==脏数据==，当 Cache line 被主存中的新的 Cache line 替换时，脏的 Cache line 会被写入主存。</li>
+<li>写回：将 Cache 中的数据标记为 <span style='background:yellow'>脏数据</span>，当 Cache line 被主存中的新的 Cache line 替换时，脏的 Cache line 会被写入主存。</li>
 </ul>
 <p>在 Cache 设计中，另一个问题是 Cache line 应该存储在什么位置。当从主存中取出一个 Cache line 时，应该把这个 Cache line 放到 Cache 中的什么位置，不同的系统采用不同的方式，这些方式分别为：</p>
 <ul>
@@ -591,7 +566,7 @@ CUDA编程基础。
 <li>n路组相联：每个 Cache line 可以被放在 n 个不同的位置中的一个</li>
 </ul>
 <p>当主存中的行能被映射到不同到 Cache 中的不同位置时，需要决定替换或者驱逐 Cache 中的某一行。常用的方案是<strong>最近最少使用</strong>。</p>
-<h4 id="2-2-2-虚拟内存"><a href="#2-2-2-虚拟内存" class="headerlink" title="2.2.2 虚拟内存"></a>2.2.2 虚拟内存</h4><p>如果一个大型的程序或者程序需要访问大型数据集，那么所有的指令或者数据可能在主存中放不下。采用==虚拟内存==，使得主存可以作为辅存的缓存。利用时空局部性的原理，只把正在运行程序的活动部分保存在主存中。</p>
+<h4 id="2-2-2-虚拟内存"><a href="#2-2-2-虚拟内存" class="headerlink" title="2.2.2 虚拟内存"></a>2.2.2 虚拟内存</h4><p>如果一个大型的程序或者程序需要访问大型数据集，那么所有的指令或者数据可能在主存中放不下。采用 <span style='background:yellow'>虚拟内存</span>，使得主存可以作为辅存的缓存。利用时空局部性的原理，只把正在运行程序的活动部分保存在主存中。</p>
 <h4 id="2-2-3-低层次并行"><a href="#2-2-3-低层次并行" class="headerlink" title="2.2.3 低层次并行"></a>2.2.3 低层次并行</h4><p><strong>指令级并行</strong></p>
 <p>指令级并行通过让多个处理器部件或者功能单元同时执行指令来提高处理器的性能。有两种主要方法来实现指令级并行：</p>
 <ul>
@@ -609,7 +584,7 @@ CUDA编程基础。
 <li>粗粒度多线程：只切换那些需要等待较长时间才能完成操作而被阻塞的线程。</li>
 <li>同步多线程：通过允许多个县城同时使用多个功能单元来利用超标量处理器的性能。</li>
 </ul>
-<h3 id="2-3-并行硬件"><a href="#2-3-并行硬件" class="headerlink" title="2.3 并行硬件"></a>2.3 并行硬件</h3><p>利用 ==Flynn 分类法==对计算机体系结构进行划分：</p>
+<h3 id="2-3-并行硬件"><a href="#2-3-并行硬件" class="headerlink" title="2.3 并行硬件"></a>2.3 并行硬件</h3><p>利用 <span style='background:yellow'>Flynn 分类法</span> 对计算机体系结构进行划分：</p>
 <p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/4.png" style="zoom: 80%;" /></p>
 <p>分别以数据和指令进行分析：</p>
 <ul>
@@ -618,143 +593,15 @@ CUDA编程基础。
 <li>多指令单数据 MISD (少见，多个指令围殴一个数据)</li>
 <li>多指令多数据 MIMD (并行架构，多核心，多指令，异步处理多个数据流，从而实现空间上的并行，MIMD 多数情况下包含 SIMD，就是 MIMD 有很多计算核，计算核支持 SIMD)</li>
 </ul>
-<p>==注：GPU 属于 SPMD，但是其可以使用 SIMD 并行==</p>
-<p>计算机架构也可以==根据内存划分==：</p>
+<p><span style='background:yellow'>注：GPU 属于 SPMD，但是其可以使用 SIMD 并行</span></p>
+<p>计算机架构也可以 <span style='background:yellow'>根据内存划分</span>：</p>
 <ul>
 <li>共享内存系统<br><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211226170617065.png" alt="共享内存系统" style="zoom:80%;" /></li>
 <li>分布式内存系统<br><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211226170804988.png" alt="分布式内存系统" style="zoom:80%;" /></li>
 </ul>
 <h3 id="2-4-并行软件"><a href="#2-4-并行软件" class="headerlink" title="2.4 并行软件"></a>2.4 并行软件</h3><h3 id="2-5-输入和输出"><a href="#2-5-输入和输出" class="headerlink" title="2.5 输入和输出"></a>2.5 输入和输出</h3><h3 id="2-6-性能"><a href="#2-6-性能" class="headerlink" title="2.6 性能"></a>2.6 性能</h3><p><strong>线性加速比</strong>：$T_{并行}=T_{串行}/p$，其中 $p$ 表示程序运行所运行的系统的核数。</p>
 <p><strong>加速比</strong>：$S=\frac{T_{并行}}{T_{串行}}$</p>
-<h2 id="3-MPI编程"><a href="#3-MPI编程" class="headerlink" title="3 MPI编程"></a>3 MPI编程</h2><h2 id="4-Pthreads编程"><a href="#4-Pthreads编程" class="headerlink" title="4 Pthreads编程"></a>4 Pthreads编程</h2><h2 id="5-OpenMP编程"><a href="#5-OpenMP编程" class="headerlink" title="5 OpenMP编程"></a>5 OpenMP编程</h2><h2 id="6-并行程序开发"><a href="#6-并行程序开发" class="headerlink" title="6 并行程序开发"></a>6 并行程序开发</h2><h2 id="7-CUDA编程基础"><a href="#7-CUDA编程基础" class="headerlink" title="7 CUDA编程基础"></a>7 CUDA编程基础</h2><p>CUDA (Compute Unified Device Architecture，统一计算设备架构) 是 NVIDIA 提出的并行计算架构，结合了 CPU 和 GPU 的优点，主要用来处理密集型及并行计算。CPU 和 GPU 是两个独立的处理器，通过单个计算节点中的 PCI-Express 总线相连，GPU 用来提高计算密集型应用程序中并行程序段的执行速度，CPU 则负责管理设备端的资源。</p>
-<h3 id="7-1-基于-CUDA-的异构并行计算"><a href="#7-1-基于-CUDA-的异构并行计算" class="headerlink" title="7.1 基于 CUDA 的异构并行计算"></a>7.1 基于 CUDA 的异构并行计算</h3><h4 id="7-1-1-并行计算"><a href="#7-1-1-并行计算" class="headerlink" title="7.1.1 并行计算"></a>7.1.1 并行计算</h4><p>在 <a href="#1.4 如何编写并行程序">1.4</a> 中介绍了应用程序的两种并行性：任务并行和数据并行，CUDA 编程非常适合解决==数据并行==的问题。</p>
-<p>数据并行程序设计的第一步就是把数据依据线程划分：</p>
-<ul>
-<li>块划分：每个线程作用于一部分数据，通常这些数据具有相同的大小。</li>
-<li>周期划分：每个线程作用于数据的多部分。</li>
-</ul>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/2.png" style="zoom:80%;" /></p>
-<h4 id="7-1-2-异构计算"><a href="#7-1-2-异构计算" class="headerlink" title="7.1.2 异构计算"></a>7.1.2 异构计算</h4><p>异构计算，首先必须了解什么是异构，不同的计算机架构就是异构，在 <a href="#2.3 并行硬件">2.3</a> 中介绍计算机架构，就是为了引出异构的概念，按照指令集划分或者按照内存结构划分。</p>
-<p>一个典型的异构架构：</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/1.png" style="zoom: 67%;" /></p>
-<ul>
-<li>左图：一个四核 CPU 一般有四个 ALU，ALU 是完成逻辑计算的核心，控制单元、缓存也在片上，DRAM 是内存，一般不在片上，CPU 通过总线访问内存。</li>
-<li>右图：GPU，绿色小方块是 ALU，我们注意红色框内的部分SM，这一组 ALU 公用一个 Control 单元和 Cache，这个部分相当于一个完整的多核 CPU，但是不同的是 ALU 多了，Control 部分变小，可见计算能力提升了，控制能力减弱了，所以对于逻辑复杂的程序，一个 GPU 的 SM 是没办法和 CPU 比较的，但是对于逻辑简单，数据量大的任务，GPU 更加高效，并且一个GPU有多个SM。</li>
-</ul>
-<p>CPU 和 GPU 配合，各取所长可以完成更加多样的任务：</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/2%20(1).png" style="zoom: 50%;" /></p>
-<h4 id="7-1-3-CUDA"><a href="#7-1-3-CUDA" class="headerlink" title="7.1.3 CUDA"></a>7.1.3 CUDA</h4><p>CUDA 不是单单指软件或者硬件，而是建立在 Nvidia GPU 上的一整套平台，并扩展出多语言支持。因此，想要使用 CUDA 就必须得有 NVIDIA GPU 环境。</p>
-<p>CUDA C 是标准 ANSI C 语言的扩展，扩展出一些语法和关键字来编写设备端代码，而且 CUDA 库本身提供了大量 API 来操作设备完成计算。</p>
-<p>在 CUDA 程序中，通常将代码分为两个部分：</p>
-<ul>
-<li>CPU 主机端(Host)</li>
-<li>GPU 设备端(Device)</li>
-</ul>
-<p>在编译代码的时候，使用过 <code>nvcc</code> 编译。CUDA nvcc 编译器会自动分离你代码里面的不同部分，如果主机代码用 C 写成，则使用本地的 C 语言编译器编译；设备端代码，也就是核函数(Kernel)，用 CUDA C 编写，通过 nvcc 编译，链接阶段，在内核程序调用或者明显的 GPU 设备操作时，添加运行时库。</p>
-<p><strong>Hello World</strong></p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// hello.cu</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"cuda_runtime.h"</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"device_launch_parameters.h"</span></span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-__global__ <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello world from GPU\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello world from CPU\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	hello <span class="token operator">&lt;&lt;</span> <span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token operator">>></span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">cudaDeviceSynchronize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>若在 Linux 系统中运行需要使用如下命令编译代码</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvcc hello.cu -0 hello.out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>使用如下命令执行代码</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./hello.out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>运行结果：</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/image-20211227102543440.png" style="zoom: 80%;" /></p>
-<p>在上面的代码中，<code>__global__</code> 用于声明运行在设备上的核函数；<code>&lt;&lt;&lt;1, 10&gt;&gt;&gt;</code> 三重尖括号意味着从主线程到设备端代码的调用，一个核函数通过一组线程来执行，多有线程执行相同的代码，其中的参数是执行配置，用来说明有多少线程来执行核函数；<code>cudaDeviceSynchronize()</code> 用于同步，因为 CPU 和 GPU 的执行时异步的，为了防止 GPU 还没有执行完程序，CPU 就已经退出程序了。</p>
-<p>CUDA 程序的编写一般分为如下步骤：</p>
-<ol>
-<li>分配 Host 内存，并进行数据初始化</li>
-<li>分配 GPU 内存</li>
-<li>将数据从 Host 拷贝到 Device</li>
-<li>调用 CUDA Kernel 在 Device 上计算</li>
-<li>将计算结果从 Device 拷贝回 Host</li>
-<li>释放 GPU 内存</li>
-</ol>
-<p>CUDA 中影响性能的结构：</p>
-<ul>
-<li>内存层次结构</li>
-<li>线程层次结构</li>
-</ul>
-<p>CUDA 抽象了硬件实现：</p>
-<ul>
-<li>线程组的层次结构</li>
-<li>内存的层级结构</li>
-<li>障碍同步</li>
-</ul>
-<h3 id="7-2-CUDA-编程模型"><a href="#7-2-CUDA-编程模型" class="headerlink" title="7.2 CUDA 编程模型"></a>7.2 CUDA 编程模型</h3><p>从程序员的角度可以从以下几个不同的层面来看待并行计算。</p>
-<ul>
-<li>领域层</li>
-<li>逻辑层</li>
-<li>硬件层</li>
-</ul>
-<h4 id="7-2-1-内存管理"><a href="#7-2-1-内存管理" class="headerlink" title="7.2.1 内存管理"></a>7.2.1 内存管理</h4><p>一个异构环境，通常有多个 CPU 多个 GPU，每个 CPU 和 GPU 的内存都由一条 PCI-Express 总线分隔开。所以要区分以下内容：</p>
-<ul>
-<li>主机：CPU及其内存(主机内存)</li>
-<li>设备：GPU及其内存(设备内存)</li>
-</ul>
-<blockquote>
-<p>为了规范化，在之后的代码中，主机内存中的变量名以 <code>h_</code> 为前缀，设备内存中的变量名以 <code>d_</code> 为前缀</p>
-</blockquote>
-<p>一个典型的 CUDA 程序包括由并行代码互补的串行代码，如图所示，串行代码在主机 CPU 上执行，而并行代码在 GPU 上执行。</p>
-<p><img src="https://gitee.com/A-Egoist/image_bed/raw/master/blog_material/20211227111620.png" style="zoom: 50%;" /></p>
-<p>Host API 和 CUDA C 的 API 的对比：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">ANSI C 函数</th>
-<th style="text-align:center">CUDA C 函数</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">malloc</td>
-<td style="text-align:center">cudaMalloc</td>
-<td style="text-align:center">内存分配</td>
-</tr>
-<tr>
-<td style="text-align:center">memcpy</td>
-<td style="text-align:center">cudaMemcpy</td>
-<td style="text-align:center">内存复制</td>
-</tr>
-<tr>
-<td style="text-align:center">memset</td>
-<td style="text-align:center">cudaMemset</td>
-<td style="text-align:center">内存设置</td>
-</tr>
-<tr>
-<td style="text-align:center">free</td>
-<td style="text-align:center">cudaFree</td>
-<td style="text-align:center">释放内存</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>==内存拷贝==：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token class-name">cudaError_t</span> <span class="token function">cudaMemcpy</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>dst<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>src<span class="token punctuation">,</span> <span class="token class-name">size_t</span> count<span class="token punctuation">,</span> cudaMemcpyKind kind<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>此函数用于 Host 和 Device 之间内存的拷贝，从 src 拷贝 count 大小字节的数据到 dst，方向由 kind 指定，kind 有以下几种：</p>
-<ul>
-<li>cudaMemcpyHostToHost</li>
-<li>cudaMemcpyHostToDevice</li>
-<li>cudaMemcpyDeviceToHost</li>
-<li>cudaMemcpyDeviceToDevice</li>
-</ul>
-
+<h2 id="3-MPI编程"><a href="#3-MPI编程" class="headerlink" title="3 MPI编程"></a>3 MPI编程</h2><h2 id="4-Pthreads编程"><a href="#4-Pthreads编程" class="headerlink" title="4 Pthreads编程"></a>4 Pthreads编程</h2><h2 id="5-OpenMP编程"><a href="#5-OpenMP编程" class="headerlink" title="5 OpenMP编程"></a>5 OpenMP编程</h2><h2 id="6-并行程序开发"><a href="#6-并行程序开发" class="headerlink" title="6 并行程序开发"></a>6 并行程序开发</h2>
                 
             </div>
             <hr/>
@@ -891,9 +738,9 @@ __global__ <span class="token keyword">void</span> <span class="token function">
                 <a href="/posts/debbe7f/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_297.jpg" class="responsive-img" alt="并行计算基础">
+                        <img src="https://gitee.com/A-Egoist/image_bed/raw/master/background/img_297.jpg" class="responsive-img" alt="并行处理及分布式系统">
                         
-                        <span class="card-title">并行计算基础</span>
+                        <span class="card-title">并行处理及分布式系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1157,7 +1004,7 @@ __global__ <span class="token keyword">void</span> <span class="token function">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">46.6k</span>
+                        class="white-color">45.1k</span>
             
             
             
